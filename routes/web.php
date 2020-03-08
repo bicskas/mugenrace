@@ -12,7 +12,20 @@
 */
 
 
-Auth::routes();
+// Main GET routes with locale
+Route::prefix('{lang?}')->middleware('locale')->group(function () {
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Auth::routes(['verify' => true, 'register' => false]);
+
+    Route::prefix('/admin')->middleware(['admin', 'verified'])->namespace('Admin')->group(function () {
+        Route::get('/', 'SzovegController@index')->name('home');
+        Route::resource('szoveg', 'SzovegController', [
+            'as' => 'admin'
+        ])->parameters([
+            'szoveg' => 'szoveg'
+        ]);
+    });
+});

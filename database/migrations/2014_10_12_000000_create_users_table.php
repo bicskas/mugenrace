@@ -19,6 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->enum('role', ['user', 'moderator', 'admin'])->default('user');
+            $table->enum('status', ['new', 'active', 'banned', 'deleted'])->default('new');
+            $table->boolean('editable')->comment('0 nem szerkeszthető (szuper admin); 1 szerkeszthető')->default(1);
+
+            $table->timestamp('lastlogin_at')->nullable();
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

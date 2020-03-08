@@ -1,0 +1,37 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+@import '../variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+//bs-select
+@import "~bootstrap-select/dist/css/bootstrap-select.css";
+//jcrop
+@import "~tolnaiz-jcrop/css/Jcrop.min.css";
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import "~jquery-ui/themes/base/all.css";
+//Datimepicker
+@import "~tempusdominus-bootstrap-4/src/sass/tempusdominus-bootstrap-4-build";
+
+
+.navbar-laravel {
+    background-color: #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    color: #fff;
+}
+
+h1 {
+    color: $blue;
+}
+
+.rendezheto .thumbnail, .rendezheto tr, .rendezheto li {
+    cursor: move;
+}
+
+.ck-editor__editable_inline {
+    min-height: 300px !important;
+}
