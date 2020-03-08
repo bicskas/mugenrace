@@ -57517,7 +57517,7 @@ $(document).ready(function () {
 
   $('.jcrop').each(function () {
     var $this = $(this),
-        name = $this.data('name') || '_kivagasok',
+        name = $this.data('name') || '_crops',
         aspectRatio = $this.data('aspect-ratio') || 1,
         selection = $this.data('selection'),
         $input = $('<input type="hidden" name="' + name + '[' + aspectRatio + ']">');

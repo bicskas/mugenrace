@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\About;
 use App\Szoveg;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -28,12 +29,9 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot();
 
-//        Route::model('szoveg', Szoveg::class);
+        Route::model('szoveg', Szoveg::class);
+        Route::model('about', About::class);
 
-        Route::bind('szoveg', function ($id) {
-            $szoveg =  Szoveg::whereId($id)->first();
-            return $szoveg;
-        });
 
     }
 

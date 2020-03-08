@@ -27,5 +27,9 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
         ])->parameters([
             'szoveg' => 'szoveg'
         ]);
+
+        Route::resource('about', 'AboutController', [
+            'as' => 'admin'
+        ]);
     });
 });

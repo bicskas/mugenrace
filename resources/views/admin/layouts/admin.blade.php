@@ -34,6 +34,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a href="{{route('admin.szoveg.index', app()->getLocale())}}" class="nav-link">Subpages</a></li>
+                    <li class="nav-item"><a href="{{route('admin.about.index', app()->getLocale())}}" class="nav-link">About us</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

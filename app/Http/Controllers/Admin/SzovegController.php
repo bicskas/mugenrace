@@ -13,6 +13,7 @@ class SzovegController extends TemplateController {
 
 		$this->class = 'szoveg';
 		\View::share('active_page', $this->class);
+		\View::share('Class', new Model());
 	}
 
 	public function index(Request $request, $lang, Model $model) {

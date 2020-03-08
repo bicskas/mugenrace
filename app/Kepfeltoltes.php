@@ -13,7 +13,7 @@ class Kepfeltoltes
     private $uploadDirectory = '';
     private $fileName = 'original';
     private $kepmeretek = array();
-    private $kivagasok_key = 'kivagasok';
+    private $kivagasok_key = 'crops';
     private $placeholder = '';
 
     public function __construct($related = null)
@@ -106,7 +106,7 @@ class Kepfeltoltes
             'key' => $key,
             'tomb' => $tomb,
             'tobbi' => $tobbi,
-            'kivagasok' => array_get($tomb, $tobbi, array()),
+            'crops' => array_get($tomb, $tobbi, array()),
         );
     }
 
@@ -138,7 +138,7 @@ class Kepfeltoltes
             $cropok[$key] = json_decode($kivagas, true);
         }
 
-        $k = array_get($this->kivagasokHelper(), 'kivagasok', array());
+        $k = array_get($this->kivagasokHelper(), 'crops', array());
 
         if ($k != $cropok) {
             $meretek = $this->getKepmeretek();
@@ -165,7 +165,7 @@ class Kepfeltoltes
     public function getKivagasok($key)
     {
         $related = $this->getRelated();
-        $k = array_get($this->kivagasokHelper(), 'kivagasok', array());
+        $k = array_get($this->kivagasokHelper(), 'crops', array());
 
         if ($related && array_has($k, $key)) {
             return json_encode(array_get($k, $key));
