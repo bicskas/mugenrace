@@ -140,7 +140,7 @@ class AboutController extends TemplateController
      * @param \App\About $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($lang, About $about)
     {
         $about->image()->delete();
         $about->delete();

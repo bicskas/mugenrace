@@ -37,17 +37,7 @@ class About extends Model
     }
 
     public function delete(array $options = array()) {
-        if (empty($this->link)) {
-            $this->link = str_slug($this->cim);
-        }
-        $this->link = str_slug($this->link);
-        if (empty($this->seotitle)) {
-            $this->seotitle = $this->cim;
-        }
-        if (empty($this->ogtitle)) {
-            $this->ogtitle = $this->cim;
-        }
-
+        $this->image()->delete();
         return parent::save($options);
     }
 

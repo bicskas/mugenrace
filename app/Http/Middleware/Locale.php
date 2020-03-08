@@ -17,7 +17,7 @@ class Locale
     {
         if ($request->method() === 'GET') {
             $segment = $request->segment(1);
-//dd(config('app.locales'));
+
             if (!array_key_exists ($segment, config('app.locales'))) {
                 $segments = $request->segments();
                 $fallback = session('locale') ?: config('app.fallback_locale');
