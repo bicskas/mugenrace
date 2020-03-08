@@ -31,6 +31,10 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
         Route::resource('about', 'AboutController', [
             'as' => 'admin'
         ]);
+
+        Route::get('/kep/torol/{snake_case}/{id}/{method}', 'KepController@getTorol');
+        Route::post('ajax/sorrend/{one?}/{two?}/', 'AjaxController@sorrend');
+        Route::post('tesztbezar', 'AjaxController@tesztbezar');
     });
 
     Route::get('about-us', 'AboutController')->name('about');

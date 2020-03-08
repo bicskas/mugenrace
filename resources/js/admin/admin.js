@@ -98,8 +98,20 @@ $(document).ready(function () {
     });
 
 
-});
+    rendezheto();
 
+});
+//Soraberendezhető sorok kezelése
+function rendezheto() {
+    $(".rendezheto").sortable({
+        update: function (event, ui) {
+            var $this = $(this);
+            $.post($this.data('action'), {
+                data: $this.sortable('serialize')
+            });
+        }
+    });
+}
 
 function createEditor(elementId) {
     return ClassicEditor

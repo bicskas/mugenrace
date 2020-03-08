@@ -57540,7 +57540,19 @@ $(document).ready(function () {
       });
     }, 400);
   });
-});
+  rendezheto();
+}); //Soraberendezhető sorok kezelése
+
+function rendezheto() {
+  $(".rendezheto").sortable({
+    update: function update(event, ui) {
+      var $this = $(this);
+      $.post($this.data('action'), {
+        data: $this.sortable('serialize')
+      });
+    }
+  });
+}
 
 function createEditor(elementId) {
   return ClassicEditor.create(document.getElementById(elementId), {

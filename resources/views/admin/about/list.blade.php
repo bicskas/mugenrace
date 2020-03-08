@@ -17,7 +17,7 @@
                                 <th class="text-right">Operations</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="rendezheto" data-action="{{url('/'.app()->getLocale().'/admin/ajax/sorrend/about')}}">
                             @forelse ($list as $element)
                                 <tr id="item_{{$element->id}}">
                                     <td class="align-middle">{{$element->title}}</td>

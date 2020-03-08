@@ -36,8 +36,25 @@ class About extends Model
         return new Kepfeltoltes($this);
     }
 
+    public function delete(array $options = array()) {
+        if (empty($this->link)) {
+            $this->link = str_slug($this->cim);
+        }
+        $this->link = str_slug($this->link);
+        if (empty($this->seotitle)) {
+            $this->seotitle = $this->cim;
+        }
+        if (empty($this->ogtitle)) {
+            $this->ogtitle = $this->cim;
+        }
+
+        return parent::save($options);
+    }
+
     public function getImage($ar = null, $w = null)
     {
         return $this->image()->getImage($ar, $w);
     }
+
+
 }

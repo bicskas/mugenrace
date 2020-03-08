@@ -51,6 +51,10 @@ class AboutController extends TemplateController
 
         $data = $request->all();
 
+        if (!$about->sorrend) {
+            $data['sorrend'] = (int)About::max('sorrend') + 1;
+        }
+
         $about->fill($data)->save();
 
         $about->image()->kepfeltoltes($request->file('image'));
