@@ -100,7 +100,7 @@ return [
     | application, set this to 'Trans'.
     |
     */
-    'translation_suffix' => 'translation',
+    'translation_suffix' => 'Translation',
 
     /*
     |--------------------------------------------------------------------------
