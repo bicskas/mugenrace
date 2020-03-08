@@ -9,7 +9,14 @@ class AboutTranslation extends Model
 {
     use BasicModel;
 
+    public $timestamps = false;
     public static $sorting = '`id` ASC';
+    protected $fillable = array(
+        'title',
+        'subtitle',
+        'content',
+        'crops',
+    );
 
     protected function rules() {
         return array(

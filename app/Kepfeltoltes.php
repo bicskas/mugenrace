@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Arr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 
@@ -41,7 +42,7 @@ class Kepfeltoltes
             return false;
         }
 
-        if (!array_get($params, 'no_delete_dir')) {
+        if (!Arr::get($params, 'no_delete_dir')) {
             $this->deleteDirectory();
         }
 
@@ -53,25 +54,25 @@ class Kepfeltoltes
             mkdir($dir, 0777, true);
         }
         $upload = $fajl->move($dir, $file);
-        if (!array_get($params, 'no_resize')) {
+        if (!Arr::get($params, 'no_resize')) {
             Image::make($dir . $file)
-                ->resize(array_get($params, 'max_width', 1920), array_get($params, 'max_height', 1920), function ($constraint) {
+                ->resize(Arr::get($params, 'max_width', 1920), Arr::get($params, 'max_height', 1920), function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })
                 ->save($dir . $file);
 
-            if (array_get($params, 'thumbnail')) {
+            if (Arr::get($params, 'thumbnail')) {
                 Image::make($dir . $file)
-                    ->resize(array_get($params, 'width', 150), array_get($params, 'height', 150), function ($constraint) {
+                    ->resize(Arr::get($params, 'width', 150), Arr::get($params, 'height', 150), function ($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })
-                    ->save(array_get($params, 'dir', $dir) . array_get($params, 'filename', 'th') . '.' . $ext);
+                    ->save(Arr::get($params, 'dir', $dir) . Arr::get($params, 'filename', 'th') . '.' . $ext);
             }
         }
 
-        if (!array_get($params, 'no_auto_crop')) {
+        if (!Arr::get($params, 'no_auto_crop')) {
             $this->crop();
         }
 
@@ -106,7 +107,7 @@ class Kepfeltoltes
             'key' => $key,
             'tomb' => $tomb,
             'tobbi' => $tobbi,
-            'crops' => array_get($tomb, $tobbi, array()),
+            'crops' => Arr::get($tomb, $tobbi, array()),
         );
     }
 
@@ -118,10 +119,10 @@ class Kepfeltoltes
         }
 
         $k = $this->kivagasokHelper();
+        $tomb = Arr::get($k, 'tomb', array());
+        $key = Arr::get($k, 'key');
+        $related->$key = Arr::set($tomb, Arr::get($k, 'tobbi', null), $cropok);
 
-        $tomb = array_get($k, 'tomb', array());
-        $key = array_get($k, 'key');
-        $related->$key = array_set($tomb, array_get($k, 'tobbi', null), $cropok);
         $related->save();
         return true;
     }
@@ -138,7 +139,7 @@ class Kepfeltoltes
             $cropok[$key] = json_decode($kivagas, true);
         }
 
-        $k = array_get($this->kivagasokHelper(), 'crops', array());
+        $k = Arr::get($this->kivagasokHelper(), 'crops', array());
 
         if ($k != $cropok) {
             $meretek = $this->getKepmeretek();
@@ -146,7 +147,7 @@ class Kepfeltoltes
             $ext = pathinfo($original, PATHINFO_EXTENSION);
             foreach ($cropok as $ar => $c) {
                 if ($c['w'] > 0 && $c['h'] > 0) {
-                    foreach (array_get($meretek, $ar, array()) as $width) {
+                    foreach (Arr::get($meretek, $ar, array()) as $width) {
                         $height = round($width / $ar);
                         Image::make($original)
                             ->crop(ceil($c['w']), ceil($c['h']), round($c['x']), round($c['y']))
@@ -165,10 +166,10 @@ class Kepfeltoltes
     public function getKivagasok($key)
     {
         $related = $this->getRelated();
-        $k = array_get($this->kivagasokHelper(), 'crops', array());
+        $k = Arr::get($this->kivagasokHelper(), 'crops', array());
 
         if ($related && array_has($k, $key)) {
-            return json_encode(array_get($k, $key));
+            return json_encode(Arr::get($k, $key));
         }
         $size = getimagesize(public_path() . $this->getImage());
         $original_size = array('x' => 0, 'y' => 0, 'x2' => $size[0], 'y2' => $size[1], 'w' => $size[0], 'h' => $size[1]);

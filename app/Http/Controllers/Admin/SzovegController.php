@@ -68,7 +68,6 @@ class SzovegController extends TemplateController {
 	}
 
 	public function edit(Request $request, $lang, Model $model) {
-//	    dd($model);
 		if (($locale = $request->get('uj_nyelv'))) {
 			return $this->uj_nyelv($locale, $model);
 		}

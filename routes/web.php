@@ -32,4 +32,6 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
             'as' => 'admin'
         ]);
     });
+
+    Route::get('about-us', 'AboutController')->name('about');
 });

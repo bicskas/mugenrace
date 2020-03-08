@@ -14,19 +14,30 @@ class About extends Model
         'title',
         'subtitle',
         'content',
-        'seotitle',
-        'seokeywords',
-        'seodescription',
-        'ogtitle',
-        'ogdescription',
+    );
+    protected $fillable = array(
+        'title',
+        'subtitle',
+        'content',
+        'crops',
+        'sorrend',
     );
 
+    protected $casts = [
+        'crops' => 'array',
+    ];
+
     public $timestamps = true;
-    public static $sorting = '`title` ASC';
+    public static $sorting = '`sorrend` ASC';
 
 
     public function image()
     {
         return new Kepfeltoltes($this);
+    }
+
+    public function getImage($ar = null, $w = null)
+    {
+        return $this->image()->getImage($ar, $w);
     }
 }

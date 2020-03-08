@@ -96,9 +96,11 @@ class AboutController extends TemplateController
      * @param \App\About $about
      * @return \Illuminate\Http\Response
      */
-    public function show(About $about)
+    public function show($lang, About $about)
     {
-        //
+        return view('admin.' . $this->class . '.show', array(
+            'model' => $about,
+        ));
     }
 
     /**
@@ -107,9 +109,13 @@ class AboutController extends TemplateController
      * @param \App\About $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit(Request $request, $lang, About $about)
     {
-        //
+        if (($locale = $request->get('uj_nyelv'))) {
+            return $this->uj_nyelv($locale, $about);
+        }
+
+        return $this->szerkeszt($about, 'put');
     }
 
     /**
@@ -119,9 +125,9 @@ class AboutController extends TemplateController
      * @param \App\About $about
      * @return \Illuminate\Http\Response
      */
-    public function update(ModelRequest $request, About $about)
+    public function update(ModelRequest $request, $lang, About $about)
     {
-        //
+        return $this->save($request, $about);
     }
 
     /**
@@ -132,6 +138,10 @@ class AboutController extends TemplateController
      */
     public function destroy(About $about)
     {
-        //
+        $about->image()->delete();
+        $about->delete();
+        return array(
+            'id' => $about->getKey(),
+        );
     }
 }

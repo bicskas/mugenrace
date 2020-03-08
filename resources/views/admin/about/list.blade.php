@@ -20,7 +20,7 @@
                             <tbody>
                             @forelse ($list as $element)
                                 <tr id="item_{{$element->id}}">
-                                    <td class="align-middle">{{$element->cim}}</td>
+                                    <td class="align-middle">{{$element->title}}</td>
                                     <td class="align-middle">{{$element->subtitle}}</td>
                                     <td class="align-middle text-wrap">{{str_limit(strip_tags($element->content))}}</td>
                                     <td class="align-middle text-right">
