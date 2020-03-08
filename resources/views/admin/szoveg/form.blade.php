@@ -3,7 +3,7 @@
 @section('content')
     <div class="card ">
         <div class="card-header clearfix">
-            <h3 class="card-title pull-left">Edit content</h3>
+            <h3 class="card-title pull-left">Edit subpage</h3>
             <div class="pull-right">
                 @include('elements.buttons.adminBack')
             </div>
@@ -23,7 +23,7 @@
                         {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
 
                         <?php $id = 'link' ?>
-                        {!! Form::bsTextMl($kod, $id, $model, [], 'Automatikusan generálódik, de felülírható') !!}
+                        {!! Form::bsTextMl($kod, $id, $model, [], 'It is automatically generated, but can be overwritten') !!}
 
                         <?php $id = 'szoveg' ?>
                         {!! Form::bsTextareaMl($kod, $id, $model, ['class' => 'form-control ckeditor']) !!}

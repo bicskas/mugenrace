@@ -6,15 +6,15 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between"><span>Statikus oldalak</span><span>@include('elements.buttons.adminNew')</span></div>
+                    <div class="card-header d-flex justify-content-between"><span>Subpages</span><span>@include('elements.buttons.adminNew')</span></div>
                     <div class="card-body">
                         <table class="table table-striped table-hover table-fixed  text-nowrap">
                             <thead class="thead-dark">
                             <tr>
-                                <th>Cím</th>
+                                <th>Title</th>
                                 <th>Link</th>
-                                <th>Szöveg</th>
-                                <th class="text-right">Műveletek</th>
+                                <th>Content</th>
+                                <th class="text-right">Operations</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -32,7 +32,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4">Nincs statikus oldal</td>
+                                    <td colspan="4">No subpage</td>
                                 </tr>
                             @endforelse
                             </tbody>

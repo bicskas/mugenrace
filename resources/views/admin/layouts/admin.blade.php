@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a href="{{route('admin.szoveg.index')}}" class="nav-link">Content</a></li>
+                    <li class="nav-item"><a href="{{route('admin.szoveg.index', app()->getLocale())}}" class="nav-link">Subpages</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -74,7 +74,7 @@
     @if (env('APP_ENV', 'production') == 'local' and Cookie::get('tesztoldal') != 'letezik')
         <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="tesztbezar"><span aria-hidden="true">&times;</span></button>
-            Jelenleg a teszt oldalon vagy. Az itteni módosítások, nem fognak az éles oldalon megjelenni.
+            You are currently on the test page. Changes made here will not appear on the live page.
         </div>
     @endif
 

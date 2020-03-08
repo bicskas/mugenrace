@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\BasicModel;
 
-class SzovegForditas extends Model {
-	
+class SzovegTranslation extends Model {
+
 	use BasicModel;
-	
-	protected $table = 'szoveg_forditas';
+
+	protected $table = 'szoveg_translation';
 	protected $fillable = array(
 		'cim',
 		'link',
@@ -31,7 +31,7 @@ class SzovegForditas extends Model {
 			),
 		);
 	}
-	
+
 	public function save(array $options = array()) {
 		if (empty($this->link)) {
 			$this->link = str_slug($this->cim);
@@ -43,7 +43,7 @@ class SzovegForditas extends Model {
 		if (empty($this->ogtitle)) {
 			$this->ogtitle = $this->cim;
 		}
-		
+
 		return parent::save($options);
 	}
 

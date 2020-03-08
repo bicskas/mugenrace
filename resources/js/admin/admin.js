@@ -7,6 +7,7 @@ import 'jquery-ui/ui/widgets/sortable.js';
 
 const ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
 require('@ckeditor/ckeditor5-build-classic/build/translations/hu');
+require('@ckeditor/ckeditor5-build-classic/build/translations/en-gb');
 
 const editors = {}; // You can also use new Map() if you use ES6
 $(document).ready(function () {
@@ -17,15 +18,27 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.confirm', function () {
-        return confirm('Biztos benne?');
+        return confirm('Are you sure?');
     });
 
-// tab active
-    var $navtabs = $('.nav-tabs');
-    if ($navtabs.find('li.active:visible').length === 0) {
-        var $tab = $navtabs.find('li a[href^="#"]:visible').first();
-        $tab.tab('show');
-    }
+
+// törlés gomb
+    $(document).on('click', '.torol', function (e) {
+        e.preventDefault();
+        if (confirm('Are you sure?')) {
+            var $this = $(this);
+            $.ajax({
+                url: $this.attr('href'),
+                method: 'DELETE',
+                success: function (resp) {
+                    $('#item_' + resp.id).remove();
+                },
+                error: function () {
+                    alert('An error occurred');
+                }
+            });
+        }
+    });
 
 
     //teszoldalra figyelmeztető szöveg elrejtése fél órára
@@ -92,7 +105,7 @@ function createEditor(elementId) {
     return ClassicEditor
         .create(document.getElementById(elementId), {
             toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
-            language: 'hu',
+            language: 'en',
         })
         .then(editor => {
             editors[elementId] = editor;

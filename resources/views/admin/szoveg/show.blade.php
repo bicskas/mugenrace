@@ -3,7 +3,7 @@
 @section('content')
     <div class="card ">
         <div class="card-header clearfix">
-            <h3 class="card-title pull-left">Statikus oldal megtekintése</h3>
+            <h3 class="card-title pull-left">Subpage - {{$model->cim}}</h3>
             <div class="pull-right">
                 @include('elements.buttons.adminBack')
             </div>

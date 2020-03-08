@@ -51,7 +51,7 @@ if (!function_exists('url_get_contents')) {
 if (!function_exists('labels')) {
     function labels($mezo)
     {
-        return trans('validation.attributes.' . $mezo);
+        return __($mezo);
     }
 }
 

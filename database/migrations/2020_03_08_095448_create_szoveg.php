@@ -32,19 +32,19 @@ class CreateSzoveg extends Migration
             $table->bigIncrements('id');
         });
 
-        Schema::create('szoveg_forditas', function(Blueprint $table) {
+        Schema::create('szoveg_translation', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('szoveg_id')->index();
             $table->char('lang', 2);
-            $table->string('cim', 255);
-            $table->string('link', 255);
+            $table->string('cim', 255)->nullable();
+            $table->string('link', 255)->nullable();
             $table->text('szoveg')->nullable();
             $this->seo($table);
 
             $table->unique(array('szoveg_id', 'lang'));
         });
 
-        Schema::table('szoveg_forditas', function(Blueprint $table) {
+        Schema::table('szoveg_translation', function(Blueprint $table) {
             $table->foreign('szoveg_id')->references('id')->on('szoveg')->onUpdate('cascade')->onDelete('cascade');
         });
     }
@@ -56,7 +56,7 @@ class CreateSzoveg extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('szoveg_forditas');
+        Schema::dropIfExists('szoveg_translation');
         Schema::dropIfExists('szoveg');
     }
 }
