@@ -6,18 +6,18 @@ use App\Traits\BasicModel;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
-class About extends Model
+class Rider extends Model
 {
     use BasicModel, Translatable;
 
     public $translatedAttributes = array(
-        'title',
-        'subtitle',
+        'name',
+        'team',
+        'race',
         'content',
     );
     protected $fillable = array(
-        'title',
-        'subtitle',
+        'name',
         'content',
         'crops',
         'sorrend',
@@ -45,6 +45,4 @@ class About extends Model
     {
         return $this->image()->getImage($ar, $w);
     }
-
-
 }

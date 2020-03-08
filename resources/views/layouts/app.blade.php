@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about', app()->getLocale()) }}">{{ __('About us') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('sponsored', app()->getLocale()) }}">{{ __('Sponsored') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

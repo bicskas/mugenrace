@@ -5,29 +5,23 @@ namespace App;
 use App\Traits\BasicModel;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutTranslation extends Model
+class TeamTranslation extends Model
 {
     use BasicModel;
 
     public $timestamps = false;
     public static $sorting = '`id` ASC';
     protected $fillable = array(
-        'title',
-        'subtitle',
+        'name',
         'content',
     );
 
     protected function rules() {
         return array(
-            'title' => array(
+            'name' => array(
                 'required',
-                'max:255',
-            ),
-
-            'subtitle' => array(
                 'max:255',
             ),
         );
     }
-
 }

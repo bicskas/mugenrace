@@ -32,10 +32,19 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
             'as' => 'admin'
         ]);
 
+        Route::resource('team', 'TeamController', [
+            'as' => 'admin'
+        ]);
+
+        Route::resource('rider', 'RiderController', [
+            'as' => 'admin'
+        ]);
+
         Route::get('/kep/torol/{snake_case}/{id}/{method}', 'KepController@getTorol');
         Route::post('ajax/sorrend/{one?}/{two?}/', 'AjaxController@sorrend');
         Route::post('tesztbezar', 'AjaxController@tesztbezar');
     });
 
     Route::get('about-us', 'AboutController')->name('about');
+    Route::get('sponsored', 'SponsoredController')->name('sponsored');
 });
