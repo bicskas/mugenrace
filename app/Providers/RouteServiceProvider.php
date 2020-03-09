@@ -3,7 +3,11 @@
 namespace App\Providers;
 
 use App\About;
+use App\BelsoKep;
+use App\BelsoSzoveg;
+use App\Rider;
 use App\Szoveg;
+use App\Team;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -31,6 +35,10 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::model('szoveg', Szoveg::class);
         Route::model('about', About::class);
+        Route::model('team', Team::class);
+        Route::model('rider', Rider::class);
+        Route::model('belso_kep', BelsoKep::class);
+        Route::model('belso_szoveg', BelsoSzoveg::class);
 
 
     }

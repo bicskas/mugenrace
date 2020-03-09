@@ -33,6 +33,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="{{route('admin.belso_kep.index', app()->getLocale())}}" class="nav-link">Page images</a></li>
+                    <li class="nav-item"><a href="{{route('admin.belso_szoveg.index', app()->getLocale())}}" class="nav-link">Page texts</a></li>
                     <li class="nav-item"><a href="{{route('admin.szoveg.index', app()->getLocale())}}" class="nav-link">Subpages</a></li>
                     <li class="nav-item"><a href="{{route('admin.about.index', app()->getLocale())}}" class="nav-link">About us</a></li>
                     <li class="nav-item"><a href="{{route('admin.team.index', app()->getLocale())}}" class="nav-link">Teams</a></li>

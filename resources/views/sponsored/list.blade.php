@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
         <div class="slider-for">
             @foreach($teams as $team)
                 <div>
@@ -35,5 +34,4 @@
                 </div>
             @endforeach
         </div>
-    </div>
 @endsection

@@ -14,6 +14,22 @@ $primary: #aaff00;
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
 
-*{
+* {
     color: white;
+}
+
+.slider-nav {
+    transform: rotate(-3deg);
+    background-color: $primary;
+
+    .slick-list {
+        padding: 20px 50px !important;
+    }
+
+    .slick-slide {
+        margin: 10px;
+        overflow: hidden;
+        transform: skewX(-3deg);
+        position: relative;
+    }
 }

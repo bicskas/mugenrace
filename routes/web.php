@@ -40,6 +40,14 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
             'as' => 'admin'
         ]);
 
+        Route::resource('belso_kep', 'BelsoKepController', [
+            'as' => 'admin'
+        ]);
+
+        Route::resource('belso_szoveg', 'BelsoSzovegController', [
+            'as' => 'admin'
+        ]);
+
         Route::get('/kep/torol/{snake_case}/{id}/{method}', 'KepController@getTorol');
         Route::post('ajax/sorrend/{one?}/{two?}/', 'AjaxController@sorrend');
         Route::post('tesztbezar', 'AjaxController@tesztbezar');

@@ -12683,3 +12683,19 @@ a.text-dark:focus {
   color: white;
 }
 
+.slider-nav {
+  transform: rotate(-3deg);
+  background-color: #aaff00;
+}
+
+.slider-nav .slick-list {
+  padding: 20px 50px !important;
+}
+
+.slider-nav .slick-slide {
+  margin: 10px;
+  overflow: hidden;
+  transform: skewX(-3deg);
+  position: relative;
+}
+
