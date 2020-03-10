@@ -37193,8 +37193,12 @@ $(function () {
 
   var scrollBool = true;
   var timerId;
-  var bgClass = 'wow animated active bounceInRight';
+  var mode = 'zoom';
+  var bgClass = 'wow animated active slow ' + mode + 'In';
   var next;
+  var inDirection;
+  var outDirection;
+  var addClass;
   $(window).on('mousewheel', function (e) {
     var active = $('.bg-image.active');
     var id = active.data('index');
@@ -37209,24 +37213,29 @@ $(function () {
         }
 
         next = $('#bgdiv' + (id + 1));
+        inDirection = '';
+        outDirection = '';
       } else {
         if (id === 1) {
           id = count + 1;
         }
 
         next = $('#bgdiv' + (id - 1));
+        inDirection = '';
+        outDirection = '';
       }
 
+      addClass = bgClass + inDirection;
       $(active).css('animation-name', '');
       $(active).css('visibility', '');
-      $(next).addClass(bgClass);
-      $(active).removeClass(bgClass);
-      $(active).addClass('wow animated active bounceOutLeft');
+      $(next).addClass(addClass);
+      $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+      $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
       wow.sync();
       clearTimeout(timerId);
       timerId = setTimeout(function () {
         scrollBool = true;
-        $(active).removeClass('wow animated active bounceOutLeft');
+        $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
       }, 1200);
     }
   });
@@ -37243,30 +37252,45 @@ $(function () {
           id = 0;
         }
 
-        var next = $('#bgdiv' + (id + 1));
-        $(active).css('animation-name', '');
-        $(active).css('visibility', '');
-        $(next).addClass(bgClass);
-        $(active).removeClass(bgClass);
+        next = $('#bgdiv' + (id + 1));
+        inDirection = 'Right';
+        outDirection = 'Left';
       } else {
         if (id === 1) {
           id = count + 1;
         }
 
-        var prev = $('#bgdiv' + (id - 1));
-        $(active).css('animation-name', '');
-        $(active).css('visibility', '');
-        $(prev).addClass(bgClass);
-        $(active).removeClass(bgClass);
-      } // wow.sync();
+        next = $('#bgdiv' + (id - 1));
+        inDirection = 'Left';
+        outDirection = 'Right';
+      }
 
-
+      addClass = bgClass + inDirection;
+      $(active).css('animation-name', '');
+      $(active).css('visibility', '');
+      $(next).addClass(addClass);
+      $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+      $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+      wow.sync();
       clearTimeout(timerId);
       timerId = setTimeout(function () {
         scrollBool = true;
+        $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
       }, 1200);
     }
-  });
+  }); // var ts;
+  // $(document).bind('touchstart', function (e){
+  //     ts = e.originalEvent.touches[0].clientY;
+  // });
+  //
+  // $(document).bind('touchend', function (e){
+  //     var te = e.originalEvent.changedTouches[0].clientY;
+  //     if(ts > te+5){
+  //         slide_down();
+  //     }else if(ts < te-5){
+  //         slide_up();
+  //     }
+  // });
 });
 
 /***/ }),
