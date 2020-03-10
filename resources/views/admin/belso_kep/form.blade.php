@@ -25,6 +25,9 @@
                         <?php $id = 'subtitle' ?>
                         {!! Form::bsTextMl($kod, $id, $model, []) !!}
 
+                        <?php $id = 'place' ?>
+                        {!! Form::bsSelect($id, $model, $places,[]) !!}
+
                     </div>
                 @endforeach
             </div>

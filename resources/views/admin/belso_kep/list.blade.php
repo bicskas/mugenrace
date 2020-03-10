@@ -13,6 +13,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Subtitle</th>
+                                <th>Place</th>
                                 <th>Image</th>
                                 <th class="text-right">Operations</th>
                             </tr>
@@ -22,6 +23,7 @@
                                 <tr id="item_{{$element->id}}">
                                     <td class="align-middle">{{$element->title}}</td>
                                     <td class="align-middle">{{$element->subtitle}}</td>
+                                    <td class="align-middle">{{$element->place}}</td>
                                     <td class="align-middle text-wrap">{!! Html::image($element->getImage(2.77,600),$element->title, ['class' => 'img-fluid','style' => 'height:50px']) !!}</td>
                                     <td class="align-middle text-right">
                                         @include('elements.buttons.adminShow',['element' => $element])

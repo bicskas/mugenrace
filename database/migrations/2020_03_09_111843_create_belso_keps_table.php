@@ -17,6 +17,7 @@ class CreateBelsoKepsTable extends Migration
             $table->bigIncrements('id');
             $table->text('crops')->nullable();
             $table->integer('sorrend')->default(1);
+            $table->enum('place',['home','about','sponsor','products'])->default('home');
             $table->timestamps();
         });
 

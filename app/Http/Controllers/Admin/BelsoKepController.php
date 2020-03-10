@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\BelsoKep;
 use App\Http\Requests\ModelRequest;
+use DemeterChain\B;
 use Illuminate\Http\Request;
 
 class BelsoKepController extends TemplateController
@@ -30,7 +31,7 @@ class BelsoKepController extends TemplateController
      */
     public function index(Request $request, $lang, BelsoKep $belso_kep)
     {
-        $model = $belso_kep->listsTranslations('title');
+        $model = $belso_kep->withTranslation('title');
 
         if (($data = $request->get('title'))) {
             $model = $model->whereTranslationLike('title', '%' . $data . '%');
@@ -65,10 +66,11 @@ class BelsoKepController extends TemplateController
 
     private function szerkeszt(BelsoKep $belso_kep, $method)
     {
-
+        $places = $belso_kep->getPlaces();
         return view('admin.' . $this->class . '.form', array(
                 'model' => $belso_kep,
                 'method' => $method,
+                'places' => $places,
             ) + $this->locales($belso_kep));
     }
 

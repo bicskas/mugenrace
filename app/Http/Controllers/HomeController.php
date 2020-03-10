@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BelsoKep;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $home_images = BelsoKep::orderByRaw(BelsoKep::$sorting)->get();
+        return view('home')->with(compact(['home_images']));
     }
 }

@@ -1,0 +1,43 @@
+#home-page {
+    margin: -1.5rem 0 !important;
+    height: calc(100vh - 54px) !important;
+    overflow: hidden;
+    position: relative;
+
+    .bg-image {
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: opacity 1s ease-in-out;
+
+        h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30vh;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    //img {
+    //    //width: 100%;
+    //    margin-left: auto;
+    //    margin-right: auto;
+    //    display: block;
+    //}
+}

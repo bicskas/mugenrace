@@ -28,11 +28,13 @@
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^17.0.0",
         "@fortawesome/fontawesome-free": "^5.12.1",
+        "animate.css": "^3.7.2",
         "bootstrap-select": "^1.13.12",
         "jquery-ui": "^1.12.1",
         "moment": "^2.24.0",
         "slick-carousel": "^1.8.1",
         "tempusdominus-bootstrap-4": "^5.1.2",
-        "tolnaiz-jcrop": "^2.0.5"
+        "tolnaiz-jcrop": "^2.0.5",
+        "wow.js": "^1.2.2"
     }
 }

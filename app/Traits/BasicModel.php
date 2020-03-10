@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Arr;
+
 trait BasicModel
 {
 
@@ -42,7 +44,7 @@ trait BasicModel
         if (is_null($param)) {
             return $this->enum;
         }
-        return array_get($this->enum, $param, array());
+        return Arr::get($this->enum, $param, array());
     }
 
     protected function messages()

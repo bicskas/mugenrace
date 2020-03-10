@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\BelsoKep;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -16,6 +17,7 @@ class AboutController extends Controller
     public function __invoke(Request $request)
     {
         $abouts = About::orderByRaw(About::$sorting)->get();
-        return view('about.list')->with(compact(['abouts']));
+        $image = BelsoKep::wherePlace('about')->inRandomOrder()->first();
+        return view('about.list')->with(compact(['abouts','image']));
     }
 }

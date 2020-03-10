@@ -38,6 +38,9 @@ class Kepfeltoltes
      */
     public function kepfeltoltes($fajl, array $params = array())
     {
+        if (env('APP_ENV', 'production') != 'production') {
+            ini_set('memory_limit', '256M');
+        }
         if (is_null($fajl) || !$fajl->isValid()) {
             return false;
         }

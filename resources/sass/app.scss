@@ -13,6 +13,9 @@ $primary: #aaff00;
 @import "~jquery-ui/themes/base/all.css";
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
+@import "~animate.css/animate.min.css";
+
+@import "home";
 
 * {
     color: white;
@@ -27,9 +30,19 @@ $primary: #aaff00;
     }
 
     .slick-slide {
-        margin: 10px;
+        //margin: 10px;
         overflow: hidden;
         transform: skewX(-3deg);
         position: relative;
+    }
+}
+
+.page-image {
+    width: 100%;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
