@@ -1,7 +1,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-$primary: #aaff00;
+//$primary: #aaff00;
+$primary: #c8ff00;
 
 
 // Variables
@@ -15,6 +16,7 @@ $primary: #aaff00;
 @import "~slick-carousel/slick/slick-theme";
 @import "~animate.css/animate.min.css";
 
+@import "navigation";
 @import "home";
 
 * {
@@ -46,3 +48,5 @@ $primary: #aaff00;
         max-height: 100%;
     }
 }
+
+

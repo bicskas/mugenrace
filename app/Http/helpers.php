@@ -95,6 +95,22 @@ function getPaginateElementNumbers($model)
     return $result;
 }
 
+function localeUrl($locale)
+{
+
+    $baseurl = url('/');
+    $explodeUri = explode('/', \Request::getRequestUri());
+    $explodeUri[1] = $locale;
+    $uri = '';
+    foreach ($explodeUri as $path) {
+        if (!empty($path)) {
+            $uri .= '/' . $path;
+        }
+    }
+    $url = $baseurl . $uri;
+    return $url;
+}
+
 if (!function_exists('userSetting')) {
     /**
      * Helper function for Setting facade.

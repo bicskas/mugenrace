@@ -113,6 +113,7 @@ $(function () {
     // 'background-image', 'url(' + imageUrl + ')'
     var scrollBool = true;
     var timerId;
+    var timerRemove;
     var mode = 'zoom';
     var bgClass = 'wow animated active slow ' + mode + 'In';
     var next;
@@ -131,8 +132,8 @@ $(function () {
                     id = 0;
                 }
                 next = $('#bgdiv' + (id + 1));
-                inDirection = '';
-                outDirection = '';
+                inDirection = 'Right';
+                outDirection = 'Left';
             } else {
                 if (id === 1) {
                     id = count + 1;
@@ -151,11 +152,15 @@ $(function () {
 
 
             wow.sync();
+            clearTimeout(timerRemove);
             clearTimeout(timerId);
+            // timerRemove = setTimeout(function () {
+            //     $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+            // }, 1200)
             timerId = setTimeout(function () {
                 scrollBool = true;
                 $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-            }, 1200)
+            }, 2100)
         }
     });
 

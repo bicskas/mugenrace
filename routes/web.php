@@ -16,12 +16,12 @@
 Route::prefix('{lang?}')->middleware('locale')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('main');
 
     Auth::routes(['verify' => true, 'register' => false]);
 
     Route::prefix('/admin')->middleware(['admin', 'verified'])->namespace('Admin')->group(function () {
-        Route::get('/', 'SzovegController@index')->name('home');
+        Route::get('/', 'SzovegController@index')->name('adminhome');
         Route::resource('szoveg', 'SzovegController', [
             'as' => 'admin'
         ])->parameters([
@@ -55,4 +55,12 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
 
     Route::get('about-us', 'AboutController')->name('about');
     Route::get('sponsored', 'SponsoredController')->name('sponsored');
+
+
+// ----- Szöveges oldalak -----
+    Route::bind('szoveg_link', function ($link) {
+        $model = App\Szoveg::whereTranslation('link', $link)->first();
+        return $model ?: abort(404);
+    });
+    Route::get('{szoveg_link}', array('as' => 'szoveg', 'uses' => 'SzovegController@index'));
 });
