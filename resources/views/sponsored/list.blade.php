@@ -1,8 +1,13 @@
 @extends('layouts.app')
+@section('page-title',ucfirst($page_image->title))
 
 @section('content')
     <div id="page-header">
-        {!! Html::image($page_image->getImage(2.065,3840), 'a',['class' => 'img-fluid']) !!}
+        {!! Html::image($page_image->getImage(2.065,3840), 'a',['class' => 'img-fluid wow slideInRight']) !!}
+        <div class="page-image-content wow slideInLeft">
+            <h2 class="title">{!! $page_image->title !!}</h2>
+            <h4 class="subtitle">{!! $page_image->subtitle !!}</h4>
+        </div>
     </div>
     <section id="team">
         <div class="team-sponsor-title d-flex align-items-end">

@@ -48,6 +48,14 @@
     }
 }
 
+#navPageTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-left: 15px;
+}
+
 .navbar #navigationMenu {
     position: fixed;
     top: $nav-height;
@@ -207,6 +215,7 @@
     padding-top: $navbrand-padding;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    font-size: 1.3rem;
 
     &:not(.no-after):after {
         content: '';

@@ -12794,6 +12794,14 @@ a.text-dark:focus {
   fill: #000000;
 }
 
+#navPageTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-left: 15px;
+}
+
 .navbar #navigationMenu {
   position: fixed;
   top: calc(100vh * 0.03935);
@@ -12945,6 +12953,7 @@ a.text-dark:focus {
   padding-top: calc(100vh * 0.0115);
   padding-left: 1rem !important;
   padding-right: 1rem !important;
+  font-size: 1.3rem;
 }
 
 .nav-lang:not(.no-after):after {
@@ -13371,12 +13380,17 @@ a.text-dark:focus {
 
 .about-section .about-content {
   padding: 0 3.9vw 0 4.4vw;
+  visibility: visible;
 }
 
 .about-section .about-content .about-content-text {
   padding-top: calc(calc(100vw * 0.049) + 10px);
   padding-right: 40px;
   font-family: "Eurostile Condensed", serif;
+}
+
+.about-section .about-content .about-content-image img {
+  visibility: visible !important;
 }
 
 footer {

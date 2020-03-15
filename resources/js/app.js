@@ -7,7 +7,7 @@
 require('./bootstrap');
 require('slick-carousel/slick/slick.min');
 const WOW = require('wow.js/dist/wow.min');
-import 'wow.js/dist/wow.min';
+// import 'wow.js/dist/wow.min';
 
 $(document).on('load', function () {
 });

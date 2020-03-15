@@ -37080,13 +37080,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var wow_js_dist_wow_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! wow.js/dist/wow.min */ "./node_modules/wow.js/dist/wow.min.js");
-/* harmony import */ var wow_js_dist_wow_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(wow_js_dist_wow_min__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -37096,7 +37092,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! slick-carousel/slick/slick.min */ "./node_modules/slick-carousel/slick/slick.min.js");
 
-var WOW = __webpack_require__(/*! wow.js/dist/wow.min */ "./node_modules/wow.js/dist/wow.min.js");
+var WOW = __webpack_require__(/*! wow.js/dist/wow.min */ "./node_modules/wow.js/dist/wow.min.js"); // import 'wow.js/dist/wow.min';
 
 
 $(document).on('load', function () {});

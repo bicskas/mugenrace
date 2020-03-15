@@ -51,9 +51,8 @@
         <div class="overlay close-nav" id="navigationMenu">
             <!-- Left Side Of Navbar -->
             <div class="navigation-list mt-5 d-flex flex-column justify-content-around align-content-stretch">
-                <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>{{ __('Everywhere') }}</span></a>
-                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>{{ __('Sponsored') }}</span></a>
-                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>{{ __('Sponsored') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>{{ __('We are') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>{{ __('Everywhere') }}</span></a>
             </div>
         </div>
 
@@ -68,6 +67,7 @@
                         {!! inline_svg('images/arrow-close.svg') !!}
                     </span>
                 </button>
+                <div id="navPageTitle" class="my-auto">@yield('page-title')</div>
             </ul>
 
             <!-- Right Side Of Navbar -->
