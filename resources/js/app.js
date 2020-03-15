@@ -211,12 +211,13 @@ $(function () {
 
     $('#navigation-btn').on('click', function () {
         var $this = $(this);
-        if($this.hasClass('open')){
+        var hasOpenClass = $this.hasClass('open');
+        $this.toggleClass('open close');
+        if(hasOpenClass){
             openNav();
         } else{
             closeNav();
         }
-        $this.toggleClass('open close');
     });
 
 // var ts;

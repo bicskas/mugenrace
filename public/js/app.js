@@ -37292,14 +37292,14 @@ $(function () {
   });
   $('#navigation-btn').on('click', function () {
     var $this = $(this);
+    var hasOpenClass = $this.hasClass('open');
+    $this.toggleClass('open close');
 
-    if ($this.hasClass('open')) {
+    if (hasOpenClass) {
       openNav();
     } else {
       closeNav();
     }
-
-    $this.toggleClass('open close');
   }); // var ts;
   // $(document).bind('touchstart', function (e){
   //     ts = e.originalEvent.touches[0].clientY;

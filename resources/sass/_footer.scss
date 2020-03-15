@@ -7,6 +7,14 @@ footer {
         background-color: $black;
         position: relative;
         z-index: 1020;
+        padding-top: 20vh;
+
+        svg {
+            height: 200px;
+            width: 200px;
+            color: $white;
+            fill: $white;
+        }
 
         &:after {
             content: '';

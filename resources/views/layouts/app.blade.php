@@ -26,27 +26,29 @@
         <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}">
             {!! Html::image($navbar_brand_src, config('app.name'), ['class' => 'img-fluid']) !!}
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+{{--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
+{{--            <span class="navbar-toggler-icon"></span>--}}
+{{--        </button>--}}
 
         <div class="overlay" id="navigationMenu">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>{{ __('About us') }}</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navigation-link" href="{{ route('sponsored', app()->getLocale()) }}"><span>{{ __('Sponsored') }}</span></a>
-                </li>
-            </ul>
+            <div class="navigation-list mt-5 d-flex flex-column justify-content-around align-content-stretch">
+                    <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>1 {{ __('Everywhere') }}</span></a>
+                    <a class="nav-link navigation-link" href="{{ route('sponsored', app()->getLocale()) }}"><span>2 {{ __('Sponsored') }}</span></a>
+                    <a class="nav-link navigation-link" href="{{ route('sponsored', app()->getLocale()) }}"><span>3 {{ __('Sponsored') }}</span></a>
+            </div>
         </div>
 
         <div class="collapse navbar-collapse" id="">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <button id="navigation-btn" class="navigation-btn open" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span id="openIcon">
+                        {!! inline_svg('images/arrow-bottom.svg') !!}
+                    </span>
+                    <span id="closeIcon">
+                        {!! inline_svg('images/arrow-close.svg') !!}
+                    </span>
                 </button>
             </ul>
 
@@ -89,6 +91,7 @@
 <footer class="footer bg-secondary">
 
     <div class="footer-top-content">
+        {!! inline_svg('images/1.svg') !!}
     </div>
 
     <div class="footer-middle-content">

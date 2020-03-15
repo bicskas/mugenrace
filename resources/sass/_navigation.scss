@@ -16,6 +16,12 @@
     .nav-lang:after {
         background: $black;
     }
+
+    #openIcon, #closeIcon {
+        svg {
+            fill: $black !important;
+        }
+    }
 }
 
 .navbar {
@@ -49,6 +55,10 @@
     .navbar-nav {
         padding-top: calc(#{$nav-height} + #{$svg-height} + 20px);
 
+    }
+
+    .navigation-list {
+        height: 90%;
     }
 
     &:after {
@@ -94,23 +104,74 @@
     }
 }
 
+.navigation-btn {
+    width: calc(#{$nav-height} - 10px);
+    height: calc(#{$nav-height} - 10px);
+    margin: 5px;
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+
+    #openIcon, #closeIcon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        //transition: visibility 0.2s ease-in-out;
+        svg {
+            height: 100%;
+            width: 100%;
+            fill: $white;
+        }
+    }
+
+    &.open {
+        #openIcon {
+            visibility: visible;
+        }
+
+        #closeIcon {
+            visibility: hidden;
+        }
+    }
+
+    &.close {
+        #openIcon {
+            visibility: hidden;
+        }
+
+        #closeIcon {
+            visibility: visible;
+        }
+    }
+}
+
+.overlay .list-group-item {
+    background-color: transparent;
+    border-color: transparent;
+}
+
 .navigation-link {
+    padding-left: 2vw;
 
     span {
-        //text-shadow: -1px 0 $black, 0 1px $black, 1px 0 $black, 0 -1px $black;
-        color: white;
-        transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
+        font-size: 10vh;
+        color: $primary;
+        transition: all 1.2s cubic-bezier(0.000, 0.000, 0.230, 1);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px $black;
         text-decoration: none;
         background-image: linear-gradient(
                 95deg,
                 black,
                 black 50%,
-                white 50%);
+                $primary 50%);
         background-size: 200% 100%;
         background-position: 100%;
+        text-transform: uppercase;
 
         &:hover {
             background-position: 0%;

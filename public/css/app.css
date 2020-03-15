@@ -12742,6 +12742,11 @@ a.text-dark:focus {
   background: #000000;
 }
 
+.homepage #openIcon svg,
+.homepage #closeIcon svg {
+  fill: #000000 !important;
+}
+
 .navbar {
   position: relative;
   background-color: #000000;
@@ -12773,6 +12778,10 @@ a.text-dark:focus {
 
 .navbar #navigationMenu .navbar-nav {
   padding-top: calc(calc(100vh * 0.03935) + calc(100vw * 0.016929) + 20px);
+}
+
+.navbar #navigationMenu .navigation-list {
+  height: 90%;
 }
 
 .navbar #navigationMenu:after {
@@ -12808,16 +12817,69 @@ a.text-dark:focus {
   vertical-align: top;
 }
 
+.navigation-btn {
+  width: calc(calc(100vh * 0.03935) - 10px);
+  height: calc(calc(100vh * 0.03935) - 10px);
+  margin: 5px;
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
+}
+
+.navigation-btn #openIcon,
+.navigation-btn #closeIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.navigation-btn #openIcon svg,
+.navigation-btn #closeIcon svg {
+  height: 100%;
+  width: 100%;
+  fill: #ffffff;
+}
+
+.navigation-btn.open #openIcon {
+  visibility: visible;
+}
+
+.navigation-btn.open #closeIcon {
+  visibility: hidden;
+}
+
+.navigation-btn.close #openIcon {
+  visibility: hidden;
+}
+
+.navigation-btn.close #closeIcon {
+  visibility: visible;
+}
+
+.overlay .list-group-item {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navigation-link {
+  padding-left: 2vw;
+}
+
 .navigation-link span {
-  color: white;
-  transition: all 1s cubic-bezier(0, 0, 0.23, 1);
+  font-size: 10vh;
+  color: #c8ff00;
+  transition: all 1.2s cubic-bezier(0, 0, 0.23, 1);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #000000;
   text-decoration: none;
-  background-image: linear-gradient(95deg, black, black 50%, white 50%);
+  background-image: linear-gradient(95deg, black, black 50%, #c8ff00 50%);
   background-size: 200% 100%;
   background-position: 100%;
+  text-transform: uppercase;
 }
 
 .navigation-link span:hover {
@@ -13024,6 +13086,14 @@ footer .footer-top-content {
   background-color: #000000;
   position: relative;
   z-index: 1020;
+  padding-top: 20vh;
+}
+
+footer .footer-top-content svg {
+  height: 200px;
+  width: 200px;
+  color: #ffffff;
+  fill: #ffffff;
 }
 
 footer .footer-top-content:after {
@@ -13067,11 +13137,6 @@ footer .footer-bottom-list .list-group-item {
   padding: 0 5px;
 }
 
-* {
-  color: white;
-  font-family: "Eurostile", serif;
-}
-
 a,
 a:hover {
   text-decoration: none;
@@ -13097,6 +13162,8 @@ body {
   max-width: 100vw;
   position: relative;
   overflow-x: hidden;
+  color: white;
+  font-family: "Eurostile", serif;
 }
 
 body.homepage footer {
