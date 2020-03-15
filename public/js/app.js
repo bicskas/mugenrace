@@ -37139,45 +37139,51 @@ $(function () {
       }
     }]
   });
-  $('.slider-for').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-    asNavFor: '.slider-nav'
-  });
-  $('.slider-nav').slick({
-    asNavFor: '.slider-for',
-    dots: true,
-    centerMode: true,
-    focusOnSelect: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 1600,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1
-      }
-    }, {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    }, {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    }, {
-      breakpoint: 440,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+  $.each(['team', 'rider'], function (index, value) {
+    $('#' + value + '-slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      speed: 2000,
+      asNavFor: '#' + value + '-slider-nav'
+    });
+    $('#' + value + '-slider-nav').slick({
+      asNavFor: '#' + value + '-slider-for',
+      dots: false,
+      centerMode: true,
+      // arrows: false,
+      prevArrow: '<button type="button" class="slick-prev"><img src="/images/arrow-left-white.png"></button>',
+      focusOnSelect: true,
+      speed: 2000,
+      slidesToShow: 5,
+      slidesToScroll: 5,
+      responsive: [{
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      }, {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      }, {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }, {
+        breakpoint: 440,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }]
+    });
   });
   $('.home-page-slick').slick({
     dots: false,
@@ -37283,6 +37289,17 @@ $(function () {
         $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
       }, 1200);
     }
+  });
+  $('#navigation-btn').on('click', function () {
+    var $this = $(this);
+
+    if ($this.hasClass('open')) {
+      openNav();
+    } else {
+      closeNav();
+    }
+
+    $this.toggleClass('open close');
   }); // var ts;
   // $(document).bind('touchstart', function (e){
   //     ts = e.originalEvent.touches[0].clientY;
@@ -37297,6 +37314,14 @@ $(function () {
   //     }
   // });
 });
+
+function openNav() {
+  document.getElementById("navigationMenu").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("navigationMenu").style.height = "0%";
+}
 
 /***/ }),
 

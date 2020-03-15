@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('body_class','homepage')
 @section('content')
     <div id="home-page">
         <div class="home-page-header">
@@ -15,6 +16,9 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+        <div class="footer-svg svg-div svg-top svg">
+            {!! inline_svg('images/line-1deg.svg') !!}
         </div>
     </div>
 @endsection

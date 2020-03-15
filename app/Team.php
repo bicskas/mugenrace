@@ -34,7 +34,8 @@ class Team extends Model
         return new Kepfeltoltes($this);
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->image()->delete();
         return parent::delete();
     }
@@ -42,5 +43,15 @@ class Team extends Model
     public function getImage($ar = null, $w = null)
     {
         return $this->image()->getImage($ar, $w);
+    }
+
+    public function getImagebySrcSet($ar, $meretek)
+    {
+        $srcset = '';
+        foreach ($meretek as $meret) {
+            $srcset .= $this->image()->getImage($ar, $meret) . ' ' . $meret . 'w, ';
+        }
+        $srcset = rtrim($srcset, ', ');
+        return $srcset;
     }
 }

@@ -18,6 +18,7 @@ class AboutController extends Controller
     {
         $abouts = About::orderByRaw(About::$sorting)->get();
         $image = BelsoKep::wherePlace('about')->inRandomOrder()->first();
+//        dd(view('about.list')->with(compact(['abouts','image']))->render());
         return view('about.list')->with(compact(['abouts','image']));
     }
 }

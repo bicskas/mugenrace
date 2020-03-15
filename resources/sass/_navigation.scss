@@ -1,30 +1,103 @@
-.navbar {
-    position: relative;
-    background-color: $primary;
+.homepage {
+    .navbar {
+        background-color: $primary;
 
-    svg {
-        display: block;
-        position: absolute;
-        bottom: 1px;
-        left: 0;
-        right: 0;
-        transform: translate(0, 100%);
-        background-repeat: no-repeat;
-        height: calc(100vw * 0.016929);
-        width: 100%;
-        margin-top: -1px;
-        z-index: 1000;
-        //path{
-        //    fill: $primary;
-        //}
+        svg {
+            path {
+                fill: $primary;
+            }
+        }
+    }
+
+    .nav-link {
+        background: $primary;
+    }
+
+    .nav-lang:after {
+        background: $black;
     }
 }
 
+.navbar {
+    position: relative;
+    background-color: $black;
+    height: $nav-height;
+    overflow: visible;
+    color: $white;
+    z-index: 1030;
 
-.nav-link {
-    background: $primary;
+    svg {
+        z-index: 1030;
+
+        path {
+            fill: $black;
+        }
+    }
+}
+
+.navbar #navigationMenu {
+    position: fixed;
+    top: $nav-height;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 1s linear;
+    overflow: hidden;
+    height: 0%;
+    background-color: $primary;
+
+    .navbar-nav {
+        padding-top: calc(#{$nav-height} + #{$svg-height} + 20px);
+
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: fixed;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        border-right: 0 solid transparent;
+        border-left: 100vw solid transparent;
+        border-bottom: $two-dot-two-deg-height solid $black;
+    }
+
+    &, & * {
+        z-index: 1;
+    }
+}
+
+//#navbarSupportedContent {
+//    position: absolute;
+//    top: $nav-height;
+//    left: 0;
+//    bottom: 0;
+//    right: 0;
+//    height: calc(100vh - #{$nav-height});
+//    transition: all 1s linear;
+//}
+
+.navbar-brand {
+    padding: $navbrand-padding 0 0;
+    margin: 0;
+    z-index: 1010;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    img {
+        max-height: calc(#{$nav-height} - #{$navbrand-padding});
+        z-index: 1010;
+        vertical-align: top;
+    }
+}
+
+.navigation-link {
 
     span {
+        //text-shadow: -1px 0 $black, 0 1px $black, 1px 0 $black, 0 -1px $black;
         color: white;
         transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
         background-clip: text;
@@ -44,3 +117,22 @@
         }
     }
 }
+
+.nav-lang {
+    position: relative;
+    color: $white;
+
+    &:not(.no-after):after {
+        content: '';
+        display: block;
+        width: 2px;
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+        right: 0;
+        background: $white;
+    }
+}
+
+
+
