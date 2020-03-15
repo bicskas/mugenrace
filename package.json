@@ -31,6 +31,7 @@
         "animate.css": "^3.7.2",
         "bootstrap-select": "^1.13.12",
         "jquery-ui": "^1.12.1",
+        "lax.js": "^1.2.5",
         "moment": "^2.24.0",
         "slick-carousel": "^1.8.1",
         "tempusdominus-bootstrap-4": "^5.1.2",

@@ -24,7 +24,7 @@
                             {!! $about->content !!}
                         </div>
 
-                        <div class="about-content-image">{!! Html::image($about->getImage(1.48,2300),$about->title,['class' => 'img-fluid wow slideInRight']) !!}</div>
+                        <div class="about-content-image">{!! Html::image($about->getImage(1.48,2300),$about->title,['class' => 'img-fluid t']) !!}</div>
                     </div>
                 </section>
     @endforeach

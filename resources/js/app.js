@@ -23,7 +23,7 @@ $(function () {
             offset: 500,          // distance to the element when triggering the animation (default is 0)
             mobile: true,       // trigger animations on mobile devices (default is true)
             live: true,       // act on asynchronously loaded content (default is true)
-            scrollContainer: '#app',
+            scrollContainer: 'main',
         }
     );
     wow.init();
@@ -243,7 +243,8 @@ $(function () {
 //         slide_up();
 //     }
 // });
-});
+})
+;
 
 function openNav() {
     document.getElementById("navigationMenu").style.height = "100%";

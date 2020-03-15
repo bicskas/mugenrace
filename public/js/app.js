@@ -37110,7 +37110,7 @@ $(function () {
     // trigger animations on mobile devices (default is true)
     live: true,
     // act on asynchronously loaded content (default is true)
-    scrollContainer: '#app'
+    scrollContainer: 'main'
   });
   wow.init();
   $('.slick-multiple-items').slick({
