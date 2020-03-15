@@ -135,3 +135,15 @@ if (!function_exists('userSetting')) {
         return app('App\UserSetting');
     }
 }
+
+function getLocales()
+{
+    $locales = [];
+    foreach (config('app.locales') as $code => $locale) {
+        if ($code != app()->getLocale()) {
+            $locales[$code] = $locale;
+        }
+    }
+
+    return $locales;
+}

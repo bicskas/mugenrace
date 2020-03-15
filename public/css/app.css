@@ -12784,6 +12784,7 @@ a.text-dark:focus {
   overflow: visible;
   color: #ffffff;
   z-index: 1070;
+  padding: 0.5rem;
 }
 
 .navbar svg {
@@ -12860,6 +12861,10 @@ a.text-dark:focus {
   max-height: calc(calc(100vh * 0.03935) - calc(100vh * 0.0115));
   z-index: 1040;
   vertical-align: top;
+}
+
+#bethebeastLogo {
+  max-height: calc(calc(100vh * 0.03935) / 2);
 }
 
 .navigation-btn {

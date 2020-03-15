@@ -38,6 +38,7 @@
     overflow: visible;
     color: $white;
     z-index: 1070;
+    padding: 0.5rem;
 
     svg {
         z-index: 1030;
@@ -115,6 +116,10 @@
         z-index: 1040;
         vertical-align: top;
     }
+}
+
+#bethebeastLogo{
+    max-height: calc(#{$nav-height} / 2);
 }
 
 .navigation-btn {

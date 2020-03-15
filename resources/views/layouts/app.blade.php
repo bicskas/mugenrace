@@ -87,7 +87,7 @@
                         @endforeach
                     </div>
                 </li>
-                @foreach(config('app.locales') as $code => $locale)
+                @foreach(getLocales() as $code => $locale)
                     <li class="nav-item d-none d-md-block d-flex align-items-center">
                         <a class="nav-link nav-lang d-flex align-items-center @if($loop->last) no-after @endif  @if($code == app()->getLocale()) active @endif" href="{{ localeUrl($code)  }}">
                             {{ strtoupper($code) }}
@@ -95,7 +95,7 @@
                     </li>
                 @endforeach
                 <li class="nav-item d-flex align-items-center">
-                    {!! Html::image($navbar_beast_src,'BETHEBEAST',['class' => 'img-fluid ml-5']) !!}
+                    {!! Html::image($navbar_beast_src,'BETHEBEAST',['class' => 'img-fluid ml-auto','id' => 'bethebeastLogo']) !!}
                 </li>
             </ul>
         </div>
