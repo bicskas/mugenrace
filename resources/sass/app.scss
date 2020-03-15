@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 
-
 //$primary: #aaff00;
 $primary: #c8ff00;
 $secondary: #d2d2d2;
@@ -11,6 +10,7 @@ $svg-height: calc(100vw * 0.016929);
 $one-dot-three-deg-height: calc(100vw * 0.022);
 $two-dot-two-deg-height: calc(100vw * 0.039);
 $two-dot-eight-deg-height: calc(100vw * 0.049);
+$four-dot-two-deg-height: calc(100vw * 0.065);
 
 $nav-height: calc(100vh * 0.03935);
 $navbrand-padding: calc(100vh * 0.0115);
@@ -34,13 +34,14 @@ $navbrand-padding: calc(100vh * 0.0115);
 @import "loading";
 @import "home";
 @import "sponsor";
+@import "about";
 @import "footer";
 
-a, a:hover{
+a, a:hover {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: $primary;
 }
 
@@ -70,8 +71,16 @@ body.homepage {
     }
 }
 
-#app{
+#app {
     z-index: 1200;
+}
+
+.bg-black {
+    background-color: $black;
+}
+
+.pb-10 {
+    padding-bottom: 6rem;
 }
 
 .page-image {
@@ -111,6 +120,43 @@ body.homepage {
             margin-bottom: -1px;
             transform: rotate(180deg) translate(0, 100%);
         }
+    }
+}
+
+#page-header {
+    position: relative;
+
+    .page-image-content {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translate(0, -50%);
+        text-align: center;
+
+    }
+
+    .title, .subtitle {
+        font-size: 10px;
+        font-weight: bold;
+        font-style: italic;
+        color: $white;
+        text-shadow: 1px 1px #000;
+        transition: all 1s ease-in-out;
+        transition-delay: 0.6s;
+        line-height: 1;
+    }
+
+    .title {
+        text-transform: uppercase;
+        margin-bottom: 0;
+        text-shadow: 1px 1px #000;
+        font-size: 200px;
+    }
+
+    .subtitle {
+        margin-top: -30px;
+        font-size: 60px;
     }
 }
 

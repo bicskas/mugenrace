@@ -1,24 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="page-image wow lightSpeedIn fast">
-        {!! Html::image($image->getImage(2.77,600),$image->title,['class' => '']) !!}
-    </div>
-    <div class="container">
-        <div class="about-content-list d-flex flex-column">
-
-            @foreach($abouts as $about)
-                <div class="about-content-item d-flex align-items-center">
-                    <div class="about-content-item-text flex-50 wow slideInLeft">
-                        <p>{!! $about->title !!}</p>
-                        <p>{!! $about->subtitle !!}</p>
-                        {!! $about->content !!}
-                    </div>
-
-                    <div class="about-content-item-image flex-50 wow slideInRight">{!! Html::image($about->getImage(2.77,600),$about->title,['class' => 'img-fluid']) !!}</div>
-                </div>
-                <hr>
-            @endforeach
+    <div id="page-header">
+        {!! Html::image($page_image->getImage(2.065,3840), 'a',['class' => 'img-fluid wow animated slideInRight']) !!}
+        <div class="page-image-content">
+            <h2 class="title">{!! $page_image->title !!}</h2>
+            <h4 class="subtitle">{!! $page_image->subtitle !!}</h4>
         </div>
     </div>
+
+    @foreach($abouts as $about)
+        <section class="about-section">
+            <div class="about-title d-flex align-items-end @if($loop->even) primary @endif">
+                <h2>
+                    {!! $about->title !!}
+                    <span>{!! $about->subtitle !!}</span>
+                </h2>
+                {!! inline_svg('images/arrow-top-down.svg') !!}
+            </div>
+            <div class="about-content d-flex align-content-center">
+                <div class="about-content-text flex-50 wo slideInLeft">
+                    {!! $about->content !!}
+                </div>
+
+                <div class="about-content-image">{!! Html::image($about->getImage(1.48,2300),$about->title,['class' => 'img-fluid']) !!}</div>
+            </div>
+        </section>
+    @endforeach
 @endsection

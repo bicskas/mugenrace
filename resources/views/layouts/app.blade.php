@@ -40,7 +40,7 @@
 
 @endif
 <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dar shadow-sm">
+    <nav class="navbar navbar-expand-xl navbar-dar shadow-sm">
         <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}">
             {!! Html::image($navbar_brand_src, config('app.name'), ['class' => 'img-fluid']) !!}
         </a>
@@ -48,12 +48,12 @@
         {{--            <span class="navbar-toggler-icon"></span>--}}
         {{--        </button>--}}
 
-        <div class="overlay" id="navigationMenu">
+        <div class="overlay close-nav" id="navigationMenu">
             <!-- Left Side Of Navbar -->
             <div class="navigation-list mt-5 d-flex flex-column justify-content-around align-content-stretch">
-                <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>1 {{ __('Everywhere') }}</span></a>
-                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>2 {{ __('Sponsored') }}</span></a>
-                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>3 {{ __('Sponsored') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>{{ __('Everywhere') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>{{ __('Sponsored') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>{{ __('Sponsored') }}</span></a>
             </div>
         </div>
 
@@ -88,12 +88,14 @@
                     </div>
                 </li>
                 @foreach(config('app.locales') as $code => $locale)
-                    <li class="nav-item d-none d-md-block">
-                        <a class="nav-link nav-lang @if($loop->last) no-after @endif  @if($code == app()->getLocale()) active @endif" href="{{ localeUrl($code)  }}">{{ strtoupper($code) }}</a>
+                    <li class="nav-item d-none d-md-block d-flex align-items-center">
+                        <a class="nav-link nav-lang d-flex align-items-center @if($loop->last) no-after @endif  @if($code == app()->getLocale()) active @endif" href="{{ localeUrl($code)  }}">
+                            {{ strtoupper($code) }}
+                        </a>
                     </li>
                 @endforeach
-                <li class="nav-item">
-                    {!! Html::image($navbar_beast_src,'BETHEBEAST',['class' => 'img-fluid']) !!}
+                <li class="nav-item d-flex align-items-center">
+                    {!! Html::image($navbar_beast_src,'BETHEBEAST',['class' => 'img-fluid ml-5']) !!}
                 </li>
             </ul>
         </div>
@@ -102,17 +104,18 @@
         </div>
     </nav>
 
-    <main class="pb-4">
+    <main class="">
         @yield('content')
     </main>
 </div>
 <footer class="footer bg-secondary">
 
     <div class="footer-top-content">
-        {!! inline_svg('images/1.svg') !!}
+        <h2>Fejlesztés alatt</h2>
     </div>
 
     <div class="footer-middle-content">
+        <h2>Fejlesztés alatt</h2>
     </div>
     <div class="footer-bottom-content">
         <div class="footer-bottom-content-svg svg-div svg-top svg">

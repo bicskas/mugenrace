@@ -5,8 +5,11 @@
         {!! Html::image($page_image->getImage(2.065,3840), 'a',['class' => 'img-fluid']) !!}
     </div>
     <section id="team">
-        <div class="team-sponsor-title">
-            <h2>{!! __('Team sponsoring') !!}</h2>
+        <div class="team-sponsor-title d-flex align-items-end">
+            <h2>
+                {!! __('Team sponsoring') !!}
+            </h2>
+            {!! inline_svg('images/arrow-bottom-down.svg') !!}
         </div>
 
         <div id="team-slider-for" class="slider-for">
@@ -17,7 +20,7 @@
             @endforeach
         </div>
 
-        <div class="mb-5 pb-5 d-block">
+        <div class="d-block">
             <div id="team-slider-nav" class="slider-nav">
                 @foreach($teams as $team)
                     <div>
@@ -27,11 +30,12 @@
             </div>
         </div>
     </section>
-    <section id="rider">
+    <section id="rider" class="bg-black">
         <div class="rider-sponsor-title">
             <h2>{!! __('Riders sponsoring') !!}</h2>
+            {!! inline_svg('images/arrow-top-down.svg') !!}
         </div>
-        <div class="mt-5 pt-5 d-block">
+        <div class="d-block">
             <div id="rider-slider-for" class="slider-for">
                 @foreach($riders as $rider)
                     <div>
@@ -40,7 +44,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="mb-5 pb-5 d-block">
+        <div class="pb-10 d-block">
 
             <div id="rider-slider-nav" class="slider-nav" data-prevArrow='<button type="button" class="slick-prev">{!! inline_svg('images/arrow-triple.svg') !!}</button>'>
                 @foreach($riders as $rider)

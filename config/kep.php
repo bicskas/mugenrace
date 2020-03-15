@@ -3,7 +3,7 @@
 return array(
     'kepmeretek' => array(
         'about' => array(
-            '2.77' => array(600),
+            '1.48' => array(1000, 2300),
         ),
         'team' => array(
             '1.53' => array(300, 630),

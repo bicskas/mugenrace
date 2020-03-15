@@ -1,0 +1,102 @@
+.about-section {
+    color: $black;
+
+    .about-title {
+        background-color: $black;
+        position: relative;
+        height: 100%;
+        padding-top: 4vh;
+        min-height: calc(#{$two-dot-eight-deg-height} * 2);
+
+        h2 {
+
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: 500;
+            padding-left: 2.5vw;
+            color: $white;
+            line-height: 1;
+            font-size: 3.5rem;
+
+            span{
+                display: block;
+                font-size: 2rem;
+            }
+        }
+
+        svg {
+            fill: $white;
+            position: absolute;
+            top: 17%;
+            left: 40%;
+            transform: translate(-40%, 0);
+            height: 100%;
+            width: auto;
+            z-index: 1050;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0;
+            border-right: 0 solid transparent;
+            border-left: 100vw solid transparent;
+            border-bottom: $one-dot-three-deg-height solid $black;
+            transform: translate(0, -100%);
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            bottom: 1px;
+            border-left: 0 solid transparent;
+            border-right: 100vw solid transparent;
+            border-top: $two-dot-eight-deg-height solid $black;
+            transform: translate(0, 100%);
+            z-index: 1040;
+        }
+
+        &.primary {
+            background-color: $primary;
+
+            h2 {
+                color: $black;
+            }
+
+            svg {
+                fill: $black;
+                left: auto;
+                top: 0%;
+                right: 10%;
+            }
+
+            &:before {
+                border-bottom: $two-dot-eight-deg-height solid $primary;
+            }
+
+            &:after {
+                border-top: $one-dot-three-deg-height solid $primary;
+            }
+        }
+    }
+
+    .about-content {
+        padding: 0 3.9vw 0 4.4vw;
+
+        .about-content-text {
+            padding-top: calc(#{$two-dot-eight-deg-height} + 10px);
+            padding-right: 40px;
+
+            font-family: "Eurostile Condensed", serif;
+        }
+
+        .about-content-image {
+        }
+    }
+}

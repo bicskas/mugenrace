@@ -2,8 +2,12 @@
     margin-bottom: calc(50vw * -0.0734);
 }
 
-#team{
-    .slider-nav, .slider-for, .slider-nav:before, .slider-nav:after{
+#team {
+    background-color: $primary;
+    z-index: 1030;
+
+    .slider-nav, .slider-for, .slider-nav:before, .slider-nav:after {
+        z-index: 1030;
         background-color: $black !important;
     }
 
@@ -24,15 +28,16 @@
         transform: skewX(-4.2deg);
         position: relative;
         padding: 0 10px;
-        img{
+
+        img {
             visibility: hidden;
             transition: visibility 1s ease-in-out;
         }
 
-        &.slick-active{
-           img{
-               visibility: visible;
-           }
+        &.slick-active {
+            img {
+                visibility: visible;
+            }
         }
     }
 
@@ -66,13 +71,34 @@
 }
 
 
+.team-sponsor-title, .rider-sponsor-title {
+    min-height: calc(#{$two-dot-eight-deg-height} * 2);
+    h2 {
+
+        text-transform: uppercase;
+        font-style: italic;
+        font-weight: 500;
+        padding-left: 2.5vw;
+        font-size: 3.5rem;
+    }
+}
+
 .team-sponsor-title {
     background-color: $black;
     position: relative;
-    z-index: 1020;
     height: 100%;
-    padding-top: 30px;
-    font-weight: bold;
+    padding-top: 4vh;
+
+    svg {
+        fill: $white;
+        position: absolute;
+        top: 17%;
+        left: 40%;
+        transform: translate(-40%, 0);
+        height: 100%;
+        width: auto;
+        z-index: 1050;
+    }
 
     &:before {
         content: '';
@@ -93,12 +119,17 @@
         position: absolute;
         width: 0;
         height: 0;
-        bottom: 0;
+        bottom: 1px;
         border-left: 0 solid transparent;
         border-right: 100vw solid transparent;
         border-top: $two-dot-eight-deg-height solid $black;
         transform: translate(0, 100%);
+        z-index: 1040;
     }
+}
+
+#rider {
+    z-index: 1020;
 }
 
 .rider-sponsor-title {
@@ -106,8 +137,17 @@
     position: relative;
     z-index: 1020;
     height: 100%;
-    padding-top: 30px;
-    font-weight: bold;
+    padding-top: calc(#{$four-dot-two-deg-height} + 2vh);
+    color: $black;
+
+    svg {
+        position: absolute;
+        top: 0%;
+        right: 10%;
+        height: 100%;
+        width: auto;
+        z-index: 1050;
+    }
 
     &:before {
         content: '';

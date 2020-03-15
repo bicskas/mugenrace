@@ -11,27 +11,52 @@
 
 @font-face {
     font-family: "Eurostile";
-    font-weight:bold;
+    font-weight: bold;
     src: url('/fonts/vendor/eurostile/Eurostile Extended-Black.otf');
 }
 
 @font-face {
     font-family: "Eurostile";
-    font-weight:bold;
+    font-weight: bold;
     font-style: italic;
     src: url('/fonts/vendor/eurostile/Eurostile Extended-Black Italic.otf');
 }
 
 @font-face {
     font-family: "Eurostile";
-    font-weight:500;
+    font-weight: 500;
     src: url('/fonts/vendor/eurostile/Eurostile Extended-Medium.otf');
 }
 
 @font-face {
     font-family: "Eurostile";
-    font-weight:500;
+    font-weight: 500;
     font-style: italic;
-    src: url('/fonts/vendor/eurostile/Eurostile Extended-Medium Italic.otf');
+    src: url('/fonts/vendor/eurostile/Eurostile-Medium Italic.otf');
+}
+
+@font-face {
+    font-family: "Eurostile Condensed";
+    src: url('/fonts/vendor/eurostile/Eurostile Condensed-Regular.otf');
+}
+
+@font-face {
+    font-family: "Eurostile Condensed";
+    font-style: italic;
+    src: url('/fonts/vendor/eurostile/Eurostile Condensed-Regular Italic.otf');
+}
+
+
+@font-face {
+    font-family: "Eurostile Condensed";
+    font-weight: bold;
+    src: url('/fonts/vendor/eurostile/Eurostile Condensed-Heavy.otf');
+}
+
+@font-face {
+    font-family: "Eurostile Condensed";
+    font-weight: bold;
+    font-style: italic;
+    src: url('/fonts/vendor/eurostile/Eurostile Condensed-Heavy Italic.otf');
 }
 

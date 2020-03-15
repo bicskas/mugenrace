@@ -1,19 +1,35 @@
 footer {
     position: relative;
-    margin-top: -20vh;
+    //margin-top: -20vh;
+    z-index: 1250;
 
     .footer-top-content {
-        height: 40vh;
+        height: 20vh;
         background-color: $black;
         position: relative;
-        z-index: 1020;
-        padding-top: 20vh;
+        z-index: 1250;
+        padding-top: 40px;
 
         svg {
             height: 200px;
             width: 200px;
             color: $white;
             fill: $white;
+            z-index: 1240;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0;
+            border-right: 0 solid transparent;
+            border-left: 100vw solid transparent;
+            border-bottom: $one-dot-three-deg-height solid $black;
+            transform: translate(0, -100%);
+            z-index: 1250;
         }
 
         &:after {
@@ -34,6 +50,8 @@ footer {
         height: 20vh;
         background-color: $white;
         position: relative;
+        padding-top: 10vh;
+        color: $black;
     }
 
     .footer-bottom-content {

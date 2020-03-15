@@ -132,84 +132,88 @@ $(function () {
     var addClass;
 
     $(window).on('mousewheel', function (e) {
-        var active = $('.bg-image.active');
-        var id = active.data('index');
-        var count = active.data('count');
-        if (scrollBool === true) {
-            scrollBool = false;
-            if (e.originalEvent.wheelDelta < 0) {
-                if (id === count) {
-                    id = 0;
+        if ($('body').hasClass('homepage')) {
+            var active = $('.bg-image.active');
+            var id = active.data('index');
+            var count = active.data('count');
+            if (scrollBool === true) {
+                scrollBool = false;
+                if (e.originalEvent.wheelDelta < 0) {
+                    if (id === count) {
+                        id = 0;
+                    }
+                    next = $('#bgdiv' + (id + 1));
+                    inDirection = 'Right';
+                    outDirection = 'Left';
+                } else {
+                    if (id === 1) {
+                        id = count + 1;
+                    }
+                    next = $('#bgdiv' + (id - 1));
+                    inDirection = '';
+                    outDirection = '';
                 }
-                next = $('#bgdiv' + (id + 1));
-                inDirection = 'Right';
-                outDirection = 'Left';
-            } else {
-                if (id === 1) {
-                    id = count + 1;
-                }
-                next = $('#bgdiv' + (id - 1));
-                inDirection = '';
-                outDirection = '';
+                addClass = bgClass + inDirection;
+
+                $(active).css('animation-name', '');
+                $(active).css('visibility', '');
+                $(next).addClass(addClass);
+                $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+                $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+
+
+                wow.sync();
+                clearTimeout(timerRemove);
+                clearTimeout(timerId);
+                // timerRemove = setTimeout(function () {
+                //     $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+                // }, 1200)
+                timerId = setTimeout(function () {
+                    scrollBool = true;
+                    $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+                }, 2100)
             }
-            addClass = bgClass + inDirection;
-
-            $(active).css('animation-name', '');
-            $(active).css('visibility', '');
-            $(next).addClass(addClass);
-            $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
-            $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
-
-
-            wow.sync();
-            clearTimeout(timerRemove);
-            clearTimeout(timerId);
-            // timerRemove = setTimeout(function () {
-            //     $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-            // }, 1200)
-            timerId = setTimeout(function () {
-                scrollBool = true;
-                $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-            }, 2100)
         }
     });
 
     $(window).on('DOMMouseScroll', function (e) {
-        var active = $('.bg-image.active');
-        var id = active.data('index');
-        var count = active.data('count');
-        if (scrollBool === true) {
-            scrollBool = false;
-            if (e.originalEvent.detail > 0) {
-                if (id === count) {
-                    id = 0;
+        if ($('body').hasClass('homepage')) {
+            var active = $('.bg-image.active');
+            var id = active.data('index');
+            var count = active.data('count');
+            if (scrollBool === true) {
+                scrollBool = false;
+                if (e.originalEvent.detail > 0) {
+                    if (id === count) {
+                        id = 0;
+                    }
+                    next = $('#bgdiv' + (id + 1));
+                    inDirection = 'Right';
+                    outDirection = 'Left';
+                } else {
+                    if (id === 1) {
+                        id = count + 1;
+                    }
+                    next = $('#bgdiv' + (id - 1));
+                    inDirection = 'Left';
+                    outDirection = 'Right';
                 }
-                next = $('#bgdiv' + (id + 1));
-                inDirection = 'Right';
-                outDirection = 'Left';
-            } else {
-                if (id === 1) {
-                    id = count + 1;
-                }
-                next = $('#bgdiv' + (id - 1));
-                inDirection = 'Left';
-                outDirection = 'Right';
+                addClass = bgClass + inDirection;
+
+                $(active).css('animation-name', '');
+                $(active).css('visibility', '');
+                $(next).addClass(addClass);
+                $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+                $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+
+
+                wow.sync();
+                clearTimeout(timerId);
+                timerId = setTimeout(function () {
+                    scrollBool = true;
+                    $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+                }, 1200)
             }
-            addClass = bgClass + inDirection;
-
-            $(active).css('animation-name', '');
-            $(active).css('visibility', '');
-            $(next).addClass(addClass);
-            $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
-            $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
-
-
-            wow.sync();
-            clearTimeout(timerId);
-            timerId = setTimeout(function () {
-                scrollBool = true;
-                $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-            }, 1200)
         }
     });
 
@@ -241,11 +245,12 @@ $(function () {
 
 function openNav() {
     document.getElementById("navigationMenu").style.height = "100%";
+    $("#navigationMenu").toggleClass('open-nav close-nav');
 }
 
 function closeNav() {
     document.getElementById("navigationMenu").style.height = "0%";
-
+    $("#navigationMenu").toggleClass('open-nav close-nav');
 }
 
 function loadingProcess() {

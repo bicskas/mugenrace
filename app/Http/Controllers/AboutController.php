@@ -17,8 +17,8 @@ class AboutController extends Controller
     public function __invoke(Request $request)
     {
         $abouts = About::orderByRaw(About::$sorting)->get();
-        $image = BelsoKep::wherePlace('about')->inRandomOrder()->first();
-//        dd(view('about.list')->with(compact(['abouts','image']))->render());
-        return view('about.list')->with(compact(['abouts','image']));
+        $page_image = BelsoKep::wherePlace('about')->inRandomOrder()->first();
+
+        return view('about.list')->with(compact(['abouts','page_image']));
     }
 }
