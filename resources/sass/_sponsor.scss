@@ -11,6 +11,12 @@
         background-color: $black !important;
     }
 
+    .slick-prev, .slick-next {
+        svg {
+            fill: $white;
+        }
+    }
+
 }
 
 .slider-nav {
@@ -73,6 +79,7 @@
 
 .team-sponsor-title, .rider-sponsor-title {
     min-height: calc(#{$two-dot-eight-deg-height} * 2);
+
     h2 {
 
         text-transform: uppercase;
@@ -174,4 +181,37 @@
         border-top: $two-dot-eight-deg-height solid $primary;
         transform: translate(0, 100%);
     }
+}
+
+.slick-prev, .slick-next {
+    width: auto;
+    height: 30%;
+    z-index: 1041;
+    opacity: 0.7;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:before {
+        display: none;
+    }
+
+    svg {
+        fill: $black;
+        height: 100%;
+        width: auto;
+    }
+}
+
+
+.slick-prev {
+    left: 10px;
+    transform: rotate(4.2deg) translate(0, -50%);
+}
+
+.slick-next {
+    right: 10px;
+    transform: rotate(184.2deg) translate(0, 50%);
+
 }

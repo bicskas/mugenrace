@@ -13134,6 +13134,11 @@ a.text-dark:focus {
   background-color: #000000 !important;
 }
 
+#team .slick-prev svg,
+#team .slick-next svg {
+  fill: #ffffff;
+}
+
 .slider-nav {
   transform: rotate(-4.2deg);
   background-color: #c8ff00;
@@ -13293,6 +13298,41 @@ a.text-dark:focus {
   border-right: 100vw solid transparent;
   border-top: calc(100vw * 0.049) solid #c8ff00;
   transform: translate(0, 100%);
+}
+
+.slick-prev,
+.slick-next {
+  width: auto;
+  height: 30%;
+  z-index: 1041;
+  opacity: 0.7;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  opacity: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+}
+
+.slick-prev svg,
+.slick-next svg {
+  fill: #000000;
+  height: 100%;
+  width: auto;
+}
+
+.slick-prev {
+  left: 10px;
+  transform: rotate(4.2deg) translate(0, -50%);
+}
+
+.slick-next {
+  right: 10px;
+  transform: rotate(184.2deg) translate(0, 50%);
 }
 
 .about-section {

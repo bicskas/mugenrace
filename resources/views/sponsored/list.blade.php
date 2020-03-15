@@ -26,7 +26,7 @@
         </div>
 
         <div class="d-block">
-            <div id="team-slider-nav" class="slider-nav">
+            <div id="team-slider-nav" class="slider-nav" data-svg='{!! inline_svg('images/arrow-top.svg') !!}'>
                 @foreach($teams as $team)
                     <div>
                         {!! Html::image($team->getImage(1.53,630),$team->name,['class' => 'img-fluid']) !!}
@@ -51,7 +51,7 @@
         </div>
         <div class="pb-10 d-block">
 
-            <div id="rider-slider-nav" class="slider-nav" data-prevArrow='<button type="button" class="slick-prev">{!! inline_svg('images/arrow-triple.svg') !!}</button>'>
+            <div id="rider-slider-nav" class="slider-nav" data-svg='{!! inline_svg('images/arrow-top.svg') !!}'>
                 @foreach($riders as $rider)
                     <div>
                         {!! Html::image($rider->getImage(1.53,630),$rider->name,['class' => 'img-fluid']) !!}
