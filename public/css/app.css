@@ -12809,7 +12809,7 @@ a.text-dark:focus {
 .navbar-brand {
   padding: calc(100vh * 0.0115) 0 0;
   margin: 0;
-  z-index: 1010;
+  z-index: 1040;
   position: absolute;
   top: 0;
   left: 50%;
@@ -12818,7 +12818,7 @@ a.text-dark:focus {
 
 .navbar-brand img {
   max-height: calc(calc(100vh * 0.03935) - calc(100vh * 0.0115));
-  z-index: 1010;
+  z-index: 1040;
   vertical-align: top;
 }
 
