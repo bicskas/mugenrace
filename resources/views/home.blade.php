@@ -14,7 +14,7 @@
                              data-image="{!! $image->getImage() !!}"
                              style="background-image: url('{!! $image->getImage() !!}')">
                             <div class="home-page-image-content">
-                                <h2 class="title">{!! $image->title !!}</h2>
+                                <h2 class="title">{!! $image->title !!}101</h2>
                                 <h4 class="subtitle">{!! $image->subtitle !!}</h4>
                             </div>
                         </div>
