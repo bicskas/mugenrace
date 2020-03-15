@@ -2,6 +2,13 @@
     margin-bottom: calc(50vw * -0.0734);
 }
 
+#team{
+    .slider-nav, .slider-for, .slider-nav:before, .slider-nav:after{
+        background-color: $black !important;
+    }
+
+}
+
 .slider-nav {
     transform: rotate(-4.2deg);
     background-color: $primary;
@@ -17,15 +24,16 @@
         transform: skewX(-4.2deg);
         position: relative;
         padding: 0 10px;
-        //img{
-        //    visibility: hidden;
-        //}
-        //
-        //&.slick-active{
-        //   img{
-        //       visibility: visible;
-        //   }
-        //}
+        img{
+            visibility: hidden;
+            transition: visibility 1s ease-in-out;
+        }
+
+        &.slick-active{
+           img{
+               visibility: visible;
+           }
+        }
     }
 
     &:before {
@@ -33,7 +41,7 @@
         display: block;
         width: 3vw;
         height: 100%;
-        background: $primary;
+        background-color: $primary;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -47,7 +55,7 @@
         display: block;
         width: 3vw;
         height: 100%;
-        background: $primary;
+        background-color: $primary;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -89,6 +97,41 @@
         border-left: 0 solid transparent;
         border-right: 100vw solid transparent;
         border-top: $two-dot-eight-deg-height solid $black;
+        transform: translate(0, 100%);
+    }
+}
+
+.rider-sponsor-title {
+    background-color: $primary;
+    position: relative;
+    z-index: 1020;
+    height: 100%;
+    padding-top: 30px;
+    font-weight: bold;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        border-right: 0 solid transparent;
+        border-left: 100vw solid transparent;
+        border-bottom: $one-dot-three-deg-height solid $primary;
+        transform: translate(0, -100%);
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        border-left: 0 solid transparent;
+        border-right: 100vw solid transparent;
+        border-top: $two-dot-eight-deg-height solid $primary;
         transform: translate(0, 100%);
     }
 }

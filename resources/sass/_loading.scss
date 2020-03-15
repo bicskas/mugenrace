@@ -1,0 +1,44 @@
+#loading {
+    position: fixed;
+    //top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: $black;
+    z-index: 100000;
+
+    .loading-nav {
+        position: absolute;
+        top: 2vh;
+        left: 0;
+        right: 0;
+        height: $nav-height;
+    }
+
+    #loadingNavIcon {
+        color: $primary;
+        padding-left: 2vw;
+
+        svg {
+            height: $nav-height;
+            width: auto;
+            margin-right: 1vw;
+
+            path {
+                fill: $primary;
+            }
+        }
+    }
+
+    #loading-box {
+        color: white;
+        font-size: 6vh;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

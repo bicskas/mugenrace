@@ -21,21 +21,39 @@
     <link rel="shortcut icon" type="image/png" href="/images/mugenrace-logo-yellow.png">
 </head>
 <body class="d-flex flex-column h-100 @yield('body_class')">
+@if(env('APP_ENV', 'production') != 'local')
+    <div id="loading">
+
+        <div class="loading-nav">
+            <div id="loadingNavIcon">
+                {!! inline_svg('images/arrow-triple.svg') !!}
+                {!! __('Scroll or click to navigate') !!}
+                {!! Html::image('images/bethebeast-logo-yellow.png','BETHEBEAST',['class' => 'img-fluid float-right mr-3 d-none d-sm-block']) !!}
+            </div>
+        </div>
+
+        <div id="loading-box" class="d-block">
+            <span id="loading-percent">0%</span>
+            {!! Html::image('images/loading/01.png','Loading',['id' => 'loading-image', 'class' => 'mx-auto d-block img-fluid','data-percent' => '1']) !!}
+        </div>
+    </div>
+
+@endif
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dar shadow-sm">
         <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}">
             {!! Html::image($navbar_brand_src, config('app.name'), ['class' => 'img-fluid']) !!}
         </a>
-{{--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
-{{--            <span class="navbar-toggler-icon"></span>--}}
-{{--        </button>--}}
+        {{--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
+        {{--            <span class="navbar-toggler-icon"></span>--}}
+        {{--        </button>--}}
 
         <div class="overlay" id="navigationMenu">
             <!-- Left Side Of Navbar -->
             <div class="navigation-list mt-5 d-flex flex-column justify-content-around align-content-stretch">
-                    <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>1 {{ __('Everywhere') }}</span></a>
-                    <a class="nav-link navigation-link" href="{{ route('sponsored', app()->getLocale()) }}"><span>2 {{ __('Sponsored') }}</span></a>
-                    <a class="nav-link navigation-link" href="{{ route('sponsored', app()->getLocale()) }}"><span>3 {{ __('Sponsored') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>1 {{ __('Everywhere') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>2 {{ __('Sponsored') }}</span></a>
+                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>3 {{ __('Sponsored') }}</span></a>
             </div>
         </div>
 
@@ -44,7 +62,7 @@
             <ul class="navbar-nav mr-auto">
                 <button id="navigation-btn" class="navigation-btn open" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span id="openIcon">
-                        {!! inline_svg('images/arrow-bottom.svg') !!}
+                        {!! inline_svg('images/arrow-triple.svg') !!}
                     </span>
                     <span id="closeIcon">
                         {!! inline_svg('images/arrow-close.svg') !!}

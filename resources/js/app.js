@@ -9,6 +9,10 @@ require('slick-carousel/slick/slick.min');
 const WOW = require('wow.js/dist/wow.min');
 import 'wow.js/dist/wow.min';
 
+$(document).on('load', function () {
+});
+loadingProcess();
+
 $(function () {
     // new WOW().init();
 
@@ -58,7 +62,7 @@ $(function () {
             slidesToScroll: 1,
             arrows: false,
             fade: true,
-            speed: 2000,
+            speed: 1000,
             asNavFor: '#' + value + '-slider-nav'
         });
         $('#' + value + '-slider-nav').slick({
@@ -66,31 +70,31 @@ $(function () {
             dots: false,
             centerMode: true,
             // arrows: false,
-            prevArrow: '<button type="button" class="slick-prev"><img src="/images/arrow-left-white.png"></button>',
+            // prevArrow: '<button type="button" class="slick-prev">' + $(this).data('prev') + '</button>',
             focusOnSelect: true,
-            speed: 2000,
+            speed: 500,
             slidesToShow: 5,
-            slidesToScroll: 5,
+            slidesToScroll: 1,
             responsive: [
                 {
                     breakpoint: 1600,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 4,
+                        slidesToScroll: 1,
                     }
                 },
                 {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3,
+                        slidesToScroll: 1,
                     }
                 },
                 {
                     breakpoint: 600,
                     settings: {
                         slidesToShow: 2,
-                        slidesToScroll: 2
+                        slidesToScroll: 1
                     }
                 },
 
@@ -212,10 +216,10 @@ $(function () {
     $('#navigation-btn').on('click', function () {
         var $this = $(this);
         var hasOpenClass = $this.hasClass('open');
-        $this.toggleClass('open close');
-        if(hasOpenClass){
+        $this.toggleClass('open closer');
+        if (hasOpenClass) {
             openNav();
-        } else{
+        } else {
             closeNav();
         }
     });
@@ -241,4 +245,71 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("navigationMenu").style.height = "0%";
+
 }
+
+function loadingProcess() {
+    var img = $('#loading-image');
+    var counter = 0;
+    var timer = setInterval(function () {
+        counter++;
+        changeLoadingImageSrc(img, img.data('percent'));
+        if (counter >= 49) {
+            clearInterval(timer);
+            setTimeout(function () {
+                closeLoading();
+            }, 300);
+        }
+    }, 50);
+}
+
+function changeLoadingImageSrc(img, current) {
+    var next = current + 1;
+    img.attr('src', '/images/loading/0' + next + '.png');
+    img.data('percent', next);
+    $('#loading-percent').text(next * 2 + ' %');
+}
+
+function closeLoading() {
+    $('#loading').css('transition', 'all 1s ease');
+    $('#loading').css('height', '0%');
+    $('#loading-box').toggleClass('d-block d-none');
+}
+
+//
+// document.onreadystatechange = function (e) {
+//     if (document.readyState == "interactive") {
+//         var all = document.getElementsByTagName("*");
+//         for (var i = 0, max = all.length; i < max; i++) {
+//             set_ele(all[i]);
+//         }
+//     }
+// }
+//
+// function check_element(ele) {
+//     var all = document.getElementsByTagName("*");
+//     var totalele = all.length;
+//     var per_inc = 100 / all.length;
+//
+//     if ($(ele).on()) {
+//         // var prog_width = per_inc + Number(document.getElementById("progress_width").value);
+//         // document.getElementById("progress_width").value = prog_width;
+//         // $("#bar1").animate({width: prog_width + "%"}, 10, function () {
+//         //     if (document.getElementById("bar1").style.width == "100%") {
+//         //         $(".progress").fadeOut("slow");
+//         //     }
+//         // });
+//         var prog_width = per_inc + Number(document.getElementById("loading-percent").data('percent'));
+//         $('#loading-percent').data('percent', prog_width);
+//         $('#loading-percent').text(prog_width);
+//         console.log(prog_width);
+//
+//     } else {
+//         set_ele(ele);
+//     }
+// }
+//
+// function set_ele(set_element) {
+//     check_element(set_element);
+// }
+
