@@ -1,0 +1,16 @@
+@include media-breakpoint-only(lg) {
+
+    #home-page {
+        .bg-image.active {
+
+            .title {
+                font-size: 100px;
+            }
+
+            .subtitle {
+                font-size: 40px;
+            }
+
+        }
+    }
+}

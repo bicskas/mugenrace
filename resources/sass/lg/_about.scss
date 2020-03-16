@@ -1,0 +1,36 @@
+@include media-breakpoint-only(lg) {
+    .about-section {
+
+        .about-title {
+
+            h2{
+                font-size: 3rem;
+            }
+
+            svg {
+                fill: $white;
+                position: absolute;
+                top: 17%;
+                left: 45%;
+                transform: translate(-40%, 0);
+                height: 100%;
+                width: auto;
+                z-index: 1050;
+            }
+        }
+
+        .about-content {
+            padding: 0 2vw;
+
+            .about-content-text {
+                padding-right: 20px;
+                font-size: 1.1rem;
+                padding-top: $two-dot-eight-deg-height;
+
+                &.even {
+                    padding-top: calc(#{$two-dot-eight-deg-height} - 10px);
+                }
+            }
+        }
+    }
+}

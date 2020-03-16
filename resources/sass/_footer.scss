@@ -151,6 +151,7 @@ footer {
         margin-top: $two-dot-eight-deg-height;
         padding-bottom: $svg-height;
         color: $black;
+        z-index: 1251;
 
         &:before {
             content: '';
@@ -163,7 +164,7 @@ footer {
             border-left: 100vw solid transparent;
             border-bottom: $two-dot-eight-deg-height solid $white;
             transform: translate(0, -100%);
-            z-index: 1250;
+            z-index: 1251;
         }
 
         #subscribeFrom {

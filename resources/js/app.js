@@ -12,12 +12,14 @@ const AOS = require('aos/dist/aos');
 
 $(document).on('load', function () {
 });
-loadingProcess();
+
+if (!$('body').hasClass('loaded-complete')) {
+    loadingProcess();
+}
 
 $(function () {
     // new WOW().init();
     AOS.init({
-        mirror: true,
         anchorPlacement: 'top-bottom',
     });
     var wow = new WOW(
@@ -291,6 +293,8 @@ function closeNav() {
 }
 
 function loadingProcess() {
+    openLoading();
+
     var img = $('#loading-image');
     var counter = 0;
     var timer = setInterval(function () {
@@ -322,7 +326,5 @@ function openLoading() {
     $('#loading').css('transition', 'all 1s ease');
     $('#loading').css('height', '100%');
     $('#loading-box').toggleClass('d-block d-none');
-
-    loadingProcess();
 }
 

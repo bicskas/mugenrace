@@ -21,10 +21,10 @@ $navbrand-padding: calc(100vh * 0.0115);
 @import 'font';
 $grid-breakpoints: (
     xs: 0,
-    sm: 600px,
-    md: 800px,
+    sm: 550px,
+    md: 900px,
     lg: 1200px,
-    xl: 2000px
+    xl: 1800px
 );
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -47,6 +47,10 @@ $grid-breakpoints: (
 
 
 @import "lg/default";
+@import "lg/sponsor";
+@import "lg/about";
+@import "lg/navigation";
+@import "lg/home";
 
 a, a:hover {
     text-decoration: none;

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class SponsoredController extends Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
     /**
      * Handle the incoming request.
      *

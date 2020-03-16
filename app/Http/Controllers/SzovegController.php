@@ -9,6 +9,11 @@ use Illuminate\Support\Str;
 class SzovegController extends Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index($lang, Model $model)
     {
 

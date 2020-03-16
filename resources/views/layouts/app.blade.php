@@ -20,38 +20,35 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/images/mugenrace-logo-yellow.png">
 </head>
-<body class="hideScrollbar @yield('body_class')">
-@if(env('APP_ENV', 'production') != 'local')
-    <div id="loading">
+<body class="hideScrollbar @yield('body_class') {!! $loaded !!}">
+<div id="loading">
 
-        <div class="loading-nav">
-            <div id="loadingNavIcon">
-                {!! inline_svg('images/arrow-triple.svg') !!}
-                {!! __('Scroll or click to navigate') !!}
-                {!! Html::image('images/bethebeast-logo-yellow.png','BETHEBEAST',['class' => 'img-fluid float-right mr-3 d-none d-sm-block']) !!}
-            </div>
-        </div>
-
-        <div id="loading-box" class="d-block">
-            <span id="loading-percent">0%</span>
-            {!! Html::image('images/loading/01.png','Loading',['id' => 'loading-image', 'class' => 'mx-auto d-block img-fluid','data-percent' => '1']) !!}
+    <div class="loading-nav">
+        <div id="loadingNavIcon">
+            {!! inline_svg('images/arrow-triple.svg') !!}
+            {!! __('Scroll or click to navigate') !!}
+            {!! Html::image('images/bethebeast-logo-yellow.png','BETHEBEAST',['class' => 'img-fluid float-right mr-3 d-none d-sm-block']) !!}
         </div>
     </div>
 
-@endif
+    <div id="loading-box" class="d-none">
+        <span id="loading-percent">0%</span>
+        {!! Html::image('images/loading/01.png','Loading',['id' => 'loading-image', 'class' => 'mx-auto d-block img-fluid','data-percent' => '1']) !!}
+    </div>
+</div>
 <div id="app">
     <nav class="navbar navbar-expand-sm navbar-dar shadow-sm">
         <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}">
             {!! Html::image($navbar_brand_src, config('app.name'), ['class' => 'img-fluid']) !!}
         </a>
-                <button  id="navigation-btn-mobile"  class="navigation-btn open d-block d-md-none" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button id="navigation-btn-mobile" class="navigation-btn open d-block d-md-none" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span id="openIcon">
                         {!! inline_svg('images/arrow-triple.svg') !!}
                     </span>
-                    <span id="closeIcon">
+            <span id="closeIcon">
                         {!! inline_svg('images/arrow-close.svg') !!}
                     </span>
-                </button>
+        </button>
 
         <div class="overlay close-nav" id="navigationMenu">
             <!-- Left Side Of Navbar -->
@@ -65,7 +62,7 @@
         <div class="collapse navbar-collapse" id="">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <button id="navigation-btn"  class="navigation-btn open d-none d-md-block" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button id="navigation-btn" class="navigation-btn open d-none d-md-block" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span id="openIcon">
                         {!! inline_svg('images/arrow-triple.svg') !!}
                     </span>
@@ -95,7 +92,7 @@
                 </li>
                 @foreach(getLocales() as $code => $locale)
                     <li class="nav-item d-none d-md-block d-flex align-items-center">
-                        <a class="nav-link nav-lang d-flex align-items-center @if($loop->last) no-after @endif  @if($code == app()->getLocale()) active @endif" href="{{ localeUrl($code)  }}">
+                        <a class="nav-link nav-lang d-flex align-items-center @if($loop->last) no-after @endif  @if($code == app()->getLocale()) active disabled @endif" href="{{ localeUrl($code)  }}">
                             {{ strtoupper($code) }}
                         </a>
                     </li>

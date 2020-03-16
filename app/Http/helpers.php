@@ -140,9 +140,9 @@ function getLocales()
 {
     $locales = [];
     foreach (config('app.locales') as $code => $locale) {
-        if ($code != app()->getLocale()) {
-            $locales[$code] = $locale;
-        }
+//        if ($code != app()->getLocale()) {
+        $locales[$code] = $locale;
+//        }
     }
 
     return $locales;
