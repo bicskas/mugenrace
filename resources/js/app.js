@@ -7,6 +7,7 @@
 require('./bootstrap');
 require('slick-carousel/slick/slick.min');
 const WOW = require('wow.js/dist/wow.min');
+const AOS = require('aos/dist/aos');
 // import 'wow.js/dist/wow.min';
 
 $(document).on('load', function () {
@@ -15,7 +16,10 @@ loadingProcess();
 
 $(function () {
     // new WOW().init();
-
+    AOS.init({
+        mirror: true,
+        anchorPlacement: 'top-bottom',
+    });
     var wow = new WOW(
         {
             boxClass: 'wow',      // animated element css class (default is wow)
@@ -23,7 +27,6 @@ $(function () {
             offset: 500,          // distance to the element when triggering the animation (default is 0)
             mobile: true,       // trigger animations on mobile devices (default is true)
             live: true,       // act on asynchronously loaded content (default is true)
-            scrollContainer: 'main',
         }
     );
     wow.init();
@@ -86,17 +89,10 @@ $(function () {
                     }
                 },
                 {
-                    breakpoint: 1024,
+                    breakpoint: 1400,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
                     }
                 },
 
@@ -282,5 +278,13 @@ function closeLoading() {
     $('#loading').css('transition', 'all 1s ease');
     $('#loading').css('height', '0%');
     $('#loading-box').toggleClass('d-block d-none');
+}
+
+function openLoading() {
+    $('#loading').css('transition', 'all 1s ease');
+    $('#loading').css('height', '100%');
+    $('#loading-box').toggleClass('d-block d-none');
+
+    loadingProcess();
 }
 

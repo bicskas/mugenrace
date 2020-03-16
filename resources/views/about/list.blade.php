@@ -11,21 +11,31 @@
     </div>
 
     @foreach($abouts as $about)
-                <section class="about-section">
-                    <div class="about-title d-flex align-items-end @if($loop->even) primary @endif">
-                        <h2>
-                            {!! $about->title !!}
-                            <span>{!! $about->subtitle !!}</span>
-                        </h2>
-                        {!! inline_svg('images/arrow-top-down.svg') !!}
-                    </div>
-                    <div class="about-content d-flex align-content-center ">
-                        <div class="about-content-text flex-50">
-                            {!! $about->content !!}
-                        </div>
+        <section class="about-section wow-oveflow-container" id="section{!! $loop->iteration !!}">
+            <div class="about-title d-flex align-items-end @if($loop->even) primary @endif">
+                <h2>
+                    {!! $about->title !!}
+                    <span>{!! $about->subtitle !!}</span>
+                </h2>
+                {!! inline_svg('images/arrow-top-down.svg') !!}
+            </div>
+            <div class="about-content d-flex align-content-center ">
+                <div class="about-content-text flex-50" data-aos="fade-down-right"
+                     data-aos-delay="100"
+                     data-aos-duration="500"
+                     data-aos-mirror="true"
+                     data-aos-offset="50">
+                    {!! $about->content !!}
+                </div>
 
-                        <div class="about-content-image">{!! Html::image($about->getImage(1.48,2300),$about->title,['class' => 'img-fluid t']) !!}</div>
-                    </div>
-                </section>
+                <div class="about-content-image" data-aos="fade-up-left"
+                     data-aos-delay="100"
+                     data-aos-duration="500"
+                     data-aos-mirror="true"
+                     data-aos-offset="50">
+                    {!! Html::image($about->getImage(1.48,2300),$about->title,['class' => 'img-fluid t']) !!}
+                </div>
+            </div>
+        </section>
     @endforeach
 @endsection
