@@ -37297,52 +37297,52 @@ $(function () {
         }, 1200);
       }
     }
-  });
-  var ts;
-  $(document).bind('touchstart', function (e) {
-    ts = e.originalEvent.touches[0].clientY;
-  });
-  $(document).bind('touchend', function (e) {
-    var te = e.originalEvent.changedTouches[0].clientY;
-    var active = $('.bg-image.active');
-    var id = active.data('index');
-    var count = active.data('count');
+  }); // var ts;
+  // $(document).bind('touchstart', function (e) {
+  //     ts = e.originalEvent.touches[0].clientY;
+  // });
+  //
+  // $(document).bind('touchend', function (e) {
+  //     var te = e.originalEvent.changedTouches[0].clientY;
+  //     var active = $('.bg-image.active');
+  //     var id = active.data('index');
+  //     var count = active.data('count');
+  //     if (scrollBool === true) {
+  //         scrollBool = false;
+  //         if (ts > te + 5) {
+  //             if (id === count) {
+  //                 id = 0;
+  //             }
+  //             next = $('#bgdiv' + (id + 1));
+  //             inDirection = 'Right';
+  //             outDirection = 'Left';
+  //         } else if (ts < te - 5) {
+  //             if (id === 1) {
+  //                 id = count + 1;
+  //             }
+  //             next = $('#bgdiv' + (id - 1));
+  //             inDirection = 'Left';
+  //             outDirection = 'Right';
+  //         }
+  //
+  //         addClass = bgClass + inDirection;
+  //
+  //         $(active).css('animation-name', '');
+  //         $(active).css('visibility', '');
+  //         $(next).addClass(addClass);
+  //         $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+  //         $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+  //
+  //
+  //         wow.sync();
+  //         clearTimeout(timerId);
+  //         timerId = setTimeout(function () {
+  //             scrollBool = true;
+  //             $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+  //         }, 1200);
+  //     }
+  // });
 
-    if (scrollBool === true) {
-      scrollBool = false;
-
-      if (ts > te + 5) {
-        if (id === count) {
-          id = 0;
-        }
-
-        next = $('#bgdiv' + (id + 1));
-        inDirection = 'Right';
-        outDirection = 'Left';
-      } else if (ts < te - 5) {
-        if (id === 1) {
-          id = count + 1;
-        }
-
-        next = $('#bgdiv' + (id - 1));
-        inDirection = 'Left';
-        outDirection = 'Right';
-      }
-
-      addClass = bgClass + inDirection;
-      $(active).css('animation-name', '');
-      $(active).css('visibility', '');
-      $(next).addClass(addClass);
-      $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
-      $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
-      wow.sync();
-      clearTimeout(timerId);
-      timerId = setTimeout(function () {
-        scrollBool = true;
-        $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-      }, 1200);
-    }
-  });
   $('#navigation-btn').on('click', function () {
     var $this = $(this);
     var hasOpenClass = $this.hasClass('open');
@@ -37353,19 +37353,18 @@ $(function () {
     } else {
       closeNav();
     }
-  }); // var ts;
-  // $(document).bind('touchstart', function (e){
-  //     ts = e.originalEvent.touches[0].clientY;
-  // });
-  //
-  // $(document).bind('touchend', function (e){
-  //     var te = e.originalEvent.changedTouches[0].clientY;
-  //     if(ts > te+5){
-  //         slide_down();
-  //     }else if(ts < te-5){
-  //         slide_up();
-  //     }
-  // });
+  });
+  $('#navigation-btn-mobile').on('click', function () {
+    var $this = $(this);
+    var hasOpenClass = $this.hasClass('open');
+    $this.toggleClass('open closer');
+
+    if (hasOpenClass) {
+      openNav();
+    } else {
+      closeNav();
+    }
+  });
 });
 
 function openNav() {

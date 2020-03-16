@@ -19,7 +19,13 @@ $navbrand-padding: calc(100vh * 0.0115);
 // Variables
 @import 'variables';
 @import 'font';
-
+$grid-breakpoints: (
+    xs: 0,
+    sm: 600px,
+    md: 800px,
+    lg: 1200px,
+    xl: 2000px
+);
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -29,6 +35,7 @@ $navbrand-padding: calc(100vh * 0.0115);
 @import "~animate.css/animate.min.css";
 @import "~aos/dist/aos.css";
 
+@import "default";
 @import "navigation";
 @import "scrollbar";
 @import "flex";
@@ -37,6 +44,9 @@ $navbrand-padding: calc(100vh * 0.0115);
 @import "sponsor";
 @import "about";
 @import "footer";
+
+
+@import "lg/default";
 
 a, a:hover {
     text-decoration: none;
@@ -66,7 +76,7 @@ html:not(.homepage) {
     overflow-y: hidden;
 }
 
-.fixedbody{
+.fixedbody {
     position: fixed;
 }
 
@@ -87,91 +97,6 @@ body.homepage {
 
 #app {
     z-index: 1200;
-}
-
-.bg-black {
-    background-color: $black;
-}
-
-.pb-10 {
-    padding-bottom: 6rem;
-}
-
-.page-image {
-    width: 100%;
-
-    img {
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
-    }
-}
-
-.svg-div {
-    svg {
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-
-        background-repeat: no-repeat;
-        height: $svg-height;
-        width: 100%;
-        z-index: 1040;
-    }
-
-    &.svg-bottom {
-        svg {
-            bottom: 1px;
-            margin-top: -1px;
-            transform: translate(0, 100%);
-        }
-    }
-
-    &.svg-top {
-        svg {
-            top: 1px;
-            margin-bottom: -1px;
-            transform: rotate(180deg) translate(0, 100%);
-        }
-    }
-}
-
-#page-header {
-    position: relative;
-
-    .page-image-content {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translate(0, -50%);
-        text-align: center;
-
-    }
-
-    .title, .subtitle {
-        font-size: 10px;
-        font-weight: bold;
-        font-style: italic;
-        color: $white;
-        text-shadow: 1px 1px #000;
-        transition: all 1s ease-in-out;
-        transition-delay: 0.6s;
-        line-height: 1;
-    }
-
-    .title {
-        text-transform: uppercase;
-        margin-bottom: 0;
-        text-shadow: 1px 1px #000;
-        font-size: 200px;
-    }
-
-    .subtitle {
-        margin-top: -30px;
-        font-size: 60px;
-    }
 }
 
 .max-height {

@@ -40,13 +40,18 @@
 
 @endif
 <div id="app">
-    <nav class="navbar navbar-expand-xl navbar-dar shadow-sm">
+    <nav class="navbar navbar-expand-sm navbar-dar shadow-sm">
         <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}">
             {!! Html::image($navbar_brand_src, config('app.name'), ['class' => 'img-fluid']) !!}
         </a>
-        {{--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
-        {{--            <span class="navbar-toggler-icon"></span>--}}
-        {{--        </button>--}}
+                <button  id="navigation-btn-mobile"  class="navigation-btn open d-block d-md-none" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span id="openIcon">
+                        {!! inline_svg('images/arrow-triple.svg') !!}
+                    </span>
+                    <span id="closeIcon">
+                        {!! inline_svg('images/arrow-close.svg') !!}
+                    </span>
+                </button>
 
         <div class="overlay close-nav" id="navigationMenu">
             <!-- Left Side Of Navbar -->
@@ -60,7 +65,7 @@
         <div class="collapse navbar-collapse" id="">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <button id="navigation-btn" class="navigation-btn open" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button id="navigation-btn"  class="navigation-btn open d-none d-md-block" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span id="openIcon">
                         {!! inline_svg('images/arrow-triple.svg') !!}
                     </span>
@@ -95,7 +100,7 @@
                         </a>
                     </li>
                 @endforeach
-                <li class="nav-item d-flex align-items-center">
+                <li class="nav-item d-flex align-items-center d-xs-none d-sm-none d-md-none d-lg-block">
                     {!! Html::image($navbar_beast_src,'BETHEBEAST',['class' => 'img-fluid ml-auto','id' => 'bethebeastLogo']) !!}
                 </li>
             </ul>
