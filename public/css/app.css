@@ -12977,6 +12977,10 @@ a.text-dark:focus {
   flex: 0 0 calc(10% - 1em);
 }
 
+.flex-17 {
+  flex: 0 0 calc(18% - 1em);
+}
+
 .flex-33 {
   flex: 0 0 calc(33% - 1em);
 }
@@ -13482,12 +13486,59 @@ footer .footer-top-content:after {
   transform: translate(0, 100%);
 }
 
+footer .footer-group .list-group-item {
+  border-color: transparent;
+}
+
+footer .footer-group a {
+  color: #000000;
+  font-style: italic;
+  transition: all 0.2s linear;
+}
+
+footer .footer-group a:hover {
+  font-weight: bold;
+}
+
 footer .footer-middle-content {
-  height: 20vh;
   background-color: #ffffff;
   position: relative;
   padding-top: 10vh;
+  padding-bottom: calc(100vw * 0.016929);
   color: #000000;
+}
+
+footer .footer-middle-content #subscribeFrom #emailInput {
+  height: 85px;
+  width: 20vw;
+  border-radius: 0;
+  color: #000000;
+  font-weight: 500;
+  font-style: italic;
+}
+
+footer .footer-middle-content #subscribeFrom #emailInput:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+footer .footer-middle-content #subscribeFrom button {
+  height: 65px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  opacity: 0.6;
+  margin-left: 1.5vw;
+}
+
+footer .footer-middle-content #subscribeFrom button:hover {
+  opacity: 1;
+}
+
+footer .footer-middle-content #subscribeFrom button svg {
+  height: auto;
+  width: 65px;
+  transform: rotate(-90deg);
 }
 
 footer .footer-bottom-content {
@@ -13625,5 +13676,9 @@ body.homepage footer {
 #page-header .subtitle {
   margin-top: -30px;
   font-size: 60px;
+}
+
+.max-height {
+  max-height: 100%;
 }
 

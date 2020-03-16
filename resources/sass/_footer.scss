@@ -46,12 +46,63 @@ footer {
         }
     }
 
+    .footer-group {
+        .list-group-item {
+            border-color: transparent;
+        }
+
+        a {
+            color: $black;
+            font-style: italic;
+            transition: all 0.2s linear;
+        }
+
+        a:hover {
+            font-weight: bold;
+        }
+    }
+
     .footer-middle-content {
-        height: 20vh;
         background-color: $white;
         position: relative;
         padding-top: 10vh;
+        padding-bottom: $svg-height;
         color: $black;
+
+        #subscribeFrom {
+            #emailInput {
+                height: 85px;
+                width: 20vw;
+                border-radius: 0;
+                color: $black;
+                font-weight: 500;
+                font-style: italic;
+
+                &:focus{
+                    border-color: $black;
+                    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+                }
+            }
+
+            button {
+                height: 65px;
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                opacity: 0.6;
+                margin-left: 1.5vw;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                svg {
+                    height: auto;
+                    width: 65px;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
     }
 
     .footer-bottom-content {

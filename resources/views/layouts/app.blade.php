@@ -110,12 +110,47 @@
 </div>
 <footer class="footer bg-secondary">
 
-    <div class="footer-top-content">
-        <h2>Fejlesztés alatt</h2>
+    <div class="footer-top-content d-flex justify-content-start align-items-stretch">
+        <div class="flex-17 text-center">
+            {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height']) !!}
+        </div>
+
+        <div class="flex-17 d-flex align-items-end arrow-one">
+            <h2>{!! __('Info') !!}</h2>
+        </div>
+
+        <div class="flex-17 d-flex align-items-end arrow-two">
+            <h2>{!! __('Follow us') !!}</h2>
+        </div>
+
+        <div class="flex-17 d-flex align-items-end arrow-three">
+            <h2>{!! __('Join to us') !!}</h2>
+        </div>
     </div>
 
-    <div class="footer-middle-content">
-        <h2>Fejlesztés alatt</h2>
+    <div class="footer-middle-content d-flex justify-content-start align-items-stretch">
+        <div class="empty flex-17"></div>
+        <div class=" flex-17">
+            <div class="list-group footer-group">
+                <div class="list-group-item"><a href="#">Downloads</a></div>
+                <div class="list-group-item"><a href="#">Press</a></div>
+                <div class="list-group-item"><a href="#">Contacts</a></div>
+            </div>
+        </div>
+        <div class=" flex-17">
+            <div class="list-group footer-group">
+                <div class="list-group-item"><a href="#">Facebook</a></div>
+                <div class="list-group-item"><a href="#">Instagram</a></div>
+                <div class="list-group-item"><a href="#">Youtube</a></div>
+                <div class="list-group-item"><a href="#">LinkedIn</a></div>
+            </div>
+        </div>
+        <div class="flex-17">
+            {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center']) !!}
+            {!! Form::email('email','',['id' =>'emailInput', 'class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
+            <button type="submit" form="subscribeForm" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
+            {!! Form::close() !!}
+        </div>
     </div>
     <div class="footer-bottom-content">
         <div class="footer-bottom-content-svg svg-div svg-top svg">
