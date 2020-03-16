@@ -12863,6 +12863,10 @@ a.text-dark:focus {
   vertical-align: top;
 }
 
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
 #bethebeastLogo {
   max-height: calc(calc(100vh * 0.03935) / 2);
 }
@@ -12934,20 +12938,21 @@ a.text-dark:focus {
   font-size: 10vh;
   font-weight: 500;
   color: #c8ff00;
-  transition: all 1.2s cubic-bezier(0, 0, 0.23, 1);
+  transition: all 2.2s cubic-bezier(0, 0, 0.23, 1);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #000000;
   text-decoration: none;
-  background-image: linear-gradient(89deg, black, black 50%, #c8ff00 50%);
-  background-size: 200% 100%;
+  background-image: linear-gradient(90deg, #000000, #000000 48%, rgba(0, 0, 0, 0.6) 10%, #c8ff00 50%);
+  background-size: 300% 110%;
   background-position: 100%;
   text-transform: uppercase;
 }
 
 .navigation-link span:hover {
   background-position: 0%;
+  color: #000000;
 }
 
 .nav-lang {
@@ -13660,7 +13665,7 @@ a:hover {
   transform: translate(-50%, 0);
 }
 
-html {
+html:not(.homepage) {
   max-width: 100%;
   overflow-x: hidden;
 }

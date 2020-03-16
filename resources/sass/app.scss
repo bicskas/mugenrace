@@ -57,10 +57,11 @@ a:hover {
     transform: translate(-50%, 0);
 }
 
-html {
+html:not(.homepage) {
     max-width: 100%;
     overflow-x: hidden;
 }
+
 
 body {
     max-width: 100%;
