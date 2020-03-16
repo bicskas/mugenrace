@@ -115,16 +115,19 @@
             {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height']) !!}
         </div>
 
-        <div class="flex-17 d-flex align-items-end arrow-one">
-            <h2>{!! __('Info') !!}</h2>
+        <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-one text-center">
+            <h2 >{!! __('Info') !!}</h2>
+            {!! inline_svg('images/arrow-bottom-up.svg') !!}
         </div>
 
-        <div class="flex-17 d-flex align-items-end arrow-two">
+        <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-two">
             <h2>{!! __('Follow us') !!}</h2>
+            {!! inline_svg('images/arrow-double-thick.svg') !!}
         </div>
 
-        <div class="flex-17 d-flex align-items-end arrow-three">
+        <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-three">
             <h2>{!! __('Join to us') !!}</h2>
+            {!! inline_svg('images/arrow-triple.svg') !!}
         </div>
     </div>
 
@@ -145,7 +148,7 @@
                 <div class="list-group-item"><a href="#">LinkedIn</a></div>
             </div>
         </div>
-        <div class="flex-17">
+        <div class="">
             {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center']) !!}
             {!! Form::email('email','',['id' =>'emailInput', 'class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
             <button type="submit" form="subscribeForm" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>

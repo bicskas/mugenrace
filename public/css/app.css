@@ -13451,12 +13451,67 @@ footer .footer-top-content {
   padding-top: 40px;
 }
 
-footer .footer-top-content svg {
-  height: 200px;
-  width: 200px;
-  color: #ffffff;
-  fill: #ffffff;
-  z-index: 1240;
+footer .footer-top-content .footer-arrow {
+  text-align: center;
+}
+
+footer .footer-top-content .footer-arrow h2 {
+  z-index: 1031;
+  line-height: 1;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+
+footer .footer-top-content .footer-arrow svg {
+  z-index: 1030;
+}
+
+footer .footer-top-content .arrow-one {
+  position: relative;
+}
+
+footer .footer-top-content .arrow-one svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  fill: #414042;
+}
+
+footer .footer-top-content .arrow-two {
+  position: relative;
+}
+
+footer .footer-top-content .arrow-two svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  fill: #414042;
+}
+
+footer .footer-top-content .arrow-three {
+  position: relative;
+}
+
+footer .footer-top-content .arrow-three svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+footer .footer-top-content .arrow-three svg path {
+  fill: #414042;
 }
 
 footer .footer-top-content:before {
@@ -13484,6 +13539,7 @@ footer .footer-top-content:after {
   border-right: 100vw solid transparent;
   border-top: calc(100vw * 0.049) solid #000000;
   transform: translate(0, 100%);
+  z-index: 1029;
 }
 
 footer .footer-group .list-group-item {
@@ -13493,28 +13549,44 @@ footer .footer-group .list-group-item {
 footer .footer-group a {
   color: #000000;
   font-style: italic;
-  transition: all 0.2s linear;
+  font-weight: normal;
 }
 
 footer .footer-group a:hover {
   font-weight: bold;
+  font-style: italic;
 }
 
 footer .footer-middle-content {
   background-color: #ffffff;
   position: relative;
-  padding-top: 10vh;
+  margin-top: calc(100vw * 0.049);
   padding-bottom: calc(100vw * 0.016929);
   color: #000000;
 }
 
+footer .footer-middle-content:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  border-right: 0 solid transparent;
+  border-left: 100vw solid transparent;
+  border-bottom: calc(100vw * 0.049) solid #ffffff;
+  transform: translate(0, -100%);
+  z-index: 1250;
+}
+
 footer .footer-middle-content #subscribeFrom #emailInput {
-  height: 85px;
+  height: 80px;
   width: 20vw;
   border-radius: 0;
   color: #000000;
   font-weight: 500;
   font-style: italic;
+  margin-left: 3vw;
 }
 
 footer .footer-middle-content #subscribeFrom #emailInput:focus {
@@ -13523,7 +13595,7 @@ footer .footer-middle-content #subscribeFrom #emailInput:focus {
 }
 
 footer .footer-middle-content #subscribeFrom button {
-  height: 65px;
+  height: 60px;
   background-color: transparent;
   border: none;
   padding: 0;
@@ -13537,7 +13609,7 @@ footer .footer-middle-content #subscribeFrom button:hover {
 
 footer .footer-middle-content #subscribeFrom button svg {
   height: auto;
-  width: 65px;
+  width: 60px;
   transform: rotate(-90deg);
 }
 
