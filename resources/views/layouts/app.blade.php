@@ -53,6 +53,7 @@
             <div class="navigation-list mt-5 d-flex flex-column justify-content-around align-content-stretch">
                 <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}"><span>{{ __('We are') }}</span></a>
                 <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span>{{ __('Everywhere') }}</span></a>
+                <a class="nav-link navigation-link" href="http://www.mugenraceshop.com"><span>{{ __('Produtcs') }}</span></a>
             </div>
         </div>
 
@@ -108,15 +109,15 @@
         @yield('content')
     </main>
 </div>
-<footer class="footer bg-secondary">
+<footer class="footer bg-black">
 
     <div class="footer-top-content d-flex justify-content-start align-items-stretch">
         <div class="flex-17 text-center">
-            {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height']) !!}
+            {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height','id'=>'footer-white-logo']) !!}
         </div>
 
         <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-one text-center">
-            <h2 >{!! __('Info') !!}</h2>
+            <h2>{!! __('Info') !!}</h2>
             {!! inline_svg('images/arrow-bottom-up.svg') !!}
         </div>
 
