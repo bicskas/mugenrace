@@ -15,3 +15,21 @@
 //        rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, .2) 50%,
 //        rgba(0, 0, 0, .2) 75%, rgba(0, 0, 0, .8) 75%)
 //}
+
+//-webkit- (Chrome, Safari, newer versions of Opera):
+//element-selector::-webkit-scrollbar { height: 0 !important }
+.hideScrollbar::-webkit-scrollbar {
+    width: 0 !important
+}
+
+//-moz- (Firefox):
+//element-selector{ overflow: -moz-scrollbars-none; }
+.hideScrollbar {
+    overflow: -moz-scrollbars-none;
+}
+
+//-ms- (Internet Explorer +10):
+//element-selector{ -ms-overflow-style: none; }
+.hideScrollbar {
+    -ms-overflow-style: none;
+}

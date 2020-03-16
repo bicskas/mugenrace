@@ -113,7 +113,7 @@
         position: absolute;
         width: 0;
         height: 0;
-        top: 0;
+        top: 1px;
         border-right: 0 solid transparent;
         border-left: 100vw solid transparent;
         border-bottom: $one-dot-three-deg-height solid $black;
@@ -162,7 +162,7 @@
         position: absolute;
         width: 0;
         height: 0;
-        top: 0;
+        top: 1px;
         border-right: 0 solid transparent;
         border-left: 100vw solid transparent;
         border-bottom: $one-dot-three-deg-height solid $primary;
@@ -175,7 +175,7 @@
         position: absolute;
         width: 0;
         height: 0;
-        bottom: 0;
+        bottom: 1px;
         border-left: 0 solid transparent;
         border-right: 100vw solid transparent;
         border-top: $two-dot-eight-deg-height solid $primary;

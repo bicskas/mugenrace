@@ -12783,7 +12783,7 @@ a.text-dark:focus {
   height: calc(100vh * 0.03935);
   overflow: visible;
   color: #ffffff;
-  z-index: 1070;
+  z-index: 1300;
   padding: 0.5rem;
 }
 
@@ -12813,7 +12813,7 @@ a.text-dark:focus {
   overflow: hidden;
   height: 0%;
   background-color: #c8ff00;
-  z-index: 1070;
+  z-index: 1300;
 }
 
 .navbar #navigationMenu .navbar-nav {
@@ -12830,12 +12830,12 @@ a.text-dark:focus {
   position: fixed;
   width: 0;
   height: 0;
-  bottom: 0;
+  bottom: -1px;
   border-right: 0 solid transparent;
   border-left: 100vw solid transparent;
   border-bottom: calc(100vw * 0.039) solid #000000;
   transition: all 1s ease;
-  z-index: 1060;
+  z-index: 1300;
 }
 
 .navbar #navigationMenu.close-nav:after {
@@ -12874,6 +12874,8 @@ a.text-dark:focus {
 .navigation-btn {
   width: calc(calc(100vh * 0.03935) - 10px);
   height: calc(calc(100vh * 0.03935) - 10px);
+  min-height: 45px;
+  min-width: 45px;
   margin: 5px;
   background-color: transparent;
   border-color: transparent;
@@ -12976,6 +12978,18 @@ a.text-dark:focus {
   background: #ffffff;
   transform: translate(0, -50%);
   height: calc(calc(100vh * 0.0115) + 8px);
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.hideScrollbar {
+  overflow: -moz-scrollbars-none;
+}
+
+.hideScrollbar {
+  -ms-overflow-style: none;
 }
 
 .flex-10 {
@@ -13241,7 +13255,7 @@ a.text-dark:focus {
   position: absolute;
   width: 0;
   height: 0;
-  top: 0;
+  top: 1px;
   border-right: 0 solid transparent;
   border-left: 100vw solid transparent;
   border-bottom: calc(100vw * 0.022) solid #000000;
@@ -13290,7 +13304,7 @@ a.text-dark:focus {
   position: absolute;
   width: 0;
   height: 0;
-  top: 0;
+  top: 1px;
   border-right: 0 solid transparent;
   border-left: 100vw solid transparent;
   border-bottom: calc(100vw * 0.022) solid #c8ff00;
@@ -13303,7 +13317,7 @@ a.text-dark:focus {
   position: absolute;
   width: 0;
   height: 0;
-  bottom: 0;
+  bottom: 1px;
   border-left: 0 solid transparent;
   border-right: 100vw solid transparent;
   border-top: calc(100vw * 0.049) solid #c8ff00;
@@ -13389,7 +13403,7 @@ a.text-dark:focus {
   position: absolute;
   width: 0;
   height: 0;
-  top: 0;
+  top: 1px;
   border-right: 0 solid transparent;
   border-left: 100vw solid transparent;
   border-bottom: calc(100vw * 0.022) solid #000000;
@@ -13543,7 +13557,7 @@ footer .footer-top-content:before {
   position: absolute;
   width: 0;
   height: 0;
-  top: 0;
+  top: 1px;
   border-right: 0 solid transparent;
   border-left: 100vw solid transparent;
   border-bottom: calc(100vw * 0.022) solid #000000;
@@ -13668,6 +13682,14 @@ a:hover {
 html:not(.homepage) {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+.noscroll {
+  overflow-y: hidden;
+}
+
+.fixedbody {
+  position: fixed;
 }
 
 body {

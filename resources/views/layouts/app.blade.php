@@ -20,7 +20,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/images/mugenrace-logo-yellow.png">
 </head>
-<body class=" @yield('body_class')">
+<body class="hideScrollbar @yield('body_class')">
 @if(env('APP_ENV', 'production') != 'local')
     <div id="loading">
 
@@ -135,7 +135,7 @@
             <div class="empty flex-17"></div>
             <div class=" flex-17">
                 <div class="list-group footer-group">
-                    <div class="list-group-item"><a href="#">Downloads</a></div>
+                    <div class="list-group-item"><a href="{!! route('download') !!}">Downloads</a></div>
                     <div class="list-group-item"><a href="#">Press</a></div>
                     <div class="list-group-item"><a href="#">Contacts</a></div>
                 </div>

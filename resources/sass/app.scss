@@ -62,6 +62,14 @@ html:not(.homepage) {
     overflow-x: hidden;
 }
 
+.noscroll {
+    overflow-y: hidden;
+}
+
+.fixedbody{
+    position: fixed;
+}
+
 
 body {
     max-width: 100%;
