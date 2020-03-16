@@ -293,8 +293,6 @@ function closeNav() {
 }
 
 function loadingProcess() {
-    openLoading();
-
     var img = $('#loading-image');
     var counter = 0;
     var timer = setInterval(function () {
@@ -319,12 +317,6 @@ function changeLoadingImageSrc(img, current) {
 function closeLoading() {
     $('#loading').css('transition', 'all 1s ease');
     $('#loading').css('height', '0%');
-    $('#loading-box').toggleClass('d-block d-none');
-}
-
-function openLoading() {
-    $('#loading').css('transition', 'all 1s ease');
-    $('#loading').css('height', '100%');
     $('#loading-box').toggleClass('d-block d-none');
 }
 
