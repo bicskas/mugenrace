@@ -21,7 +21,7 @@
     <link rel="shortcut icon" type="image/png" href="/images/mugenrace-logo-yellow.png">
 </head>
 <body class="hideScrollbar @yield('body_class') {!! $loaded !!}">
-<div id="loading">
+<div id="loading" class="{!! $loaded !!}">
 
     <div class="loading-nav">
         <div id="loadingNavIcon">
