@@ -8,4 +8,18 @@
         padding-left: 0.8rem !important;
         padding-right: 0.8rem !important;
     }
+
+    .navigation-left {
+        #navPageTitle {
+            font-size: 1.3rem;
+        }
+    }
+
+    .navigation-link {
+        .small {
+            top: 0;
+            letter-spacing: 6px;
+            font-size: 1.1rem;
+        }
+    }
 }

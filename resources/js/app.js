@@ -159,9 +159,6 @@ $(function () {
                 wow.sync();
                 clearTimeout(timerRemove);
                 clearTimeout(timerId);
-                // timerRemove = setTimeout(function () {
-                //     $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-                // }, 1200)
                 timerId = setTimeout(function () {
                     scrollBool = true;
                     $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);

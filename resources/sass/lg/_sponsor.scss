@@ -11,7 +11,9 @@
     }
 
     .slick-next, .slick-prev {
-        height: 25%;
+        svg {
+            height: 25%;
+        }
     }
 
     .slick-next {
@@ -19,7 +21,7 @@
     }
 
     .slick-prev {
-        left: 8px;
+        left: 6px;
     }
 }
 

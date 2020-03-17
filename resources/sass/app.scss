@@ -12,8 +12,8 @@ $two-dot-two-deg-height: calc(100vw * 0.039);
 $two-dot-eight-deg-height: calc(100vw * 0.049);
 $four-dot-two-deg-height: calc(100vw * 0.065);
 
-$nav-height: calc(100vh * 0.03935);
-$navbrand-padding: calc(100vh * 0.0115);
+$nav-height: calc(100vw * 0.022);
+$navbrand-padding: calc(100vw * 0.0065);
 
 
 // Variables
@@ -44,6 +44,7 @@ $grid-breakpoints: (
 @import "sponsor";
 @import "about";
 @import "footer";
+//@import "transition";
 
 
 @import "lg/default";

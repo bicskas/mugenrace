@@ -26,14 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $images = BelsoKep::orderByRaw(BelsoKep::$sorting)->get();
-//        $home_images = collect();
-//        foreach ($images->groupBy('place') as $group) {
-//            $home_images->push($group->random(1)->first());
-//        }
-////dd($images, $home_images);
+        $images = BelsoKep::orderByRaw(BelsoKep::$sorting)->get();
+        $home_images = collect();
+        foreach ($images->groupBy('place') as $group) {
+            $home_images->push($group->random(1)->first());
+        }
+//dd($images, $home_images);
 
-        $home_images = BelsoKep::orderByRaw(BelsoKep::$sorting)->get();
+//        $home_images = BelsoKep::orderByRaw(BelsoKep::$sorting)->take(4)->get();
         return view('home')->with(compact(['home_images']));
     }
 }

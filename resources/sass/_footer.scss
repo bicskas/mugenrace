@@ -212,6 +212,7 @@ footer {
         .footer-bottom-content-svg {
 
             svg {
+                z-index: 1252;
                 path {
                     fill: $secondary;
                 }

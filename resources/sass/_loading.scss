@@ -23,6 +23,8 @@
     #loadingNavIcon {
         color: $primary;
         padding-left: 2vw;
+        font-style: italic;
+        text-transform: uppercase;
 
         svg {
             height: $nav-height;
@@ -39,10 +41,18 @@
         color: white;
         font-size: 6vh;
         font-weight: bold;
+        font-style: italic;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        width: 13vw;
+    }
+
+    #bethebeastload {
+        max-height: calc(#{$nav-height} / 2);
+        width: 8vw;
+        margin-right: 1.6vw !important;
     }
 }
