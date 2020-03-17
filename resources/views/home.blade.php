@@ -7,8 +7,8 @@
             <div class="home-page-slic">
                 @foreach($home_images as $image)
                     <a href="{!! route($image->place, app()->getLocale()) !!}" id="bgdiv{!! $loop->iteration !!}"
-{{--                       class="bg-image  @if($loop->first) wow animated active fadeInRight @else hidden @endif"--}}
-                       class="bg-image  @if($loop->first)  active  image-1 @else hidden image-2  @endif"
+                       class="bg-image  @if($loop->first) wow animated active fadeInRight @else hidden @endif"
+{{--                       class="bg-image  @if($loop->first)  active  image-1 @else hidden image-2  @endif"--}}
                        data-index="{!! $loop->iteration !!}"
                        data-count="{!! $loop->count !!}"
                        data-image="{!! $image->getImage(1.92, 3840) !!}"
