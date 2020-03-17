@@ -3,40 +3,53 @@ footer {
     z-index: 1250;
 
     .footer-top-content {
-        height: 20vh;
+        height: 8vw;
         background-color: $black;
         position: relative;
         z-index: 1250;
         //margin-bottom: $two-dot-eight-deg-height;
 
         .max-height {
-            max-height: 80%;
+            max-height: 95%;
         }
 
         //.flex-17 {
         //    margin-top: -100px;
         //}
         //
-        //#footer-white-logo {
-        //    margin-top: 120px;
-        //}
+
+
+        #footer-white-logo {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .footer-arrow {
             text-align: center;
 
             h2 {
-                z-index: 1031;
-                line-height: 1;
+                z-index: 1252;
+                line-height: 1.5rem;
                 margin-bottom: 0;
                 text-transform: uppercase;
                 font-weight: normal;
                 font-style: italic;
                 text-align: center;
                 position: absolute;
+                bottom: -10%;
+
             }
 
             svg {
-                z-index: 1030;
+                z-index: 1251;
+                top: 0;
+                width: 100%;
+                height: auto;
+                max-height: 150%;
 
             }
         }
@@ -44,53 +57,32 @@ footer {
         .arrow-one {
             position: relative;
 
-            h2 {
-                bottom: -30%;
-            }
-
             svg {
                 position: absolute;
-                bottom: -45%;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
-                fill: #414042;
+                top: 20%;
+
+                polygon {
+                    fill: #414042;
+                }
             }
         }
 
         .arrow-two {
             position: relative;
 
-            h2 {
-                bottom: -20%;
-            }
 
             svg {
                 position: absolute;
-                bottom: -35%;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
                 fill: #414042;
             }
         }
 
         .arrow-three {
             position: relative;
-
-            h2 {
-                bottom: -10%;
-            }
+            top: -5%;
 
             svg {
                 position: absolute;
-                bottom: -25%;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
 
                 path {
                     fill: #414042;
@@ -205,23 +197,30 @@ footer {
     }
 
     .footer-bottom-content {
-        padding: 2vh 4vw 0;
+        padding: 2.7vh 4vw 0.6vh;
         position: relative;
         background-color: $secondary;
+        font-style: italic;
 
         .footer-bottom-content-svg {
 
             svg {
                 z-index: 1252;
+
                 path {
                     fill: $secondary;
                 }
             }
         }
 
+        a:hover {
+            font-weight: bold;
+            color: $black;
+        }
+
         &, & a:not(:hover), & p {
             color: $text-base-color;
-            font-size: 18px;
+            font-size: 1rem;
         }
     }
 
@@ -229,7 +228,7 @@ footer {
         .list-group-item {
             background-color: transparent;
             border: none;
-            padding: 0 5px;
+            padding: 0 15px;
         }
     }
 }

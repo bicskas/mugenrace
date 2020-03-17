@@ -125,8 +125,8 @@
     <footer class="footer bg-black">
 
         <div class="footer-top-content d-flex justify-content-start align-items-stretch">
-            <div class="flex-17 text-center">
-                {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height','id'=>'footer-white-logo']) !!}
+            <div class="flex-17 text-center" style="position: relative">
+                    {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height align-self-end','id'=>'footer-white-logo']) !!}
             </div>
 
             <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-one text-center">
@@ -174,14 +174,14 @@
                 {!! inline_svg('images/line-1deg.svg') !!}
             </div>
             <div class=" d-flex justify-content-between align-items-end">
-                <p class="m-0 flex-10">© {!! date('Y') !!} Mugenrace</p>
+                <p class="m-0">© {!! date('Y') !!} MUGENRACE</p>
 
-                <ul class="footer-bottom-list list-group list-group-horizontal flex-10 text-center">
+                <ul class="footer-bottom-list list-group list-group-horizontal text-center">
                     <li class="list-group-item"><a href="#">Privacy</a></li>
                     <li class="list-group-item"><a href="#">Cookie</a></li>
+                    <li class="list-group-item"><a href="#">Credits</a></li>
                 </ul>
 
-                <p class="m-0 flex-10 text-right"><a href="#">Credits</a></p>
             </div>
         </div>
     </footer>

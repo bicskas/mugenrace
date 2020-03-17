@@ -1,0 +1,23 @@
+@include media-breakpoint-only(lg) {
+    footer {
+
+        .footer-arrow {
+            h2 {
+                font-size: 1.3rem;
+                line-height: 1.3rem !important;
+            }
+        }
+
+        .footer-group {
+            a {
+                font-size: 1.3rem;
+            }
+        }
+
+        .footer-bottom-content {
+            &, & a:not(:hover), & p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
