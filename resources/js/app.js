@@ -11,6 +11,7 @@ const AOS = require('aos/dist/aos');
 // import 'wow.js/dist/wow.min';
 
 $(document).on('load', function () {
+
 });
 
 if (!$('body').hasClass('loaded-complete')) {
@@ -278,6 +279,10 @@ $(function () {
         }
     });
 
+    setTimeout(function () {
+    $('#home-page .bg-image').removeClass('hidden');
+    },300);
+
 });
 
 function openNav() {
@@ -293,7 +298,7 @@ function closeNav() {
 }
 
 function loadingProcess() {
-    var img = $('#loading-image');
+     var img = $('#loading-image');
     var counter = 0;
     var timer = setInterval(function () {
         counter++;
