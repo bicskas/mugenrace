@@ -33,7 +33,7 @@ class HomeController extends Controller
         }
 //dd($images, $home_images);
 
-        $home_images = BelsoKep::orderByRaw(BelsoKep::$sorting)->take(6)->get();
+//        $home_images = BelsoKep::orderByRaw(BelsoKep::$sorting)->take(6)->get();
         return view('home2')->with(compact(['home_images']));
     }
 }

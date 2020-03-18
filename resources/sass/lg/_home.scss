@@ -19,13 +19,13 @@
 
             .subtitle {
                 font-size: 40px;
-                margin-top: 90px !important;
+                margin-top: 100px !important;
             }
         }
 
         @for $i from 1 through 20 {
             .cr-container input.cr-selector-img-#{$i}:checked ~ .cr-titles h3:nth-child(#{$i}) span:nth-child(2) {
-                margin-top: 40px !important;
+                margin-top: 50px !important;
                 opacity: 1;
             }
         }
