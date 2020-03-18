@@ -24,7 +24,6 @@
                                     <td class="align-middle">{!! Str::limit(strip_tags($element->content),30) !!}</td>
                                     <td class="align-middle">{{$element->hely}}</td>
                                     <td class="align-middle text-right">
-                                        @include('elements.buttons.adminShow',['element' => $element])
                                         @include('elements.buttons.adminEdit',['element' => $element])
                                         @include('elements.buttons.adminDelete',['element' => $element])
 

@@ -24,7 +24,6 @@
                                     <td class="align-middle">{{$element->link}}</td>
                                     <td class="align-middle text-wrap">{{str_limit(strip_tags($element->szoveg))}}</td>
                                     <td class="align-middle text-right">
-                                        @include('elements.buttons.adminShow',['element' => $element])
                                         @include('elements.buttons.adminEdit',['element' => $element])
                                         @include('elements.buttons.adminDelete',['element' => $element])
 

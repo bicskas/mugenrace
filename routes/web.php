@@ -48,9 +48,16 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
             'as' => 'admin'
         ]);
 
+        Route::resource('download', 'DownloadController', [
+            'as' => 'admin'
+        ]);
+
         Route::get('/kep/torol/{snake_case}/{id}/{method}', 'KepController@getTorol');
         Route::post('ajax/sorrend/{one?}/{two?}/', 'AjaxController@sorrend');
         Route::post('tesztbezar', 'AjaxController@tesztbezar');
+
+        Route::resource('file', 'FileController')->only(['destroy']);
+        Route::get('/file/torol/{file}', 'FileController@destroy')->name('file.delete');
     });
 
     Route::get('about-us', 'AboutController')->name('about');

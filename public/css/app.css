@@ -13830,6 +13830,7 @@ footer .footer-bottom-list .list-group-item {
   bottom: 3.5vh;
   margin: 0 auto;
   overflow: hidden;
+  cursor: pointer;
 }
 
 #home-page .cr-container label {
@@ -14680,106 +14681,106 @@ footer .footer-bottom-list .list-group-item {
 
   #home-page .cr-titles h3 .subtitle {
     font-size: 40px;
-    margin-top: 90px !important;
+    margin-top: 100px !important;
   }
 
   #home-page .cr-container input.cr-selector-img-1:checked ~ .cr-titles h3:nth-child(1) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-2:checked ~ .cr-titles h3:nth-child(2) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-3:checked ~ .cr-titles h3:nth-child(3) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-4:checked ~ .cr-titles h3:nth-child(4) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-5:checked ~ .cr-titles h3:nth-child(5) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-6:checked ~ .cr-titles h3:nth-child(6) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-7:checked ~ .cr-titles h3:nth-child(7) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-8:checked ~ .cr-titles h3:nth-child(8) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-9:checked ~ .cr-titles h3:nth-child(9) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-10:checked ~ .cr-titles h3:nth-child(10) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-11:checked ~ .cr-titles h3:nth-child(11) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-12:checked ~ .cr-titles h3:nth-child(12) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-13:checked ~ .cr-titles h3:nth-child(13) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-14:checked ~ .cr-titles h3:nth-child(14) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-15:checked ~ .cr-titles h3:nth-child(15) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-16:checked ~ .cr-titles h3:nth-child(16) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-17:checked ~ .cr-titles h3:nth-child(17) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-18:checked ~ .cr-titles h3:nth-child(18) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-19:checked ~ .cr-titles h3:nth-child(19) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 
   #home-page .cr-container input.cr-selector-img-20:checked ~ .cr-titles h3:nth-child(20) span:nth-child(2) {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     opacity: 1;
   }
 }

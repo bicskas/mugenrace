@@ -8,7 +8,7 @@
 	@if ($model->exists and count($locales2) > 0)
 		<li role="presentation" class="dropdown nav-item">
 			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-				<span class="glyphicon glyphicon-plus"></span> Új fordítás <span class="caret"></span>
+				<span class="glyphicon glyphicon-plus"></span> New translation <span class="caret"></span>
 			</a>
 			<div class="dropdown-menu">
 				@foreach ($locales2 as $kod => $nyelv)
@@ -17,6 +17,6 @@
 			</div>
 		</li>
 	@elseif(!$model->exists)
-		<li role="presentation"  class="nav-item"><a class="nav-link disabled"><span class="glyphicon glyphicon-plus"></span> Új fordítás előtt mentenie kell</a></li>
+		<li role="presentation"  class="nav-item"><a class="nav-link disabled"><span class="glyphicon glyphicon-plus"></span> You have to save before new translation</a></li>
 	@endif
 </ul>

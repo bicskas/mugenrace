@@ -22,7 +22,6 @@
                                     <td class="align-middle">{{$element->name}}</td>
                                     <td class="align-middle text-wrap">{{\Str::limit(strip_tags($element->content))}}</td>
                                     <td class="align-middle text-right">
-                                        @include('elements.buttons.adminShow',['element' => $element])
                                         @include('elements.buttons.adminEdit',['element' => $element])
                                         @include('elements.buttons.adminDelete',['element' => $element])
 

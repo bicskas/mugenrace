@@ -11,7 +11,6 @@ class Download extends Model
 
     use BasicModel,	Translatable;
 
-    protected $table = 'szoveg';
     public $translatedAttributes = array(
         'title',
         'format',
@@ -19,14 +18,14 @@ class Download extends Model
     protected $fillable = array(
         'title',
         'format',
-        'type',
+        'category',
         'sorrend',
     );
     public $timestamps = false;
     public static $sorting = '`sorrend` ASC';
 
     private $enum = array(
-        'type' => array('products', 'document'),
+        'category' => array('catalogs', 'documents'),
     );
 
     public function delete()
@@ -38,5 +37,17 @@ class Download extends Model
     public function fajlok()
     {
         return $this->morphMany('App\File', 'file');
+    }
+
+    public function getCategory()
+    {
+        $places = $this->enum('category');
+        $placesWithName = [];
+        foreach ($places as $place) {
+            $placesWithName[$place] = ucfirst(__($place));
+
+        }
+
+        return $placesWithName;
     }
 }

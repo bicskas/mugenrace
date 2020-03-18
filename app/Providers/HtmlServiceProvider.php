@@ -19,7 +19,7 @@ class HtmlServiceProvider extends \Collective\Html\HtmlServiceProvider
         Form::component('bsCheckboxWithText', $dir . 'bsCheckboxWithText', ['id', 'model', 'value' => 1, 'label', 'attributes' => [], 'help' => '', 'textName', 'textValue', 'textAttributes' => []]);
         Form::component('bsRadio', $dir . 'bsRadio', ['id', 'model', 'value' => 1, 'attributes' => [], 'help' => '']);
         Form::component('bsFile', $dir . 'bsFile', ['id', 'model']);
-        Form::component('bsFiles', $dir . 'bsFiles', ['id', 'model', 'number']);
+        Form::component('bsFiles', $dir . 'bsFiles', ['id', 'model', 'number' => 1, 'related' => 'fajlok']);
         Form::component('bsKep', $dir . 'bsKep', ['id', 'model']);
         Form::component('bsJcrop', $dir . 'bsJcrop', ['id', 'model']);
         Form::component('bsDropzone', $dir . 'bsDropzone', ['model', 'keplista' => '.keplista']);

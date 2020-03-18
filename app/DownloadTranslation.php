@@ -32,9 +32,4 @@ class DownloadTranslation extends Model
         );
     }
 
-    public function save(array $options = array())
-    {
-        return parent::save($options);
-    }
-
 }

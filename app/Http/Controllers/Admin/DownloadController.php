@@ -2,92 +2,154 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Download as Model;
+use App\Download;
+use App\Fajl;
+use App\File;
 use App\Http\Requests\ModelRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class DownloadController extends TemplateController {
+class DownloadController extends TemplateController
+{
 
-	public function __construct() {
-		parent::__construct();
+    /**
+     * @var string
+     */
+    private $class;
 
-		$this->class = 'download';
-		\View::share('active_page', $this->class);
-		\View::share('Class', new Model());
-	}
+    public function __construct()
+    {
+        parent::__construct();
 
-	public function index(Request $request, $lang, Model $model) {
+        $this->class = 'download';
+        \View::share('active_page', $this->class);
+        \View::share('Class', new Download());
+    }
 
-		$model = $model->listsTranslations('cim');
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index(Request $request, $lang, Download $download)
+    {
+        $model = $download->withTranslation('title');
 
-		if (($data = $request->get('cim'))) {
-			$model = $model->whereTranslationLike('cim', '%' . $data . '%');
-		}
+        if (($data = $request->get('title'))) {
+            $model = $model->whereTranslationLike('title', '%' . $data . '%');
+        }
 
-		$lis = $model
-			->orderByRaw(Model::$sorting)
-			->paginate(15);
+        $list = $model
+            ->orderByRaw(Download::$sorting)
+            ->paginate(15);
+        return view('admin.' . $this->class . '.list', array(
+            'list' => $list->appends($request->except('page')), // lapozó miatt!
+        ));
+    }
 
-		return view('admin.' . $this->class . '.list', array(
-			'list' => $lis->appends($request->except('page')), // lapozó miatt!
-		));
-	}
+    private function save(ModelRequest $request, Download $download)
+    {
 
-	private function save(ModelRequest $request, Model $model) {
+        $data = $request->all();
 
-		$data = $request->all();
+        $download->fill($data)->save();
 
-		$model->fill($data)->save();
+        $files = $request->file('file');
 
-        $file = new Model();
-//        $jatek->fajlok()->save($file);
-//        $file->file()->fajlfeltoltes($upload);
-//        Auth::user()->fajlok()->save($file);
+        if (!is_null($files)) {
+            foreach ($files as $upload) {
+                $file = new File();
+                $download->fajlok()->save($file);
+                $file->file()->fajlfeltoltes($upload);
+            }
+        }
 
-		return redirect($model->adminLink() . '/edit')
-			->with('uzenet', __('Sikeres mentés!'));
-	}
+        return redirect($download->adminLink() . '/edit')
+            ->with('uzenet', __('Sikeres mentés!'));
+    }
 
-	private function szerkeszt(Model $model, $method) {
+    private function szerkeszt(Download $download, $method)
+    {
+        $categories = $download->getCategory();
+        return view('admin.' . $this->class . '.form', array(
+                'model' => $download,
+                'method' => $method,
+                'categories' => $categories,
+            ) + $this->locales($download));
+    }
 
-		return view('admin.' . $this->class . '.form', array(
-			'model' => $model,
-			'method' => $method,
-		) + $this->locales($model));
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create($lang, Download $download)
+    {
+        return $this->szerkeszt($download, 'post');
+    }
 
-	public function show($lang, Model $model) {
-		return view('admin.' . $this->class . '.show', array(
-			'model' => $model,
-		));
-	}
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\ModelRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(ModelRequest $request, $lang, Download $download)
+    {
+        return $this->save($request, $download);
+    }
 
-	public function store(ModelRequest $request, $lang, Model $model) {
-        return $this->save($request, $model);
-	}
+    /**
+     * Display the specified resource.
+     *
+     * @param \App\Download $download
+     * @return \Illuminate\Http\Response
+     */
+    public function show($lang, Download $download)
+    {
+        return view('admin.' . $this->class . '.show', array(
+            'model' => $download,
+        ));
+    }
 
-	public function update(ModelRequest $request, $lang, Model $model) {
-		return $this->save($request, $model);
-	}
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param \App\Download $download
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Request $request, $lang, Download $download)
+    {
+        if (($locale = $request->get('uj_nyelv'))) {
+            return $this->uj_nyelv($locale, $download);
+        }
+        return $this->szerkeszt($download, 'put');
+    }
 
-	public function edit(Request $request, $lang, Model $model) {
-		if (($locale = $request->get('uj_nyelv'))) {
-			return $this->uj_nyelv($locale, $model);
-		}
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\ModelRequest $request
+     * @param \App\Download $download
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ModelRequest $request, $lang, Download $download)
+    {
+        return $this->save($request, $download);
+    }
 
-		return $this->szerkeszt($model, 'put');
-	}
-
-	public function create($lang, Model $model) {
-		return $this->szerkeszt($model, 'post');
-	}
-
-	public function destroy($lang, Model $model) {
-		$model->kep()->delete();
-		$model->delete();
-		return array(
-			'id' => $model->getKey(),
-		);
-	}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param \App\Download $download
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($lang, Download $download)
+    {
+        $download->fajlok()->delete();
+        $download->delete();
+        return array(
+            'id' => $download->getKey(),
+        );
+    }
 }
