@@ -44,6 +44,13 @@ class ViewServiceProvider extends ServiceProvider
             ]);
         });
 
+        view()->composer('home2', function ($view) {
+            $view->with([
+                'navbar_brand_src' => 'images/mugenrace-logo-black.png',
+                'navbar_beast_src' => 'images/bethebeast-logo-black.png'
+            ]);
+        });
+
         view()->composer('*', function ($view) {
 
             if (Session::has('loaded')) {

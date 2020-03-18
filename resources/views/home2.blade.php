@@ -18,21 +18,32 @@
             {{--            </div>--}}
             <section class="cr-container">
                 @foreach($home_images as $image)
-                    <input id="select-img-{!! $loop->iteration !!}" name="radio-set" type="radio" class="cr-selector-img-{!! $loop->iteration !!}" @if($loop->last) checked @endif/>
-                    <label for="select-img-{!! $loop->iteration !!}" class="cr-label-img-{!! $loop->iteration !!}">{!! $loop->iteration !!}</label>
+                    <input id="select-img-{!! $loop->iteration !!}"
+                           name="radio-set" type="radio"
+                           class="bg-image-selector cr-selector-img-{!! $loop->iteration !!}"
+                           @if($loop->first) checked @endif
+                           data-href="{!! route($image->place, app()->getLocale()) !!}"
+                           data-index="{!! $loop->iteration !!}"
+                           data-count="{!! $loop->count !!}"/>
                 @endforeach
 
                 <div class="clr"></div>
                 <div class="cr-bgimg">
                     @php($count = ($home_images->count()))
-                    @for($i =0;$i < $count;$i++)
+                    @for($i =0;$i < 4;$i++)
                         <div>
                             @for($j =0;$j < $count;$j++)
-{{--                                @dd($home_images[$j]->getImage())--}}
+                                {{--                                @dd($home_images[$j]->getImage())--}}
                                 <span style="background-image: url({!! $home_images[$j]->getImage(1.92,3840) !!})">Slice {!! $i !!} - Image {{$j}}</span>
                             @endfor
                         </div>
                     @endfor
+                </div>
+
+                <div class="cr-titles">
+                    @foreach($home_images as $image)
+                        <h3><span class="title">{!! $image->title !!}</span><span class="subtitle">{!! $image->subtitle !!}</span></h3>
+                    @endforeach
                 </div>
             </section>
             <div class="footer-svg svg-div svg-top svg">

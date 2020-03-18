@@ -37215,7 +37215,7 @@ $(function () {
   var addClass;
   $(window).on('mousewheel', function (e) {
     if ($('body').hasClass('homepage')) {
-      var active = $('.bg-image.active');
+      var active = $('.bg-image-selector:checked');
       var id = active.data('index');
       var count = active.data('count');
 
@@ -37227,38 +37227,27 @@ $(function () {
             id = 0;
           }
 
-          next = $('#bgdiv' + (id + 1));
-          inDirection = 'Right';
-          outDirection = 'Left';
+          next = $('#select-img-' + (id + 1));
         } else {
           if (id === 1) {
             id = count + 1;
           }
 
-          next = $('#bgdiv' + (id - 1));
-          inDirection = '';
-          outDirection = '';
+          next = $('#select-img-' + (id - 1));
         }
 
-        addClass = bgClass + inDirection;
-        $(active).css('animation-name', '');
-        $(active).css('visibility', '');
-        $(next).addClass(addClass);
-        $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
-        $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
-        wow.sync();
-        clearTimeout(timerRemove);
+        active.attr('checked', false);
+        next.attr('checked', true);
         clearTimeout(timerId);
         timerId = setTimeout(function () {
           scrollBool = true;
-          $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
-        }, 2100);
+        }, 1200);
       }
     }
   });
   $(window).on('DOMMouseScroll', function (e) {
     if ($('body').hasClass('homepage')) {
-      var active = $('.bg-image.active');
+      var active = $('.bg-image-selector:checked');
       var id = active.data('index');
       var count = active.data('count');
 
@@ -37270,34 +37259,109 @@ $(function () {
             id = 0;
           }
 
-          next = $('#bgdiv' + (id + 1));
-          inDirection = 'Right';
-          outDirection = 'Left';
+          next = $('#select-img-' + (id + 1));
         } else {
           if (id === 1) {
             id = count + 1;
           }
 
-          next = $('#bgdiv' + (id - 1));
-          inDirection = 'Left';
-          outDirection = 'Right';
+          next = $('#select-img-' + (id - 1));
         }
 
-        addClass = bgClass + inDirection;
-        $(active).css('animation-name', '');
-        $(active).css('visibility', '');
-        $(next).addClass(addClass);
-        $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
-        $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
-        wow.sync();
+        active.attr('checked', false);
+        next.attr('checked', true);
         clearTimeout(timerId);
         timerId = setTimeout(function () {
           scrollBool = true;
-          $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
         }, 1200);
       }
     }
-  }); // var ts;
+  });
+  $(document).on('click', '.cr-container', function () {
+    var active = $('.bg-image-selector:checked');
+    window.location.href = active.data('href');
+  }); // $(window).on('mousewheel', function (e) {
+  //     if ($('body').hasClass('homepage')) {
+  //         var active = $('.bg-image.active');
+  //         var id = active.data('index');
+  //         var count = active.data('count');
+  //         if (scrollBool === true) {
+  //             scrollBool = false;
+  //             if (e.originalEvent.wheelDelta < 0) {
+  //                 if (id === count) {
+  //                     id = 0;
+  //                 }
+  //                 next = $('#bgdiv' + (id + 1));
+  //                 inDirection = 'Right';
+  //                 outDirection = 'Left';
+  //             } else {
+  //                 if (id === 1) {
+  //                     id = count + 1;
+  //                 }
+  //                 next = $('#bgdiv' + (id - 1));
+  //                 inDirection = '';
+  //                 outDirection = '';
+  //             }
+  //             addClass = bgClass + inDirection;
+  //
+  //             $(active).css('animation-name', '');
+  //             $(active).css('visibility', '');
+  //             $(next).addClass(addClass);
+  //             $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+  //             $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+  //
+  //
+  //             wow.sync();
+  //             clearTimeout(timerRemove);
+  //             clearTimeout(timerId);
+  //             timerId = setTimeout(function () {
+  //                 scrollBool = true;
+  //                 $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+  //             }, 2100)
+  //         }
+  //     }
+  // });
+  // $(window).on('DOMMouseScroll', function (e) {
+  //     if ($('body').hasClass('homepage')) {
+  //         var active = $('.bg-image.active');
+  //         var id = active.data('index');
+  //         var count = active.data('count');
+  //         if (scrollBool === true) {
+  //             scrollBool = false;
+  //             if (e.originalEvent.detail > 0) {
+  //                 if (id === count) {
+  //                     id = 0;
+  //                 }
+  //                 next = $('#bgdiv' + (id + 1));
+  //                 inDirection = 'Right';
+  //                 outDirection = 'Left';
+  //             } else {
+  //                 if (id === 1) {
+  //                     id = count + 1;
+  //                 }
+  //                 next = $('#bgdiv' + (id - 1));
+  //                 inDirection = 'Left';
+  //                 outDirection = 'Right';
+  //             }
+  //             addClass = bgClass + inDirection;
+  //
+  //             $(active).css('animation-name', '');
+  //             $(active).css('visibility', '');
+  //             $(next).addClass(addClass);
+  //             $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+  //             $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+  //
+  //
+  //             wow.sync();
+  //             clearTimeout(timerId);
+  //             timerId = setTimeout(function () {
+  //                 scrollBool = true;
+  //                 $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+  //             }, 1200);
+  //         }
+  //     }
+  // });
+  // var ts;
   // $(document).bind('touchstart', function (e) {
   //     ts = e.originalEvent.touches[0].clientY;
   // });

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Download as Model;
-use App\Fajl;
 use App\Http\Requests\ModelRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +40,7 @@ class DownloadController extends TemplateController {
 
 		$model->fill($data)->save();
 
-        $file = new Fajl();
+        $file = new Model();
 //        $jatek->fajlok()->save($file);
 //        $file->file()->fajlfeltoltes($upload);
 //        Auth::user()->fajlok()->save($file);
