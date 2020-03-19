@@ -22,7 +22,7 @@ class Download extends Model
         'sorrend',
     );
     public $timestamps = false;
-    public static $sorting = '`sorrend` ASC';
+    public static $sorting = '`category` ASC, `sorrend` ASC';
 
     private $enum = array(
         'category' => array('catalogs', 'documents'),

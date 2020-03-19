@@ -63,6 +63,7 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
     Route::get('about-us', 'AboutController')->name('about');
     Route::get('sponsored', 'SponsoredController')->name('sponsor');
     Route::get('downloads', 'DownloadController')->name('download');
+    Route::post('subscribe', 'SubscribeController')->name('subscribe');
 
 
 // ----- Szöveges oldalak -----

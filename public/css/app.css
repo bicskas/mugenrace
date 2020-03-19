@@ -1590,6 +1590,11 @@ a.ui-button:active,
   src: url("/fonts/vendor/eurostile/Eurostile Condensed-Heavy Italic.otf");
 }
 
+@font-face {
+  font-family: "Eurostile Oblique";
+  src: url("/fonts/vendor/eurostile/Eurostile-Bold Oblique.otf");
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -13615,6 +13620,180 @@ a.text-dark:focus {
   font-family: "Eurostile Condensed", serif;
 }
 
+.download-section {
+  color: #000000;
+}
+
+.download-section .download-title {
+  background-color: #000000;
+  position: relative;
+  height: 100%;
+  padding-top: 4vh;
+  min-height: calc(calc(100vw * 0.049) * 2);
+}
+
+.download-section .download-title h2 {
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 500;
+  padding-left: 2.5vw;
+  color: #ffffff;
+  line-height: 1;
+  font-size: 3.5rem;
+}
+
+.download-section .download-title h2 span {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  position: relative;
+  padding-left: 14px;
+}
+
+.download-section .download-title h2 span svg {
+  fill: #c8ff00;
+  width: auto;
+  height: 65%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.download-section .download-title > svg {
+  fill: #ffffff;
+  position: absolute;
+  top: 17%;
+  left: 40%;
+  transform: translate(-40%, 0);
+  height: 100%;
+  width: auto;
+  z-index: 1050;
+}
+
+.download-section .download-title:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 1px;
+  border-right: 0 solid transparent;
+  border-left: 100vw solid transparent;
+  border-bottom: calc(100vw * 0.022) solid #000000;
+  transform: translate(0, -100%);
+}
+
+.download-section .download-title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 1px;
+  border-left: 0 solid transparent;
+  border-right: 100vw solid transparent;
+  border-top: calc(100vw * 0.049) solid #000000;
+  transform: translate(0, 100%);
+  z-index: 1040;
+}
+
+.download-section .download-content {
+  margin-top: calc(100vw * 0.049);
+  margin-bottom: calc(100vw * 0.022);
+  padding: 1vw 4.2vw 4vw;
+}
+
+.download-section .download-category {
+  padding-bottom: 4vw;
+}
+
+.download-section .download-category-title {
+  font-size: 2rem;
+  line-height: 1;
+  font-style: italic;
+  font-weight: bold;
+  position: relative;
+  padding-left: 25px;
+}
+
+.download-section .download-category-title svg {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: -20%;
+  left: 0;
+}
+
+.download-section .download-item-title,
+.download-section .download-item-format {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.download-section .download-item-size {
+  font-family: "Eurostile Oblique", serif;
+}
+
+.download-section .download-item-button a {
+  height: 1.7vw;
+  width: 4.4vw;
+  max-width: 100%;
+  background: transparent;
+  border-radius: 0;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.download-section .download-item-button a svg {
+  max-height: 100%;
+  width: 1.9vw;
+}
+
+.download-section .download-item-button a:hover,
+.download-section .download-item-button a:focus {
+  background-color: #c8ff00;
+}
+
+.download-section .download-item {
+  margin-left: 4.2vw;
+  font-size: 1.8rem;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.download-section .download-item > * {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.download-section .download-item .flex-10 {
+  flex: 0 0 10%;
+}
+
+.download-section .download-item .flex-18 {
+  flex: 0 0 12%;
+}
+
+.download-section .download-item .flex-32 {
+  flex: 0 0 32%;
+}
+
+.download-section .download-item .flex-40 {
+  flex: 0 0 40%;
+}
+
+.login {
+  padding-top: 15vh;
+  min-height: 80vh;
+}
+
+.login .card-header,
+.login label {
+  color: #000000;
+}
+
 footer {
   position: relative;
   z-index: 1250;
@@ -13688,7 +13867,6 @@ footer .footer-top-content .arrow-two svg {
 
 footer .footer-top-content .arrow-three {
   position: relative;
-  top: -5%;
 }
 
 footer .footer-top-content .arrow-three svg {

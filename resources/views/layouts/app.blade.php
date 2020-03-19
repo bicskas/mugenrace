@@ -163,9 +163,9 @@
                 </div>
             </div>
             <div class="">
-                {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center']) !!}
-                {!! Form::email('email','',['id' =>'emailInput', 'class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
-                <button type="submit" form="subscribeForm" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
+                {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
+                {!! Form::email('email','',['id' =>'emailInput', 'required','class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
+                <button type="submit" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
                 {!! Form::close() !!}
             </div>
         </div>

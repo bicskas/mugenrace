@@ -59,7 +59,7 @@ function human_filesize($bytes, $decimals = 2)
 {
     $sz = ' KMGTP';
     $factor = floor((strlen($bytes) - 1) / 3);
-    return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @trim($sz[$factor]) . "B";
+    return intval(sprintf("%.{$decimals}f", $bytes / pow(1024, $factor))) . @trim($sz[$factor]) . "B";
 }
 
 function belso_szoveg_hely_label($key)
@@ -109,31 +109,6 @@ function localeUrl($locale)
     }
     $url = $baseurl . $uri;
     return $url;
-}
-
-if (!function_exists('userSetting')) {
-    /**
-     * Helper function for Setting facade.
-     *
-     * @param string $key
-     * @param mixed $default
-     * @param string $constraint_value
-     * @return mixed
-     */
-    function userSetting($key = null, $default = null, $constraint_value = null)
-    {
-        $instance = app('App\UserSetting');
-
-        if (!isset($instance)) {
-            $instance = app()->make('App\UserSetting');
-        }
-
-        if (isset($key)) {
-            return $instance->get($key, $default, $constraint_value);
-        }
-
-        return app('App\UserSetting');
-    }
 }
 
 function getLocales()

@@ -37115,7 +37115,12 @@ if (!$('body').hasClass('loaded-complete')) {
 }
 
 $(function () {
-  // new WOW().init();
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  }); // new WOW().init();
+
   AOS.init({
     anchorPlacement: 'top-bottom'
   });
@@ -37280,6 +37285,18 @@ $(function () {
   $(document).on('click', '.cr-container', function () {
     var active = $('.bg-image-selector:checked');
     window.location.href = active.data('href');
+  });
+  $(document).on('submit', '#subscribeFrom', function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('action'),
+      method: 'POST',
+      type: 'JSON',
+      data: $(this).serialize(),
+      success: function success(resp) {
+        alert(resp);
+      }
+    });
   }); // $(window).on('mousewheel', function (e) {
   //     if ($('body').hasClass('homepage')) {
   //         var active = $('.bg-image.active');

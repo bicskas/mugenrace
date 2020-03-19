@@ -15,9 +15,7 @@ class CreateSubscribesTable extends Migration
     {
         Schema::create('subscribes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('id');
-            $table->enum('type',['catalog','document'])->default('catalog');
-            $table->integer('sorrend')->default(1);
+            $table->string('email');
             $table->timestamps();
         });
     }
