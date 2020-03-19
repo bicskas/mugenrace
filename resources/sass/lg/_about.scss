@@ -3,19 +3,16 @@
 
         .about-title {
 
-            h2{
-                font-size: 3rem;
+            h2 {
+                font-size: 35px;
+
+                span {
+                    font-size: calc(35px * 0.65);
+                }
             }
 
             svg {
-                fill: $white;
-                position: absolute;
-                top: 17%;
                 left: 45%;
-                transform: translate(-40%, 0);
-                height: 100%;
-                width: auto;
-                z-index: 1050;
             }
         }
 
@@ -24,13 +21,74 @@
 
             .about-content-text {
                 padding-right: 20px;
-                font-size: 1.1rem;
+                font-size: 18px;
                 padding-top: $two-dot-eight-deg-height;
-
-                &.even {
-                    padding-top: calc(#{$two-dot-eight-deg-height} - 10px);
-                }
             }
         }
     }
 }
+
+
+@include media-breakpoint-only(xl) {
+    .about-section {
+
+        .about-title {
+
+            h2 {
+                font-size: 60px;
+
+                span {
+                    font-size: calc(60px * 0.65);
+                }
+            }
+        }
+
+        .about-content {
+
+            .about-content-text {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(tk) {
+    .about-section {
+
+        .about-title {
+
+            h2 {
+                font-size: 70px;
+
+                span {
+                    font-size: calc(70px * 0.65);
+                }
+            }
+
+            svg {
+                left: 45%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(fk) {
+    .about-section {
+
+        .about-title {
+
+            h2 {
+                font-size: 100px;
+
+                span {
+                    font-size: calc(100px * 0.65);
+                }
+            }
+
+            svg {
+                left: 45%;
+            }
+        }
+    }
+}
+

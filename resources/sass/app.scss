@@ -24,7 +24,9 @@ $grid-breakpoints: (
     sm: 550px,
     md: 900px,
     lg: 1200px,
-    xl: 1800px
+    xl: 1800px,
+    tk: 2500px,
+    fk: 3400px
 );
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -54,6 +56,7 @@ $grid-breakpoints: (
 @import "lg/about";
 @import "lg/navigation";
 @import "lg/home";
+@import "lg/download";
 @import "lg/footer";
 
 a, a:hover {

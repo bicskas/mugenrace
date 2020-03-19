@@ -32,7 +32,7 @@ class BelsoKep extends Model
     public static $sorting = '`sorrend` ASC';
 
     private $enum = array(
-        'place' => array('home', 'about', 'sponsor','produtcs','subpage','download'),
+        'place' => array('home', 'about', 'sponsor','products','subpage','download'),
     );
 
     public function getPlaces()

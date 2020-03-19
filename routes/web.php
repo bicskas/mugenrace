@@ -58,6 +58,7 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
 
         Route::resource('file', 'FileController')->only(['destroy']);
         Route::get('/file/torol/{file}', 'FileController@destroy')->name('file.delete');
+        Route::get('subscribe', 'SubscribeController')->name('admin.subscribe');
     });
 
     Route::get('about-us', 'AboutController')->name('about');

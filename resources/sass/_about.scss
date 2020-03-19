@@ -1,5 +1,14 @@
 .about-section {
     color: $black;
+    padding-bottom: calc((#{$two-dot-eight-deg-height} / 2) - 5px);
+
+    &.even {
+        padding-bottom: calc((#{$one-dot-three-deg-height} / 2) - 5px);
+    }
+
+    &:last-of-type {
+        padding-bottom: calc((#{$one-dot-three-deg-height} / 2) - 5px);
+    }
 
     .about-title {
         background-color: $black;
@@ -96,6 +105,10 @@
             text-align: justify;
 
             font-family: "Eurostile Condensed", serif;
+
+            &.even {
+                padding-top: calc(#{$one-dot-three-deg-height} + 10px);
+            }
         }
     }
 }

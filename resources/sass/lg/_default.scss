@@ -1,11 +1,51 @@
 @include media-breakpoint-only(lg) {
     #page-header {
         .title {
-            font-size: 100px;
+            font-size: 150px;
         }
 
         .subtitle {
             font-size: 40px;
+            margin-top: -40px;
         }
     }
 }
+
+@include media-breakpoint-only(xl) {
+    #page-header {
+        .title {
+            font-size: 200px;
+        }
+
+        .subtitle {
+            font-size: 55px;
+            margin-top: -55px;
+        }
+    }
+}
+
+@include media-breakpoint-only(tk) {
+    #page-header {
+        .title {
+            font-size: 250px;
+        }
+
+        .subtitle {
+            font-size: 60px;
+            margin-top: -60px;
+        }
+    }
+}
+
+@include media-breakpoint-only(fk) {
+    #page-header {
+        .title {
+            font-size: 350px;
+        }
+
+        .subtitle {
+            font-size: 80px;
+        }
+    }
+}
+

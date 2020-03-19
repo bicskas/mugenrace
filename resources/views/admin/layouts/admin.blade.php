@@ -48,6 +48,8 @@
                             <a class="dropdown-item @if($active_page == 'rider') active @endif" href="{{route('admin.rider.index', app()->getLocale())}}">Riders</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item @if($active_page == 'download') active @endif" href="{{route('admin.download.index', app()->getLocale())}}">Downloads</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item @if($active_page == 'subscribe') active @endif" href="{{route('admin.subscribe', app()->getLocale())}}">Subscribes</a>
                         </div>
                     </li>
                 </ul>
