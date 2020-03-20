@@ -1,16 +1,58 @@
 @include media-breakpoint-only(lg) {
     footer {
 
-        .footer-arrow {
+        .footer-top-content .footer-arrow {
             h2 {
-                font-size: 1.3rem;
-                line-height: 1.3rem !important;
+                font-size: 22px;
+            }
+
+            &.arrow-one h2 {
+                margin-left: 33%;
+            }
+
+            &.arrow-two h2 {
+                margin-left: 12%;
+            }
+
+            &.arrow-three h2 {
+                margin-left: 12%;
             }
         }
 
         .footer-group {
             a {
-                font-size: 1.3rem;
+                font-size: 16px;
+            }
+
+            .list-group-item {
+                padding: 0.25rem 0.5rem 0.25rem 0;
+            }
+
+            &.footer-group-download {
+                margin-left: 33%;
+            }
+
+            &.footer-group-follow {
+                margin-left: 12%;
+            }
+        }
+
+        .footer-middle-content #subscribeFrom {
+            margin-top: 8px;
+
+            #emailInput {
+                height: 30px;
+                margin-left: calc(12% + 0.375rem + 2px);
+                font-size: 16px;
+
+            }
+
+            button {
+                height: 30px;
+
+                svg {
+                    width: 30px;
+                }
             }
         }
 
@@ -21,3 +63,103 @@
         }
     }
 }
+
+@include media-breakpoint-only(xl) {
+    footer {
+
+        .footer-top-content .footer-arrow {
+            h2 {
+                font-size: 33px;
+                bottom: -17%;
+            }
+
+            &.arrow-one h2 {
+                margin-left: 35%;
+            }
+
+            &.arrow-two h2 {
+                margin-left: 18%;
+            }
+
+            &.arrow-three h2 {
+                margin-left: 15%;
+            }
+        }
+
+        .footer-group {
+            a {
+                font-size: 20px;
+            }
+
+            &.footer-group-download {
+                margin-left: 35%;
+            }
+
+            &.footer-group-follow {
+                margin-left: 18%;
+            }
+        }
+
+        .footer-middle-content #subscribeFrom {
+            margin-top: 5px;
+
+            #emailInput {
+                height: 35px;
+                margin-left: calc(15% + 0.375rem + 2px);
+                font-size: 22px;
+
+            }
+
+            button {
+                height: 34px;
+
+                svg {
+                    width: 34px;
+                }
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-only(tk) {
+    footer {
+
+        .footer-top-content .footer-arrow {
+            h2 {
+                font-size: 45px;
+                bottom: -20%;
+            }
+        }
+
+        .footer-middle-content #subscribeFrom {
+            margin-top: 1px;
+
+            #emailInput {
+                height: 45px;
+                margin-left: calc(20% + 0.375rem + 2px);
+                font-size: 25px;
+
+            }
+
+            button {
+                height: 44px;
+
+                svg {
+                    width: 44px;
+                }
+            }
+        }
+
+        .footer-group a {
+            font-size: 25px;
+        }
+    }
+}
+
+@include media-breakpoint-only(fk) {
+    footer {
+    }
+}
+
+

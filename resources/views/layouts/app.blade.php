@@ -125,48 +125,50 @@
     <footer class="footer bg-black">
 
         <div class="footer-top-content d-flex justify-content-start align-items-stretch">
-            <div class="flex-17 text-center" style="position: relative">
-                    {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height align-self-end','id'=>'footer-white-logo']) !!}
+            <div class="flex-13 " style="position: relative">
+                {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height align-self-end','id'=>'footer-white-logo']) !!}
             </div>
 
-            <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-one text-center">
+            <div class="flex-17 d-flex align-items-end footer-arrow arrow-one text-center">
                 <h2>{!! __('Info') !!}</h2>
                 {!! inline_svg('images/arrow-bottom-up.svg') !!}
             </div>
 
-            <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-two">
+            <div class="flex-17 d-flex align-items-end footer-arrow arrow-two">
                 <h2>{!! __('Follow us') !!}</h2>
                 {!! inline_svg('images/arrow-double-thick.svg') !!}
             </div>
 
-            <div class="flex-17 d-flex justify-content-center align-items-end footer-arrow arrow-three">
+            <div class="flex-17 d-flex align-items-end footer-arrow arrow-three">
                 <h2>{!! __('Join to us') !!}</h2>
                 {!! inline_svg('images/arrow-triple.svg') !!}
             </div>
         </div>
 
         <div class="footer-middle-content d-flex justify-content-start align-items-stretch">
-            <div class="empty flex-17"></div>
-            <div class=" flex-17">
-                <div class="list-group footer-group">
+            <div class="empty flex-13"></div>
+            <div class="flex-17">
+                <div class="list-group footer-group footer-group-download">
                     <div class="list-group-item"><a href="{!! route('download') !!}">Downloads</a></div>
                     <div class="list-group-item"><a href="#">Press</a></div>
                     <div class="list-group-item"><a href="#">Contacts</a></div>
                 </div>
             </div>
             <div class=" flex-17">
-                <div class="list-group footer-group">
+                <div class="list-group footer-group footer-group-follow">
                     <div class="list-group-item"><a href="#">Facebook</a></div>
                     <div class="list-group-item"><a href="#">Instagram</a></div>
                     <div class="list-group-item"><a href="#">Youtube</a></div>
                     <div class="list-group-item"><a href="#">LinkedIn</a></div>
                 </div>
             </div>
-            <div class="">
-                {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
-                {!! Form::email('email','',['id' =>'emailInput', 'required','class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
-                <button type="submit" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
-                {!! Form::close() !!}
+            <div class="list-group footer-group">
+                <div class="list-group-item">
+                    {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
+                    {!! Form::email('email','',['id' =>'emailInput', 'required','class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
+                    <button type="submit" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
+                    {!! Form::close() !!}
+                </div>
             </div>
         </div>
         <div class="footer-bottom-content">
