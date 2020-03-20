@@ -1,3 +1,23 @@
+@include media-breakpoint-between(xs, sm) {
+    #home-page {
+        height: calc(100vh - 40px) !important;
+
+        .cr-titles h3 {
+
+            .title {
+                font-size: 46px;
+                letter-spacing: 4px !important;
+            }
+
+            .subtitle {
+                font-size: 20px;
+                margin-top: 25px !important;
+            }
+        }
+    }
+}
+
+
 @include media-breakpoint-only(lg) {
     #home-page {
         .bg-image.active {

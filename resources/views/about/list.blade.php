@@ -11,7 +11,7 @@
     </div>
 
     @foreach($abouts as $about)
-        <section class="about-section wow-oveflow-container @if($loop->even) even @endif " id="section{!! $loop->iteration !!}">
+        <section class="about-section @if($loop->even) even @endif " id="section{!! $loop->iteration !!}">
             <div class="about-title d-flex align-items-end @if($loop->even) primary @endif">
                 <h2>
                     {!! $about->title !!}

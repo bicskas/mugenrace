@@ -1,3 +1,12 @@
+@include media-breakpoint-between(xs, sm) {
+    footer{
+        border-top: 2px solid $black;
+        .footer-top-content{
+            display: none !important;
+        }
+    }
+}
+
 @include media-breakpoint-only(lg) {
     footer {
 

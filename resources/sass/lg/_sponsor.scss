@@ -1,3 +1,26 @@
+@include media-breakpoint-between(xs, sm) {
+
+    .team-sponsor-title, .rider-sponsor-title {
+        h2 {
+            font-size: 23px;
+        }
+
+        svg {
+            left: 97% !important;
+            transform: translate(-100%, 0) !important;
+            height: 75% !important;
+        }
+    }
+
+
+    .slider-nav {
+        &:before, &:after {
+            width: 7vw;
+        }
+    }
+}
+
+
 @include media-breakpoint-only(lg) {
     .team-sponsor-title {
         svg {

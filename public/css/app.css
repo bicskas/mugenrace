@@ -14799,6 +14799,7 @@ a.text-dark:focus {
   position: relative;
   background-color: #000000;
   height: calc(100vw * 0.022);
+  min-height: 40px;
   overflow: visible;
   color: #ffffff;
   z-index: 1300;
@@ -16772,6 +16773,18 @@ footer .footer-bottom-list .list-group-item {
   opacity: 1;
 }
 
+@media (max-width: 899.98px) {
+  #page-header .title {
+    font-size: 46px;
+    letter-spacing: 4px !important;
+  }
+
+  #page-header .subtitle {
+    font-size: 20px;
+    margin-top: -10px;
+  }
+}
+
 @media (min-width: 1200px) and (max-width: 1799.98px) {
   #page-header .title {
     font-size: 150px;
@@ -16815,6 +16828,25 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
+@media (max-width: 899.98px) {
+  .team-sponsor-title h2,
+  .rider-sponsor-title h2 {
+    font-size: 23px;
+  }
+
+  .team-sponsor-title svg,
+  .rider-sponsor-title svg {
+    left: 97% !important;
+    transform: translate(-100%, 0) !important;
+    height: 75% !important;
+  }
+
+  .slider-nav:before,
+  .slider-nav:after {
+    width: 7vw;
+  }
+}
+
 @media (min-width: 1200px) and (max-width: 1799.98px) {
   .team-sponsor-title svg {
     left: 45%;
@@ -16836,6 +16868,37 @@ footer .footer-bottom-list .list-group-item {
 
   .slick-prev {
     left: 6px;
+  }
+}
+
+@media (max-width: 899.98px) {
+  .about-section {
+    padding-bottom: 0;
+  }
+
+  .about-section .about-title h2 {
+    font-size: 23px;
+  }
+
+  .about-section .about-title h2 span {
+    font-size: calc(23px * 0.65);
+  }
+
+  .about-section .about-title svg {
+    left: 97% !important;
+    transform: translate(-100%, 0) !important;
+    height: 75% !important;
+  }
+
+  .about-section .about-content {
+    padding: 0 2vw;
+    flex-direction: column-reverse;
+  }
+
+  .about-section .about-content .about-content-text {
+    padding: 10px 20px;
+    font-size: 16px;
+    padding-top: calc(100vw * 0.049);
   }
 }
 
@@ -16905,6 +16968,46 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
+@media (max-width: 899.98px) {
+  .navbar .navbar-brand img {
+    max-height: 35px;
+  }
+
+  .navbar .nav-lang {
+    font-size: 1.1rem;
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+  }
+
+  .navbar .navigation-btn {
+    margin-top: -7px;
+  }
+
+  .navbar #navigationMenu .navigation-list {
+    height: 80%;
+  }
+
+  .navbar #navigationMenu .navigation-lang {
+    top: 40%;
+  }
+
+  .navbar #navigationMenu {
+    top: 40px;
+  }
+
+  .navbar .navigation-left #navPageTitle {
+    font-size: 1.3rem;
+  }
+
+  .navbar .navigation-link .nav-hover-overlay {
+    font-size: 2.5rem;
+  }
+
+  .navbar .navigation-link .small {
+    display: none;
+  }
+}
+
 @media (min-width: 1200px) and (max-width: 1799.98px) {
   .nav-lang {
     font-size: 1.1rem;
@@ -16920,6 +17023,22 @@ footer .footer-bottom-list .list-group-item {
     top: 0;
     letter-spacing: 6px;
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 899.98px) {
+  #home-page {
+    height: calc(100vh - 40px) !important;
+  }
+
+  #home-page .cr-titles h3 .title {
+    font-size: 46px;
+    letter-spacing: 4px !important;
+  }
+
+  #home-page .cr-titles h3 .subtitle {
+    font-size: 20px;
+    margin-top: 25px !important;
   }
 }
 
@@ -17042,6 +17161,70 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
+@media (max-width: 899.98px) {
+  .download-section .download-content {
+    padding: 1.5vh 2vh 3vh;
+  }
+
+  .download-section .download-category-title {
+    font-size: 25px;
+    padding-left: 17px;
+  }
+
+  .download-section .download-title h2 {
+    font-size: 23px;
+  }
+
+  .download-section .download-title h2 span {
+    font-size: calc(23px * 0.65);
+    padding-left: 0;
+  }
+
+  .download-section .download-title h2 span > svg {
+    display: none;
+  }
+
+  .download-section .download-title > svg {
+    left: 97% !important;
+    transform: translate(-100%, 0) !important;
+    height: 60% !important;
+    top: 5%;
+  }
+
+  .download-section .download-item {
+    font-size: 16px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 17px;
+  }
+
+  .download-section .download-item .download-item-title {
+    flex: 0 0 60%;
+  }
+
+  .download-section .download-item .download-item-size,
+  .download-section .download-item .download-item-button {
+    flex: 0 0 20%;
+  }
+
+  .download-section .download-item .download-item-size {
+    justify-content: flex-start !important;
+  }
+
+  .download-section .download-item .download-item-button a {
+    width: 95%;
+  }
+
+  .download-section .download-item .download-item-button svg {
+    width: auto;
+    height: 95%;
+  }
+
+  .download-section .download-item .download-item-format {
+    display: none;
+  }
+}
+
 @media (min-width: 1200px) and (max-width: 1799.98px) {
   .download-section .download-title h2 {
     font-size: 35px;
@@ -17128,6 +17311,16 @@ footer .footer-bottom-list .list-group-item {
   .download-section .download-item-format,
   .download-section .download-item-size {
     font-size: calc(100px * 0.65);
+  }
+}
+
+@media (max-width: 899.98px) {
+  footer {
+    border-top: 2px solid #000000;
+  }
+
+  footer .footer-top-content {
+    display: none !important;
   }
 }
 

@@ -52,7 +52,7 @@
 
         <div class="overlay close-nav" id="navigationMenu">
             <!-- Left Side Of Navbar -->
-            <div class="navigation-list mt-5 d-flex flex-column justify-content-around align-content-stretch">
+            <div class="navigation-list mt-md-5 d-flex flex-column justify-content-around align-content-stretch">
                 <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}">
                     <span class="nav-hover-overlay">{{ __('We are') }}</span><span class="small">what do you need to know</span>
                 </a>

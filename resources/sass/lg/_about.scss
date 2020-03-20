@@ -1,3 +1,39 @@
+@include media-breakpoint-between(xs, sm) {
+
+    .about-section {
+        padding-bottom: 0;
+
+        .about-title {
+
+            h2 {
+                font-size: 23px;
+
+                span {
+                    font-size: calc(23px * 0.65);
+                }
+            }
+
+            svg {
+                left: 97% !important;
+                transform: translate(-100%, 0) !important;
+                height: 75% !important;
+            }
+        }
+
+        .about-content {
+            padding: 0 2vw;
+            flex-direction: column-reverse;
+
+            .about-content-text {
+                padding: 10px 20px;
+                font-size: 16px;
+                padding-top: $two-dot-eight-deg-height;
+            }
+        }
+    }
+
+}
+
 @include media-breakpoint-only(lg) {
     .about-section {
 

@@ -1,3 +1,18 @@
+@include media-breakpoint-between(xs, sm) {
+    #page-header {
+        .title {
+            font-size: 46px;
+            letter-spacing: 4px !important;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-top: -10px;
+        }
+    }
+}
+
+
 @include media-breakpoint-only(lg) {
     #page-header {
         .title {
