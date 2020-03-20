@@ -16989,9 +16989,8 @@ footer .footer-bottom-list .list-group-item {
   }
 
   .navbar .nav-lang {
-    font-size: 1.1rem;
-    padding-left: 0.8rem !important;
-    padding-right: 0.8rem !important;
+    font-size: 20px;
+    padding: 0.8rem !important;
   }
 
   .navbar .navigation-btn {
