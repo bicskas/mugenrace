@@ -1,8 +1,23 @@
 @include media-breakpoint-between(xs, sm) {
-    footer{
+    footer {
         border-top: 2px solid $black;
-        .footer-top-content{
+
+        .footer-top-content {
             display: none !important;
+        }
+
+        .footer-middle-content {
+
+        }
+
+        .footer-bottom-content .d-flex {
+            flex-direction: column-reverse;
+            align-items: center !important;
+
+            >p{
+                align-self: flex-start;
+                font-size: 12px;
+            }
         }
     }
 }

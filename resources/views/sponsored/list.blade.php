@@ -20,7 +20,11 @@
         <div id="team-slider-for" class="slider-for">
             @foreach($teams as $team)
                 <div>
-                    {!! Html::image($team->getImage(2.42,3840),$team->name,['class' => 'img-fluid','srcset' => $team->getImagebySrcSet(2.42,[3840,1920,1000])]) !!}
+                    @if(Browser::isMobile())
+                        {!! Html::image($team->getImage(1.53,630),$team->name,['class' => 'img-fluid']) !!}
+                    @else
+                        {!! Html::image($team->getImage(2.42,3840),$team->name,['class' => 'img-fluid']) !!}
+                    @endif
                 </div>
             @endforeach
         </div>
@@ -44,7 +48,11 @@
             <div id="rider-slider-for" class="slider-for">
                 @foreach($riders as $rider)
                     <div>
-                        {!! Html::image($rider->getImage(2.42,3840),$rider->name,['class' => 'img-fluid']) !!}
+                        @if(Browser::isMobile())
+                            {!! Html::image($rider->getImage(1.53,630),$rider->name,['class' => 'img-fluid']) !!}
+                        @else
+                            {!! Html::image($rider->getImage(2.42,3840),$rider->name,['class' => 'img-fluid']) !!}
+                        @endif
                     </div>
                 @endforeach
             </div>
