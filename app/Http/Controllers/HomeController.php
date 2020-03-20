@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $images = BelsoKep::orderByRaw(BelsoKep::$sorting)->get();
+        $images = BelsoKep::whereIn('place', ['home','about','sponsor','products'])->orderByRaw(BelsoKep::$sorting)->get();
         $home_images = collect();
         foreach ($images->groupBy('place') as $group) {
             $home_images->push($group->random(1)->first());
