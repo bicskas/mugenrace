@@ -23,7 +23,7 @@
                 <div class="about-content-text @if($loop->even) even @endif flex-50" data-aos="fade-down-right"
                      data-aos-delay="100"
                      data-aos-duration="500"
-                     data-aos-mirror="true"
+                     data-aos-mirror="false"
                      data-aos-offset="10">
                     {!! $about->content !!}
                 </div>
@@ -31,7 +31,7 @@
                 <div class="about-content-image" data-aos="fade-up-left"
                      data-aos-delay="100"
                      data-aos-duration="500"
-                     data-aos-mirror="true"
+                     data-aos-mirror="false"
                      data-aos-offset="10">
                     {!! Html::image($about->getImage(1.48,2300),$about->title,['class' => 'img-fluid t']) !!}
                 </div>

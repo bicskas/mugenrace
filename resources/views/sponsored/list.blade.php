@@ -22,6 +22,8 @@
                 <div>
                     @if(Browser::isMobile())
                         {!! Html::image($team->getImage(1.53,630),$team->name,['class' => 'img-fluid']) !!}
+                    @elseif(Browser::isTablet())
+                        {!! Html::image($team->getImage(1.53,1200),$team->name,['class' => 'img-fluid']) !!}
                     @else
                         {!! Html::image($team->getImage(2.42,3840),$team->name,['class' => 'img-fluid']) !!}
                     @endif
@@ -50,6 +52,8 @@
                     <div>
                         @if(Browser::isMobile())
                             {!! Html::image($rider->getImage(1.53,630),$rider->name,['class' => 'img-fluid']) !!}
+                        @elseif(Browser::isTablet())
+                            {!! Html::image($team->getImage(1.53,1200),$team->name,['class' => 'img-fluid']) !!}
                         @else
                             {!! Html::image($rider->getImage(2.42,3840),$rider->name,['class' => 'img-fluid']) !!}
                         @endif

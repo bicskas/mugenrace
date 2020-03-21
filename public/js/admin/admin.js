@@ -57560,7 +57560,7 @@ function rendezheto() {
 
 function createEditor(elementId) {
   return ClassicEditor.create(document.getElementById(elementId), {
-    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'table'],
     language: 'en'
   }).then(function (editor) {
     editors[elementId] = editor;

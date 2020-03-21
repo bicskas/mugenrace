@@ -47,6 +47,12 @@
     }
 }
 
+@media (max-width: 1860px) {
+    #navigationMenu {
+        top: 40px !important;
+    }
+}
+
 @include media-breakpoint-only(lg) {
 
     .nav-lang {

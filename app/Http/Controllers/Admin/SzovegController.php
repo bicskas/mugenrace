@@ -45,7 +45,8 @@ class SzovegController extends TemplateController {
             $model->seo()->save($seo);
         }
 
-		$model->kep()->kepfeltoltes($request->file('kep'));
+		$model->image()->kepfeltoltes($request->file('image'));
+		$model->image()->cropolas($request->get('_crops', array()));
 
 		return redirect($model->adminLink() . '/edit')
 			->with('uzenet', __('Sikeres mentés!'));
@@ -86,7 +87,6 @@ class SzovegController extends TemplateController {
 	}
 
 	public function destroy($lang, Model $model) {
-		$model->kep()->delete();
 		$model->delete();
 		return array(
 			'id' => $model->getKey(),

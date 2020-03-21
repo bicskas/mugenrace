@@ -27,24 +27,14 @@
 
                         <?php $id = 'szoveg' ?>
                         {!! Form::bsTextareaMl($kod, $id, $model, ['class' => 'form-control ckeditor']) !!}
-
-{{--                        <div class="card">--}}
-{{--                            <div class="card-heading" role="tab" id="headingSeo{{$kod}}" data-toggle="collapse" href="#collapseSeo{{$kod}}" aria-expanded="false" aria-controls="collapseSeo{{$kod}}">--}}
-{{--                                <h4 class="card-title"><span class="caret"></span> SEO</h4>--}}
-{{--                            </div>--}}
-{{--                            <div id="collapseSeo{{$kod}}" class="card-collapse collapse" role="tabpanel" aria-labelledby="headingSeo{{$kod}}">--}}
-{{--                                <div class="card-body">--}}
-{{--                                    @foreach (['seotitle', 'seokeywords', 'seodescription', 'ogtitle', 'ogdescription'] as $id)--}}
-{{--                                        {!! Form::bsTextMl($kod, $id, $model) !!}--}}
-{{--                                    @endforeach--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                     </div>
                 @endforeach
             </div>
 
+            <hr>
 
+            <?php $id = 'image' ?>
+            {!! Form::bsJcrop($id, $model) !!}
             <hr>
 
             {!! Form::mentes() !!}

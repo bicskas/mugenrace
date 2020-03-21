@@ -39,6 +39,7 @@ class CreateSzoveg extends Migration
             $table->string('cim', 255)->nullable();
             $table->string('link', 255)->nullable();
             $table->text('szoveg')->nullable();
+            $table->text('crops')->nullable();
             $this->seo($table);
 
             $table->unique(array('szoveg_id', 'lang'));

@@ -1,5 +1,5 @@
 // Fonts
-//@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 
 //$primary: #aaff00;
@@ -49,6 +49,7 @@ $grid-breakpoints: (
 @import "login";
 @import "footer";
 @import "transition";
+@import "szoveg";
 
 
 @import "lg/default";
@@ -58,6 +59,7 @@ $grid-breakpoints: (
 @import "lg/home";
 @import "lg/download";
 @import "lg/footer";
+@import "lg/szoveg";
 
 a, a:hover {
     text-decoration: none;

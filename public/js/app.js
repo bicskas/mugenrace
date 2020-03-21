@@ -37121,6 +37121,10 @@ $(function () {
     }
   }); // new WOW().init();
 
+  $('.szoveg > *').each(function () {
+    $(this).attr('data-aos', 'fade-down-right');
+    $(this).addClass('aos-init');
+  });
   AOS.init({
     anchorPlacement: 'top-bottom'
   });
@@ -37183,13 +37187,13 @@ $(function () {
       slidesToShow: 5,
       slidesToScroll: 1,
       responsive: [{
-        breakpoint: 1600,
+        breakpoint: 1800,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1
         }
       }, {
-        breakpoint: 440,
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

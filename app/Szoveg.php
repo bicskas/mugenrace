@@ -31,9 +31,14 @@ class Szoveg extends Model {
 		'seodescription',
 		'ogtitle',
 		'ogdescription',
+		'crops',
 	);
 	public $timestamps = false;
 	public static $sorting = '`cim` ASC';
+
+    protected $casts = [
+        'crops' => 'array',
+    ];
 
 	protected function rules() {
 		return array(
@@ -45,12 +50,24 @@ class Szoveg extends Model {
 
     public function seo()
     {
-        return $this->morphMany('App\Seo', 'seoable');
+        return $this->morphOne('App\Seo', 'seoable');
     }
 
-	public function kep() {
+	public function image() {
 		return new Kepfeltoltes($this);
 	}
+
+    public function getImage($ar = null, $w = null)
+    {
+        return $this->image()->getImage($ar, $w);
+    }
+
+    public function delete()
+    {
+        $this->seo()->delete();
+        $this->image()->delete();
+        return parent::delete();
+    }
 
 	public function getLink() {
 		$prefix = \App::getLocale() != config('app.fallback_locale') ? \App::getLocale() : '';
