@@ -17,6 +17,10 @@ return array(
             '1.92' => array(1000, 3840),
             '2.065' => array(1000, 3840),
         ),
+
+        'szoveg' => array(
+            '1.92' => array(1000, 3840),
+        ),
     ),
     'placeholder' => 'Mugenrace',
 );

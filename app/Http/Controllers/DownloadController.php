@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BelsoKep;
 use App\Download;
+use App\Title;
 use Illuminate\Http\Request;
 
 class DownloadController extends Controller
@@ -22,8 +23,12 @@ class DownloadController extends Controller
      */
     public function __invoke(Request $request)
     {
+        $page_title = Title::wherePlace('download')->inRandomOrder()->first();
         $page_image = BelsoKep::wherePlace('download')->inRandomOrder()->first();
         $download_categories = Download::orderByRaw(Download::$sorting)->get()->groupBy('category');
-        return view('download')->with(compact(['page_image', 'download_categories']));
+
+        shareSeo($page_title->title, $page_image, $page_title->seo()->exists() ? $page_title->seo : null);
+
+        return view('download')->with(compact(['page_title','page_image', 'download_categories']));
     }
 }

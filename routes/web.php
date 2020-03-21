@@ -40,6 +40,10 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
             'as' => 'admin'
         ]);
 
+        Route::resource('title', 'TitleController', [
+            'as' => 'admin'
+        ])->except(['create', 'store', 'show']);
+
         Route::resource('belso_kep', 'BelsoKepController', [
             'as' => 'admin'
         ]);
@@ -51,6 +55,10 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
         Route::resource('download', 'DownloadController', [
             'as' => 'admin'
         ]);
+
+        Route::resource('seo', 'SeoController', [
+            'as' => 'admin'
+        ])->only(['index', 'edit', 'update']);
 
         Route::get('/kep/torol/{snake_case}/{id}/{method}', 'KepController@getTorol');
         Route::post('ajax/sorrend/{one?}/{two?}/', 'AjaxController@sorrend');
@@ -65,6 +73,10 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
     Route::get('sponsored', 'SponsoredController')->name('sponsor');
     Route::get('downloads', 'DownloadController')->name('download');
     Route::post('subscribe', 'SubscribeController')->name('subscribe');
+
+    Route::get('products', function () {
+        return redirect("http://www.mugenraceshop.com");
+    })->name('products');
 
 
 // ----- Szöveges oldalak -----

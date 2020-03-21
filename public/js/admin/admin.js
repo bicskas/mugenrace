@@ -57513,6 +57513,10 @@ $(document).ready(function () {
   });
   $(document).on('submit', 'form', function (e) {
     ck_check_required(e, $(this));
+  }); // kötelető mezőkhöz piros csillag
+
+  $('[required]').each(function () {
+    $(this).parents('.form-group').find('label').first().append('&nbsp;<span class="text-danger" title="Kötelező mező">*</span>');
   }); //croppolás
 
   $('.jcrop').each(function () {

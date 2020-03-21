@@ -6,8 +6,14 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Mugenrace') }}</title>
+    <meta name="description" content="{{isset($seo_desc) ? $seo_desc : ''}}@yield('desc')">
+    <meta name="keywords" content="{{isset($seo_key) ? $seo_key : ''}}@yield('keywords')">
+    <meta property="og:description" name="og:description"
+          content="{{isset($og_desc) ? $og_desc : ''}}@yield('og_desc')">
+    <meta property="og:title" name="og:title" content="{{isset($og_title) ? $og_title : ''}}@yield('og_title')">
+    <meta property="og:image" name="og:image" content="{{isset($og_image) ? $og_image : ''}}@yield('og_image')">
+    <meta property="og:url" name="og:url" content="{{url()->current()}}">
+    <title>{{ (isset($title) ? $title.' - ' : null) . config('app.name', 'Mugenrace') }}</title>
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -53,11 +59,15 @@
         <div class="overlay close-nav" id="navigationMenu">
             <!-- Left Side Of Navbar -->
             <div class="navigation-list mt-md-5 d-flex flex-column justify-content-around align-content-stretch">
-                <a class="nav-link navigation-link" href="{{ route('about', app()->getLocale()) }}">
-                    <span class="nav-hover-overlay">{{ __('We are') }}</span><span class="small">what do you need to know</span>
-                </a>
-                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span class="nav-hover-overlay">{{ __('Everywhere') }}</span><span class="small">where you can to see</span></a>
-                <a class="nav-link navigation-link" href="http://www.mugenraceshop.com"><span class="nav-hover-overlay">{{ __('Produtcs') }}</span><span class="small">what do you need to know</span></a>
+
+                @foreach($nav_links as $nav_link)
+
+                    <a class="nav-link navigation-link" href="{{ route($nav_link->place, app()->getLocale()) }}">
+                        <span class="nav-hover-overlay">{{ $nav_link->title }}</span><span class="small">{!! $nav_link->subtitle !!}</span>
+                    </a>
+                @endforeach
+                {{--                <a class="nav-link navigation-link" href="{{ route('sponsor', app()->getLocale()) }}"><span class="nav-hover-overlay">{{ __('Everywhere') }}</span><span class="small">where you can to see</span></a>--}}
+                {{--                <a class="nav-link navigation-link" href="http://www.mugenraceshop.com"><span class="nav-hover-overlay">{{ __('Produtcs') }}</span><span class="small">what do you need to know</span></a>--}}
             </div>
 
             <div class="navigation-lang">
@@ -149,9 +159,9 @@
             <div class="empty flex-13"></div>
             <div class="flex-17">
                 <div class="list-group footer-group footer-group-download">
-                    <div class="list-group-item"><a href="{!! route('download') !!}">Downloads</a></div>
-                    <div class="list-group-item"><a href="#">Press</a></div>
-                    <div class="list-group-item"><a href="#">Contacts</a></div>
+                    <div class="list-group-item"><a href="{!! route('download') !!}">{!! __('Downloads') !!}</a></div>
+                    <div class="list-group-item"><a href="#">{!! __('Press') !!}</a></div>
+                    <div class="list-group-item"><a href="mailto:{!! Html::email('info@mugenrace.com') !!}">{!! __('Contacts') !!}</a></div>
                 </div>
             </div>
             <div class=" flex-17">
@@ -179,9 +189,9 @@
                 <p class="m-0">© {!! date('Y') !!} MUGENRACE</p>
 
                 <ul class="footer-bottom-list list-group list-group-horizontal text-center">
-                    <li class="list-group-item"><a href="#">Privacy</a></li>
+                    <li class="list-group-item"><a href="#">{!! _('Privacy') !!}</a></li>
                     <li class="list-group-item"><a href="#">Cookie</a></li>
-                    <li class="list-group-item"><a href="#">Credits</a></li>
+                    <li class="list-group-item"><a href="#">{!! _('Credits') !!}</a></li>
                 </ul>
 
             </div>

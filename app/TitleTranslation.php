@@ -5,7 +5,7 @@ namespace App;
 use App\Traits\BasicModel;
 use Illuminate\Database\Eloquent\Model;
 
-class BelsoKepTranslation extends Model
+class TitleTranslation extends Model
 {
     use BasicModel;
 
@@ -20,6 +20,7 @@ class BelsoKepTranslation extends Model
     {
         return array(
             'title' => array(
+                'required',
                 'max:255',
             ),
 

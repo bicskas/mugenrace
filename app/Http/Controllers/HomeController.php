@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BelsoKep;
+use App\Title;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,7 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $images = BelsoKep::whereIn('place', ['home','about','sponsor','products'])->orderByRaw(BelsoKep::$sorting)->get();
+        $titles = Title::whereIn('place', ['home', 'about', 'sponsor', 'products'])->orderByRaw(Title::$sorting)->get();
+        $images = BelsoKep::whereIn('place', ['home', 'about', 'sponsor', 'products'])->orderByRaw(BelsoKep::$sorting)->get();
+        $page_title = Title::wherePlace('home')->first();
+        $page_image = BelsoKep::wherePlace('home')->inRandomOrder()->first();
         $home_images = collect();
         foreach ($images->groupBy('place') as $group) {
             $home_images->push($group->random(1)->first());
@@ -34,6 +38,7 @@ class HomeController extends Controller
 //dd($images, $home_images);
 
 //        $home_images = BelsoKep::orderByRaw(BelsoKep::$sorting)->take(6)->get();
-        return view('home2')->with(compact(['home_images']));
+        shareSeo($page_title->title, $page_image, $page_title->seo()->exists() ? $page_title->seo : null);
+        return view('home2')->with(compact(['home_images', 'titles']));
     }
 }

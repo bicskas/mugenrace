@@ -33,10 +33,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a href="{{route('admin.belso_kep.index', app()->getLocale())}}" class="nav-link @if($active_page == 'belso_kep') active @endif">Page images</a></li>
-                    <li class="nav-item"><a href="{{route('admin.belso_szoveg.index', app()->getLocale())}}" class="nav-link @if($active_page == 'belso_szoveg') active @endif">Page texts</a></li>
-                    <li class="nav-item"><a href="{{route('admin.szoveg.index', app()->getLocale())}}" class="nav-link @if($active_page == 'szoveg') active @endif">Subpages</a></li>
-
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle @if(in_array($active_page,['title','belso_kep','belso_szoveg','szoveg','seo']))active @endif" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Page
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item @if($active_page == 'title') active @endif" href="{{route('admin.title.index', app()->getLocale())}}">Page titles</a>
+                            <a class="dropdown-item @if($active_page == 'belso_kep') active @endif" href="{{route('admin.belso_kep.index', app()->getLocale())}}">Page images</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item @if($active_page == 'belso_szoveg') active @endif" href="{{route('admin.belso_szoveg.index', app()->getLocale())}}">Page texts</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item @if($active_page == 'szoveg') active @endif" href="{{route('admin.szoveg.index', app()->getLocale())}}">Subpages</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item @if($active_page == 'seo') active @endif" href="{{route('admin.seo.index', app()->getLocale())}}">SEO</a>
+                        </div>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle @if(in_array($active_page,['about','team','rider','download']))active @endif" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Content

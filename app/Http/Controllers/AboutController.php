@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\BelsoKep;
+use App\Title;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -13,6 +14,7 @@ class AboutController extends Controller
     {
         parent::__construct();
     }
+
     /**
      * Handle the incoming request.
      *
@@ -21,9 +23,12 @@ class AboutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $abouts = About::orderByRaw(About::$sorting)->get();
+        $page_title = Title::wherePlace('about')->first();
         $page_image = BelsoKep::wherePlace('about')->inRandomOrder()->first();
+        $abouts = About::orderByRaw(About::$sorting)->get();
 
-        return view('about.list')->with(compact(['abouts','page_image']));
+        shareSeo($page_title->title, $page_image, $page_title->seo()->exists() ? $page_title->seo : null);
+
+        return view('about.list')->with(compact(['abouts', 'page_title', 'page_image']));
     }
 }

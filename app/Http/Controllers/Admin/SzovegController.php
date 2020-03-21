@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Seo;
 use App\Szoveg as Model;
 use App\Http\Requests\ModelRequest;
 use Illuminate\Http\Request;
@@ -39,7 +40,12 @@ class SzovegController extends TemplateController {
 
 		$model->fill($data)->save();
 
-//		$model->kep()->kepfeltoltes($request->file('kep'));
+        if (!$model->seo()->exists()) {
+            $seo = Seo::make();
+            $model->seo()->save($seo);
+        }
+
+		$model->kep()->kepfeltoltes($request->file('kep'));
 
 		return redirect($model->adminLink() . '/edit')
 			->with('uzenet', __('Sikeres mentés!'));

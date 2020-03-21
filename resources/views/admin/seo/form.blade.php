@@ -3,7 +3,7 @@
 @section('content')
     <div class="card ">
         <div class="card-header clearfix">
-            <h3 class="card-title pull-left">Edit site image</h3>
+            <h3 class="card-title pull-left">Edit seo</h3>
             <div class="pull-right">
                 @include('elements.buttons.adminBack')
             </div>
@@ -18,19 +18,18 @@
                 @foreach ($locales as $kod => $nyelv)
                     <div role="tabpanel" class="tab-pane fade @if($loop->first) active show @endif" id="{{$kod}}">
                         {!! Form::hidden('_locales[]', $kod) !!}
-
-                        <?php $id = 'title' ?>
-                        {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
+                        @foreach (['seotitle', 'seokeywords', 'seodescription', 'ogtitle', 'ogdescription'] as $id)
+                            @if($id == 'seotitle' or $id == 'seodescription')
+                                {!! Form::bsTextMl($kod, $id, $model,['required']) !!}
+                            @else
+                                {!! Form::bsTextMl($kod, $id, $model) !!}
+                            @endif
+                        @endforeach
                     </div>
                 @endforeach
             </div>
-            <hr>
-            <?php $id = 'place' ?>
-            {!! Form::bsSelect($id, $model, $places,[]) !!}
 
-            <hr>
-            <?php $id = 'image' ?>
-            {!! Form::bsJcrop($id, $model) !!}
+
             <hr>
 
             {!! Form::mentes() !!}

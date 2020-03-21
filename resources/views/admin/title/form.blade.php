@@ -3,7 +3,7 @@
 @section('content')
     <div class="card ">
         <div class="card-header clearfix">
-            <h3 class="card-title pull-left">Edit site image</h3>
+            <h3 class="card-title pull-left">Edit page title</h3>
             <div class="pull-right">
                 @include('elements.buttons.adminBack')
             </div>
@@ -21,16 +21,12 @@
 
                         <?php $id = 'title' ?>
                         {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
+
+                        <?php $id = 'subtitle' ?>
+                        {!! Form::bsTextMl($kod, $id, $model, []) !!}
                     </div>
                 @endforeach
             </div>
-            <hr>
-            <?php $id = 'place' ?>
-            {!! Form::bsSelect($id, $model, $places,[]) !!}
-
-            <hr>
-            <?php $id = 'image' ?>
-            {!! Form::bsJcrop($id, $model) !!}
             <hr>
 
             {!! Form::mentes() !!}

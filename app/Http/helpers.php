@@ -122,3 +122,29 @@ function getLocales()
 
     return $locales;
 }
+
+function getTitle($model)
+{
+    $title = '';
+    if (isset($model->title)) {
+        $title = $model->title;
+    } elseif (isset($model->cim)) {
+        $title = $model->cim;
+    }
+
+    return $title;
+}
+
+function shareSeo($title, $image, $seo = null)
+{
+    View::share('title', $title);
+
+    if (!is_null($seo)) {
+        View::share('seo_title', $seo->seotitle);
+        View::share('seo_key', $seo->seokeywords);
+        View::share('seo_desc', $seo->seodescription);
+        View::share('og_title', $seo->ogtitle);
+        View::share('og_desc', $seo->ogdescription);
+    }
+    View::share('og_image', $image->getImage() ? url($image->getImage()) : null);
+}

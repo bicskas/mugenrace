@@ -42,7 +42,7 @@
 
                 <div class="cr-titles">
                     @foreach($home_images as $image)
-                        <h3><span class="title">{!! $image->title !!}</span><span class="subtitle">{!! $image->subtitle !!}</span></h3>
+                        <h3><span class="title">{!! $titles->where('place',$image->place)->first()->title !!}</span><span class="subtitle">{!! $titles->where('place',$image->place)->first()->subtitle !!}</span></h3>
                     @endforeach
                 </div>
             </section>

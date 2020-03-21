@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('page-title',ucfirst($page_image->title))
+@section('page-title',ucfirst($page_title->title))
 
 @section('content')
     <div id="page-header">
@@ -12,8 +12,8 @@
     <section class="download-section">
         <div class="download-title d-flex align-items-end">
             <h2>
-                {!! $page_image->title !!}
-                <span>{!! inline_svg('images/arrow-double-left.svg') !!} {!! $page_image->subtitle !!}</span>
+                {!! $page_title->title !!}
+                <span>{!! inline_svg('images/arrow-double-left.svg') !!} {!! $page_title->subtitle !!}</span>
             </h2>
             {!! inline_svg('images/arrow-top-down.svg') !!}
         </div>

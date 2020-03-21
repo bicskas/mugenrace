@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Title;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
@@ -62,6 +63,7 @@ class ViewServiceProvider extends ServiceProvider
             $src = array_merge([
                 'navbar_brand_src' => 'images/mugenrace-logo-white.png',
                 'navbar_beast_src' => 'images/bethebeast-logo-white.png',
+                'nav_links' => Title::whereIn('place',['about', 'sponsor', 'products'])->get(),
                 'loaded' => Session::get('loaded')
             ], $view->getData());
 

@@ -19,6 +19,8 @@ class SzovegController extends Controller
 
         \View::share('active_menu', Str::slug($model->cim));
 
+        shareSeo($model->cim, $model->kep(), $model->seo()->exists() ? $model->seo : null);
+
         return view('szoveg', array(
             'model' => $model,
             'title' => $model->cim,
