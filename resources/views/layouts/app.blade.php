@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <div id="loading-box" class="@if($loaded == 'loaded-not-complete') d-block @else d-none @endif">
+    <div id="loading-box" class="@if($loaded == 'loaded-complete') d-none @else d-block @endif">
         {{--        <span id="loading-percent">0%</span>--}}
         {!! Html::image('images/loading/01.png','Loading',['id' => 'loading-image', 'class' => 'mx-auto d-block img-fluid','data-percent' => '1']) !!}
     </div>

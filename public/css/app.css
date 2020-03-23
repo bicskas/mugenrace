@@ -17762,6 +17762,42 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
+@media (max-width: 549.98px) {
+  #loading #loading-box {
+    width: 40vw;
+  }
+
+  #loading #loadingNavIcon {
+    font-size: 20px;
+  }
+
+  #loading #loadingNavIcon svg {
+    height: 20px;
+    margin-right: 3vw;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 899.98px) {
+  #loading #loading-box {
+    width: 40vw;
+  }
+
+  #loading #loadingNavIcon {
+    font-size: 20px;
+  }
+
+  #loading #loadingNavIcon svg {
+    height: 20px;
+    margin-right: 3vw;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199.98px) {
+  #loading #loading-box {
+    width: 20vw;
+  }
+}
+
 a,
 a:hover {
   text-decoration: none;
