@@ -55,7 +55,7 @@ class ViewServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
 
             if (Session::has('loaded')) {
-                Session::put('loaded', 'loaded-complet');
+                Session::put('loaded', 'loaded-complete');
             } else {
                 Session::put('loaded', 'loaded-not-complete');
             }
