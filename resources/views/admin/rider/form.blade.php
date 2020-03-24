@@ -28,13 +28,13 @@
                         <?php $id = 'race' ?>
                         {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
 
-                        <?php $id = 'year' ?>
-                        {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
 
                     </div>
                 @endforeach
             </div>
-
+            <hr>
+            <?php $id = 'year' ?>
+            {!! Form::bsText($id, $model, []) !!}
 
             <hr>
             <?php $id = 'image' ?>

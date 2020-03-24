@@ -31,14 +31,7 @@ class RiderController extends TemplateController
      */
     public function index(Request $request, $lang, Rider $rider)
     {
-        $model = $rider->listsTranslations('name');
-
-        if (($data = $request->get('name'))) {
-            $model = $model->whereTranslationLike('name', '%' . $data . '%');
-        }
-
-        $list = $model
-            ->orderByRaw(Rider::$sorting)
+        $list = Rider::orderByRaw(Rider::$sorting)
             ->paginate(15);
 
         return view('admin.' . $this->class . '.list', array(

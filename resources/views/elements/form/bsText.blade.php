@@ -14,7 +14,6 @@ if (isset($attributes['append'])) {
     unset($attributes['append']);
 }
 
-
 $attributes = $attributes + array(
         'id' => $id,
         'class' => "form-control " . $error_class,
