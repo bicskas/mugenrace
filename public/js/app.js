@@ -37301,6 +37301,77 @@ $(function () {
         alert(resp);
       }
     });
+  });
+  var ts;
+  $(document).bind('touchstart', function (e) {
+    ts = e.originalEvent.touches[0].clientY;
+  });
+  $(document).bind('touchend', function (e) {
+    if ($('body').hasClass('homepage')) {
+      var te = e.originalEvent.changedTouches[0].clientY;
+      var active = $('.bg-image-selector:checked');
+      var id = active.data('index');
+      var count = active.data('count');
+
+      if (scrollBool === true) {
+        scrollBool = false;
+
+        if (ts > te + 5) {
+          if (id === count) {
+            id = 0;
+          }
+
+          next = $('#select-img-' + (id + 1));
+        } else if (ts < te - 5) {
+          if (id === 1) {
+            id = count + 1;
+          }
+
+          next = $('#select-img-' + (id - 1));
+        }
+
+        active.attr('checked', false);
+        next.attr('checked', true);
+        clearTimeout(timerId);
+        timerId = setTimeout(function () {
+          scrollBool = true;
+        }, 1200);
+      }
+    } // if (scrollBool === true) {
+    //     scrollBool = false;
+    //     if (ts > te + 5) {
+    //         if (id === count) {
+    //             id = 0;
+    //         }
+    //         next = $('#bgdiv' + (id + 1));
+    //         inDirection = 'Right';
+    //         outDirection = 'Left';
+    //     } else if (ts < te - 5) {
+    //         if (id === 1) {
+    //             id = count + 1;
+    //         }
+    //         next = $('#bgdiv' + (id - 1));
+    //         inDirection = 'Left';
+    //         outDirection = 'Right';
+    //     }
+    //
+    //     addClass = bgClass + inDirection;
+    //
+    //     $(active).css('animation-name', '');
+    //     $(active).css('visibility', '');
+    //     $(next).addClass(addClass);
+    //     $(active).removeClass(bgClass + 'Left ' + mode + 'InRight');
+    //     $(active).addClass('wow animated active slow ' + mode + 'Out' + outDirection);
+    //
+    //
+    //     wow.sync();
+    //     clearTimeout(timerId);
+    //     timerId = setTimeout(function () {
+    //         scrollBool = true;
+    //         $(active).removeClass('wow animated active slow ' + mode + 'Out' + outDirection);
+    //     }, 1200);
+    // }
+
   }); // $(window).on('mousewheel', function (e) {
   //     if ($('body').hasClass('homepage')) {
   //         var active = $('.bg-image.active');

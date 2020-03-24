@@ -220,30 +220,32 @@ $(function () {
     });
 
     $(document).bind('touchend', function (e) {
-        var te = e.originalEvent.changedTouches[0].clientY;
-        var active = $('.bg-image.active');
-        var id = active.data('index');
-        var count = active.data('count');
-        if (scrollBool === true) {
-            scrollBool = false;
-            if (ts > te + 5) {
-                if (id === count) {
-                    id = 0;
+        if ($('body').hasClass('homepage')) {
+            var te = e.originalEvent.changedTouches[0].clientY;
+            var active = $('.bg-image-selector:checked');
+            var id = active.data('index');
+            var count = active.data('count');
+            if (scrollBool === true) {
+                scrollBool = false;
+                if (ts > te + 5) {
+                    if (id === count) {
+                        id = 0;
+                    }
+                    next = $('#select-img-' + (id + 1));
+                } else if (ts < te - 5) {
+                    if (id === 1) {
+                        id = count + 1;
+                    }
+                    next = $('#select-img-' + (id - 1));
                 }
-                next = $('#select-img-' + (id + 1));
-            } else if (ts < te - 5) {
-                if (id === 1) {
-                    id = count + 1;
-                }
-                next = $('#select-img-' + (id - 1));
-            }
-            active.attr('checked', false);
-            next.attr('checked', true);
+                active.attr('checked', false);
+                next.attr('checked', true);
 
-            clearTimeout(timerId);
-            timerId = setTimeout(function () {
-                scrollBool = true;
-            }, 1200);
+                clearTimeout(timerId);
+                timerId = setTimeout(function () {
+                    scrollBool = true;
+                }, 1200);
+            }
         }
         // if (scrollBool === true) {
         //     scrollBool = false;

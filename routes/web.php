@@ -18,7 +18,7 @@ Route::prefix('{lang?}')->middleware('locale')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('main');
 
-    Auth::routes(['verify' => true, 'register' => false]);
+    Auth::routes(['verify' => true, 'register' => false,'reset' => false]);
 
     Route::prefix('/admin')->middleware(['admin', 'verified'])->namespace('Admin')->group(function () {
         Route::get('/', 'SzovegController@index')->name('adminhome');

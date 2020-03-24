@@ -40,8 +40,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item @if($active_page == 'title') active @endif" href="{{route('admin.title.index', app()->getLocale())}}">Page titles</a>
                             <a class="dropdown-item @if($active_page == 'belso_kep') active @endif" href="{{route('admin.belso_kep.index', app()->getLocale())}}">Page images</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item @if($active_page == 'belso_szoveg') active @endif" href="{{route('admin.belso_szoveg.index', app()->getLocale())}}">Page texts</a>
+{{--                            <div class="dropdown-divider"></div>--}}
+{{--                            <a class="dropdown-item @if($active_page == 'belso_szoveg') active @endif" href="{{route('admin.belso_szoveg.index', app()->getLocale())}}">Page texts</a>--}}
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item @if($active_page == 'szoveg') active @endif" href="{{route('admin.szoveg.index', app()->getLocale())}}">Subpages</a>
                             <div class="dropdown-divider"></div>

@@ -14920,6 +14920,7 @@ a.text-dark:focus {
   left: 0;
   right: 0;
   bottom: 0;
+  transition: visibility 0.2s ease-in-out;
   opacity: 1;
 }
 
@@ -17159,7 +17160,7 @@ footer .footer-bottom-list .list-group-item {
   }
 
   .navbar .navigation-btn {
-    margin-top: -5px;
+    margin-top: 7px;
   }
 
   .navbar #navigationMenu .navigation-list {
