@@ -122,7 +122,7 @@ function rendezheto() {
 function createEditor(elementId) {
     return ClassicEditor
         .create(document.getElementById(elementId), {
-            toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote','table'],
+            toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
             language: 'en',
         })
         .then(editor => {
