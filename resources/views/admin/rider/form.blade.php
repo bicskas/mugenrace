@@ -28,8 +28,8 @@
                         <?php $id = 'race' ?>
                         {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
 
-                        <?php $id = 'content' ?>
-                        {!! Form::bsTextareaMl($kod, $id, $model, ['class' => 'form-control ckeditor']) !!}
+                        <?php $id = 'year' ?>
+                        {!! Form::bsTextMl($kod, $id, $model, ['required']) !!}
 
                     </div>
                 @endforeach

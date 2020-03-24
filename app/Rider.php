@@ -18,8 +18,11 @@ class Rider extends Model
     );
     protected $fillable = array(
         'name',
+        'team',
+        'race',
         'content',
         'crops',
+        'year',
         'sorrend',
     );
 

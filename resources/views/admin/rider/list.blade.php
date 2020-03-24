@@ -14,7 +14,7 @@
                                 <th>Name</th>
                                 <th>Team</th>
                                 <th>Race</th>
-                                <th>Content</th>
+                                <th>Year</th>
                                 <th class="text-right">Operations</th>
                             </tr>
                             </thead>
@@ -24,7 +24,7 @@
                                     <td class="align-middle">{{$element->name}}</td>
                                     <td class="align-middle">{{$element->team}}</td>
                                     <td class="align-middle">{{$element->race}}</td>
-                                    <td class="align-middle text-wrap">{{\Str::limit(strip_tags($element->content))}}</td>
+                                    <td class="align-middle">{{$element->year}}</td>
                                     <td class="align-middle text-right">
                                         @include('elements.buttons.adminEdit',['element' => $element])
                                         @include('elements.buttons.adminDelete',['element' => $element])

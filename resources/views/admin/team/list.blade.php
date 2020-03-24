@@ -12,7 +12,7 @@
                             <thead class="thead-dark">
                             <tr>
                                 <th>Name</th>
-                                <th>Content</th>
+{{--                                <th>Content</th>--}}
                                 <th class="text-right">Operations</th>
                             </tr>
                             </thead>
@@ -20,7 +20,7 @@
                             @forelse ($list as $element)
                                 <tr id="item_{{$element->id}}">
                                     <td class="align-middle">{{$element->name}}</td>
-                                    <td class="align-middle text-wrap">{{\Str::limit(strip_tags($element->content))}}</td>
+{{--                                    <td class="align-middle text-wrap">{{\Str::limit(strip_tags($element->content))}}</td>--}}
                                     <td class="align-middle text-right">
                                         @include('elements.buttons.adminEdit',['element' => $element])
                                         @include('elements.buttons.adminDelete',['element' => $element])
