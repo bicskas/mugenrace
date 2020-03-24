@@ -135,7 +135,7 @@
     <footer class="footer bg-black">
 
         <div class="footer-top-content d-flex justify-content-start align-items-stretch">
-            <div class="flex-13 " style="position: relative">
+            <div id="footer-mugenrace-logo-div" class="flex-13 " style="position: relative">
                 {!! Html::image('images/mugenrace-logo-down-white.png','Mugenrace',['class' => 'img-fluid max-height align-self-end','id'=>'footer-white-logo']) !!}
             </div>
 
@@ -157,14 +157,14 @@
 
         <div class="footer-middle-content d-flex justify-content-start align-items-stretch">
             <div class="empty flex-13"></div>
-            <div class="flex-17">
+            <div class="flex-17 xs-double-one">
                 <div class="list-group footer-group footer-group-download">
                     <div class="list-group-item"><a href="{!! route('download') !!}">{!! __('Downloads') !!}</a></div>
                     <div class="list-group-item"><a href="#">{!! __('Press') !!}</a></div>
                     <div class="list-group-item"><a href="mailto:{!! Html::email('info@mugenrace.com') !!}">{!! __('Contacts') !!}</a></div>
                 </div>
             </div>
-            <div class=" flex-17">
+            <div class=" flex-17 xs-double-two">
                 <div class="list-group footer-group footer-group-follow">
                     <div class="list-group-item"><a href="#">Facebook</a></div>
                     <div class="list-group-item"><a href="#">Instagram</a></div>
@@ -172,11 +172,14 @@
                     <div class="list-group-item"><a href="#">LinkedIn</a></div>
                 </div>
             </div>
-            <div class="list-group footer-group">
+            <div class="list-group footer-group footer-form ">
                 <div class="list-group-item">
-                    {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
-                    {!! Form::email('email','',['id' =>'emailInput', 'required','class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
-                    <button type="submit" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
+                    {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-sm-center justify-content-md-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
+                    <label class="d-block d-md-none">Join to us</label>
+                    <div class="d-flex">
+                        {!! Form::email('email','',['id' =>'emailInput', 'required','class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
+                        <button type="submit" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
+                    </div>
                     {!! Form::close() !!}
                 </div>
             </div>

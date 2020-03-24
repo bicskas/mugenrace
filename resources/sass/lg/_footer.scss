@@ -3,18 +3,131 @@
         border-top: 2px solid $black;
 
         .footer-top-content {
-            display: none !important;
+            flex-wrap: wrap;
+            height: auto;
+
+            #footer-mugenrace-logo-div {
+                flex: 0 0 100%;
+
+                img {
+
+                    right: unset;
+                    bottom: unset;
+                    max-height: unset;
+                    max-width: 30%;
+                    position: relative;
+                    margin: 0 auto;
+                    display: block;
+                    margin-top: 10px;
+                    margin-bottom: 25px;
+                    z-index: 1252;
+                }
+            }
+
+            .footer-arrow {
+                &.arrow-one, &.arrow-two {
+                    //flex: 0 0 50%;
+                    margin: 0;
+                    padding: 0 0 0 15px;
+
+                    h2 {
+                        font-size: 27px;
+                        position: relative;
+                        margin-left: 0;
+                    }
+
+                    svg {
+                        top: 0;
+                        transform: translate(0, -50%);
+                        width: 80%;
+                        max-height: unset;
+                        opacity: 0.7;
+                    }
+                }
+
+                &.arrow-one{
+                    flex: 0 0 40%;
+                }
+
+                &.arrow-two{
+                    flex: 0 0 60%;
+                }
+
+                &.arrow-three {
+                    display: none !important;
+                }
+            }
+
         }
 
         .footer-middle-content {
+            flex-wrap: wrap;
 
+            .empty {
+                display: none !important;
+            }
+
+            .xs-double-one, .xs-double-two{
+                margin: 0;
+                padding-left: 15px;
+
+                .list-group {
+                    margin-left: 0;
+                }
+            }
+
+            .xs-double-one{
+                flex: 0 0 40%;
+
+            }
+
+            .xs-double-two{
+                flex: 0 0 30%
+            }
+
+            .footer-group {
+                a {
+                    font-size: 18px;
+                }
+
+                &.footer-group-download{
+
+                }
+            }
+
+            .footer-form {
+                flex: 0 0 100%;
+
+                .list-group-item{
+                    padding: 0.75rem 1.25rem;
+                }
+
+                #subscribeFrom {
+                flex-wrap: wrap;
+                    justify-content: center;
+                    #emailInput {
+                        width: auto;
+                        height: 40px;
+                        margin-left: 0;
+                        max-width: 70vw;
+                    }
+
+                    button {
+                        height: 40px;
+
+                        svg {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
         }
 
         .footer-bottom-content .d-flex {
             flex-direction: column-reverse;
             align-items: center !important;
 
-            >p{
+            > p {
                 align-self: flex-start;
                 font-size: 12px;
             }
