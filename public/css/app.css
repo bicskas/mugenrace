@@ -1626,7 +1626,7 @@ a.ui-button:active,
   --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 550px;
-  --breakpoint-md: 900px;
+  --breakpoint-md: 700px;
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1800px;
   --breakpoint-tk: 2500px;
@@ -2185,7 +2185,7 @@ pre code {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .container {
     max-width: 720px;
   }
@@ -2222,7 +2222,7 @@ pre code {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .container-md,
   .container-sm,
   .container {
@@ -2788,7 +2788,7 @@ pre code {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .col-md {
     flex-basis: 0;
     flex-grow: 1;
@@ -4145,7 +4145,7 @@ pre code {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   .table-responsive-md {
     display: block;
     width: 100%;
@@ -5537,7 +5537,7 @@ input[type=button].btn-block {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .dropdown-menu-md-left {
     right: auto;
     left: 0;
@@ -6756,7 +6756,7 @@ input[type=button].btn-block {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   .navbar-expand-md > .container,
   .navbar-expand-md > .container-fluid,
   .navbar-expand-md > .container-sm,
@@ -6768,7 +6768,7 @@ input[type=button].btn-block {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .navbar-expand-md {
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -8041,7 +8041,7 @@ a.badge-dark.focus {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .list-group-horizontal-md {
     flex-direction: row;
   }
@@ -9510,7 +9510,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .d-md-none {
     display: none !important;
   }
@@ -10055,7 +10055,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .flex-md-row {
     flex-direction: row !important;
   }
@@ -10771,7 +10771,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .float-md-left {
     float: left !important;
   }
@@ -11875,7 +11875,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .m-md-0 {
     margin: 0 !important;
   }
@@ -14093,7 +14093,7 @@ button.bg-dark:focus {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .text-md-left {
     text-align: left !important;
   }
@@ -16946,7 +16946,7 @@ footer .footer-bottom-list .list-group-item {
   color: #000000;
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   #page-header .title {
     font-size: 46px;
     letter-spacing: 4px !important;
@@ -17001,7 +17001,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   section#rider .pb-10 {
     padding-bottom: 1rem;
   }
@@ -17063,7 +17063,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   .about-section {
     padding-bottom: 0;
   }
@@ -17160,7 +17160,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   .navbar .navbar-brand img {
     max-height: 35px;
   }
@@ -17188,6 +17188,8 @@ footer .footer-bottom-list .list-group-item {
 
   .navbar .navigation-left #navPageTitle {
     font-size: 1.3rem;
+    margin-left: 45px;
+    margin-top: 20px !important;
   }
 
   .navbar .navigation-link .nav-hover-overlay {
@@ -17223,7 +17225,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   #home-page {
     height: calc(100vh - 40px) !important;
   }
@@ -17358,7 +17360,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   .download-section .download-content {
     padding: 1.5vh 2vh 5vh;
   }
@@ -17511,7 +17513,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   footer {
     border-top: 2px solid #000000;
   }
@@ -17519,6 +17521,10 @@ footer .footer-bottom-list .list-group-item {
   footer .footer-top-content {
     flex-wrap: wrap;
     height: auto;
+  }
+
+  footer .footer-top-content:before {
+    border-bottom-width: 12px;
   }
 
   footer .footer-top-content #footer-mugenrace-logo-div {
@@ -17533,8 +17539,8 @@ footer .footer-bottom-list .list-group-item {
     position: relative;
     margin: 0 auto;
     display: block;
-    margin-top: 10px;
-    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-bottom: 45px;
     z-index: 1252;
   }
 
@@ -17778,7 +17784,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 699.98px) {
   .szoveg-section .szoveg-title h2 {
     font-size: 23px;
   }
@@ -17900,7 +17906,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (min-width: 550px) and (max-width: 899.98px) {
+@media (min-width: 550px) and (max-width: 699.98px) {
   #loading #loading-box {
     width: 40vw;
   }
@@ -17915,7 +17921,7 @@ footer .footer-bottom-list .list-group-item {
   }
 }
 
-@media (min-width: 900px) and (max-width: 1199.98px) {
+@media (min-width: 700px) and (max-width: 1199.98px) {
   #loading #loading-box {
     width: 20vw;
   }

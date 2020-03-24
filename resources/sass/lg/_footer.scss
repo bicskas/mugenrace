@@ -6,6 +6,10 @@
             flex-wrap: wrap;
             height: auto;
 
+            &:before {
+                border-bottom-width: 12px;
+            }
+
             #footer-mugenrace-logo-div {
                 flex: 0 0 100%;
 
@@ -18,8 +22,8 @@
                     position: relative;
                     margin: 0 auto;
                     display: block;
-                    margin-top: 10px;
-                    margin-bottom: 25px;
+                    margin-top: 25px;
+                    margin-bottom: 45px;
                     z-index: 1252;
                 }
             }
@@ -45,11 +49,11 @@
                     }
                 }
 
-                &.arrow-one{
+                &.arrow-one {
                     flex: 0 0 40%;
                 }
 
-                &.arrow-two{
+                &.arrow-two {
                     flex: 0 0 60%;
                 }
 
@@ -67,7 +71,7 @@
                 display: none !important;
             }
 
-            .xs-double-one, .xs-double-two{
+            .xs-double-one, .xs-double-two {
                 margin: 0;
                 padding-left: 15px;
 
@@ -76,12 +80,12 @@
                 }
             }
 
-            .xs-double-one{
+            .xs-double-one {
                 flex: 0 0 40%;
 
             }
 
-            .xs-double-two{
+            .xs-double-two {
                 flex: 0 0 30%
             }
 
@@ -90,7 +94,7 @@
                     font-size: 18px;
                 }
 
-                &.footer-group-download{
+                &.footer-group-download {
 
                 }
             }
@@ -98,13 +102,14 @@
             .footer-form {
                 flex: 0 0 100%;
 
-                .list-group-item{
+                .list-group-item {
                     padding: 0.75rem 1.25rem;
                 }
 
                 #subscribeFrom {
-                flex-wrap: wrap;
+                    flex-wrap: wrap;
                     justify-content: center;
+
                     #emailInput {
                         width: auto;
                         height: 40px;
