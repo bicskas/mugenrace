@@ -49,9 +49,6 @@ class RiderController extends TemplateController
         }
 
         $rider->fill($data)->save();
-        if ($request->get('dd') == true) {
-            dd($request->get('_crops'), $rider->image()->cropolas($request->get('_crops', array())));
-        }
         $rider->image()->kepfeltoltes($request->file('image'));
         $rider->image()->cropolas($request->get('_crops', array()));
 

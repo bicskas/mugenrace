@@ -36,8 +36,6 @@
             <?php $id = 'year' ?>
             {!! Form::bsText($id, $model, []) !!}
 
-            <input type="hidden" name="dd" value="false">
-
             <hr>
             <?php $id = 'image' ?>
             {!! Form::bsJcrop($id, $model) !!}
