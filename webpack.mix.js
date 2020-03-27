@@ -22,7 +22,8 @@ if (!mix.inProduction()) {
         proxy: process.env.APP_URL,
         port: process.env.APP_PORT
     });
+    mix.webpackConfig({
+        devtool: 'inline-source-map'
+    });
 }
-mix.webpackConfig({
-    devtool: 'inline-source-map'
-});
+
