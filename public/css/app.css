@@ -15261,6 +15261,29 @@ a.text-dark:focus {
   fill: #ffffff;
 }
 
+#team-slider-for {
+  position: relative;
+}
+
+#team-slider-for .team-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: scale(0.7) translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px #000;
+  font-weight: bold;
+  font-style: italic;
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+#team-slider-for .slick-current .team-text {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -100%);
+}
+
 .slider-nav {
   transform: rotate(-4.2deg);
   background-color: #c8ff00;
@@ -15376,6 +15399,30 @@ a.text-dark:focus {
 
 #rider {
   z-index: 1020;
+}
+
+#rider-slider-for {
+  position: relative;
+}
+
+#rider-slider-for .rider-text {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: scale(0.7) translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px #000;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1;
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+#rider-slider-for .slick-current .rider-text {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -100%);
 }
 
 .rider-sponsor-title {
@@ -15930,7 +15977,7 @@ footer .footer-middle-content:before {
   position: absolute;
   width: 0;
   height: 0;
-  top: 0;
+  top: 1px;
   border-right: 0 solid transparent;
   border-left: 100vw solid transparent;
   border-bottom: calc(100vw * 0.049) solid #ffffff;
@@ -17040,6 +17087,18 @@ footer .footer-bottom-list .list-group-item {
 }
 
 @media (min-width: 1200px) and (max-width: 1799.98px) {
+  #team-slider-for .team-text {
+    font-size: 35px;
+  }
+
+  #rider-slider-for .rider-text {
+    font-size: 20px;
+  }
+
+  #rider-slider-for .rider-text span {
+    font-size: 35px;
+  }
+
   .team-sponsor-title svg {
     left: 45%;
   }
@@ -17060,6 +17119,48 @@ footer .footer-bottom-list .list-group-item {
 
   .slick-prev {
     left: 6px;
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 2499.98px) {
+  #team-slider-for .team-text {
+    font-size: 70px;
+  }
+
+  #rider-slider-for .rider-text {
+    font-size: 40px;
+  }
+
+  #rider-slider-for .rider-text span {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 3399.98px) {
+  #team-slider-for .team-text {
+    font-size: 90px;
+  }
+
+  #rider-slider-for .rider-text {
+    font-size: 50px;
+  }
+
+  #rider-slider-for .rider-text span {
+    font-size: 90px;
+  }
+}
+
+@media (min-width: 3400px) {
+  #team-slider-for .team-text {
+    font-size: 130px;
+  }
+
+  #rider-slider-for .rider-text {
+    font-size: 70px;
+  }
+
+  #rider-slider-for .rider-text span {
+    font-size: 130px;
   }
 }
 

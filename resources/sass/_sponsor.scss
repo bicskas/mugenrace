@@ -25,6 +25,29 @@
 
 }
 
+#team-slider-for {
+    position: relative;
+
+    .team-text {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: scale(0.7) translate(-50%, 0);
+        width: 100%;
+        text-align: center;
+        text-shadow: 2px 2px #000;
+        font-weight: bold;
+        font-style: italic;
+        opacity: 0;
+        transition: all 2s ease;
+    }
+
+    .slick-current .team-text {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -100%);
+    }
+}
+
 .slider-nav {
     transform: rotate(-4.2deg);
     background-color: $primary;
@@ -143,6 +166,31 @@
 
 #rider {
     z-index: 1020;
+}
+
+
+#rider-slider-for {
+    position: relative;
+
+    .rider-text {
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: scale(0.7) translate(-50%, 0);
+        width: 100%;
+        text-align: center;
+        text-shadow: 2px 2px #000;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1;
+        opacity: 0;
+        transition: all 2s ease;
+    }
+
+    .slick-current .rider-text {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -100%);
+    }
 }
 
 .rider-sponsor-title {

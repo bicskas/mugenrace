@@ -9,7 +9,7 @@
     @foreach ($model->$id()->getKepmeretek() as $ar => $widths)
         <div class="form-group">
             <label>1:{{$ar}} arány</label>
-            {!! Html::image($model->$id()->getImage() . '?r=' . rand(0,1000), '', ['class' => 'img-fluid jcrop', 'data-aspect-ratio' => $ar, 'data-selection' => $model->$id()->getKivagasok($ar)]) !!}
+            {!! Html::image($model->$id()->getImage(), '', ['class' => 'img-fluid jcrop', 'data-aspect-ratio' => $ar, 'data-selection' => $model->$id()->getKivagasok($ar)]) !!}
         </div>
     @endforeach
 @endif

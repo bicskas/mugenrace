@@ -27,6 +27,9 @@
                     @else
                         {!! Html::image($team->getImage(2.42,3840),$team->name,['class' => 'img-fluid']) !!}
                     @endif
+                    <div class="team-text">
+                        {!! $team->name !!}
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -57,6 +60,11 @@
                         @else
                             {!! Html::image($rider->getImage(2.42,3840),$rider->name,['class' => 'img-fluid']) !!}
                         @endif
+                        <div class="rider-text">
+                            <span>{!! $rider->name !!}</span><br>
+                            {!! $rider->team !!} - {!! $rider->race !!}<br>
+                            {!! $rider->year !!}
+                        </div>
                     </div>
                 @endforeach
             </div>
