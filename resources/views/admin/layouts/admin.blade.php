@@ -10,7 +10,7 @@
     <title>Admin - {{ config('app.name', 'Mugenrace') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/admin/admin.js') }}" defer></script>
+{{--    <script src="{{ mix('js/admin/admin.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -40,8 +40,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item @if($active_page == 'title') active @endif" href="{{route('admin.title.index', app()->getLocale())}}">Page titles</a>
                             <a class="dropdown-item @if($active_page == 'belso_kep') active @endif" href="{{route('admin.belso_kep.index', app()->getLocale())}}">Page images</a>
-{{--                            <div class="dropdown-divider"></div>--}}
-{{--                            <a class="dropdown-item @if($active_page == 'belso_szoveg') active @endif" href="{{route('admin.belso_szoveg.index', app()->getLocale())}}">Page texts</a>--}}
+                            {{--                            <div class="dropdown-divider"></div>--}}
+                            {{--                            <a class="dropdown-item @if($active_page == 'belso_szoveg') active @endif" href="{{route('admin.belso_szoveg.index', app()->getLocale())}}">Page texts</a>--}}
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item @if($active_page == 'szoveg') active @endif" href="{{route('admin.szoveg.index', app()->getLocale())}}">Subpages</a>
                             <div class="dropdown-divider"></div>
@@ -100,8 +100,8 @@
                 @endguest
             </ul>
         </div>
+    </nav>
 </div>
-</nav>
 @if (env('APP_ENV', 'production') == 'local' and Cookie::get('tesztoldal') != 'letezik')
     <div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="tesztbezar"><span aria-hidden="true">&times;</span></button>
@@ -116,6 +116,6 @@
 <main class="py-4 container">
     @yield('content')
 </main>
-</div>
+<script src="{{ mix('js/admin/admin.js') }}"></script>
 </body>
 </html>

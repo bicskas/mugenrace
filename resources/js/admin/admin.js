@@ -100,7 +100,7 @@ $(document).ready(function () {
                 boxWidth: $this.width(),
                 bgColor: '#ddd'
             });
-        }, 400);
+        }, 600);
     });
 
 
