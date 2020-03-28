@@ -106,6 +106,11 @@
                     padding: 0.75rem 1.25rem;
                 }
 
+                label {
+                    font-family: "Eurostile Ext";
+                    font-style: italic;
+                }
+
                 #subscribeFrom {
                     flex-wrap: wrap;
                     justify-content: center;
@@ -132,6 +137,160 @@
             flex-direction: column-reverse;
             align-items: center !important;
 
+            > p {
+                align-self: flex-start;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(md) {
+    footer {
+        border-top: 0;
+
+        .footer-top-content {
+            flex-wrap: nowrap;
+            height: auto;
+
+            &:before {
+                border-bottom-width: 12px;
+            }
+
+            #footer-mugenrace-logo-div {
+                flex: 0 0 calc(25% - 4vw);
+
+                img {
+
+                    right: unset;
+                    bottom: unset;
+                    max-height: unset;
+                    width: 220px;
+                    max-width: 85%;
+                    position: relative;
+                    margin: 0 auto;
+                    display: block;
+                    margin-top: 25px;
+                    z-index: 1252;
+                }
+            }
+
+            .footer-arrow {
+                &.arrow-one, &.arrow-two {
+                    //flex: 0 0 50%;
+                    margin: 0;
+                    padding: 0 0 0 15px;
+
+                    h2 {
+                        font-size: 42px;
+                        position: relative;
+                        margin-left: 0;
+                        bottom: unset;
+                    }
+
+                    svg {
+                        top: unset;
+                        bottom: -40px;
+                        //transform: translate(0, -50%);
+                        width: 80%;
+                        max-height: calc(100% + 30px);
+                        opacity: 0.7;
+                    }
+                }
+
+                &.arrow-one {
+                    flex: 0 0 30%;
+
+                    > svg {
+                        width: 100%;
+                        left: -20px;
+                    }
+                }
+
+                &.arrow-two {
+                    flex: 0 0 40%;
+                }
+
+                &.arrow-three {
+                    display: none !important;
+                }
+            }
+
+        }
+
+        .footer-middle-content {
+            flex-wrap: wrap;
+
+            .empty {
+                flex: 0 0 calc(25% - 4vw);
+            }
+
+            .xs-double-one, .xs-double-two {
+                margin: 0;
+                padding-left: 15px;
+
+                .list-group {
+                    margin-left: 0;
+                }
+            }
+
+            .xs-double-one {
+                flex: 0 0 30%;
+
+            }
+
+            .xs-double-two {
+                flex: 0 0 38%
+            }
+
+            .footer-group {
+                a {
+                    font-size: 26px;
+                }
+
+                &.footer-group-download {
+
+                }
+            }
+
+            .footer-form {
+                flex: 0 0 100%;
+
+                .list-group-item {
+                    padding: 0.75rem 1.25rem;
+                }
+
+                label {
+                    padding-right: 20px;
+                    font-family: "Eurostile Ext";
+                    font-style: italic;
+                }
+
+                #subscribeFrom {
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    #emailInput {
+                        width: auto;
+                        height: 40px;
+                        margin-left: 0;
+                        max-width: 70vw;
+                    }
+
+                    button {
+                        height: 40px;
+
+                        svg {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-bottom-content .d-flex {
+            //flex-direction: column-reverse;
+            //align-items: center !important;
             > p {
                 align-self: flex-start;
                 font-size: 12px;

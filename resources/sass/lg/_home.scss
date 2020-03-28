@@ -17,6 +17,25 @@
     }
 }
 
+@include media-breakpoint-only(md) {
+    #home-page {
+        height: calc(100vh - 40px) !important;
+
+        .cr-titles h3 {
+
+            .title {
+                font-size: 85px;
+                letter-spacing: 4px !important;
+            }
+
+            .subtitle {
+                font-size: 38px;
+                margin-top: 45px !important;
+            }
+        }
+    }
+}
+
 
 @include media-breakpoint-only(lg) {
     #home-page {

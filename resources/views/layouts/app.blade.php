@@ -174,8 +174,8 @@
             </div>
             <div class="list-group footer-group footer-form ">
                 <div class="list-group-item">
-                    {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-sm-center justify-content-md-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
-                    <label class="d-block d-md-none">Join to us</label>
+                    {!! Form::open(['id' => 'subscribeFrom','class' => 'd-flex justify-content-sm-center justify-content-lg-between align-items-center', 'route' => ['subscribe',app()->getLocale()]]) !!}
+                    <label class="d-block d-lg-none">Join to us</label>
                     <div class="d-flex">
                         {!! Form::email('email','',['id' =>'emailInput', 'required','class' => 'form-control','placeholder' => __('Your e-mail address')]) !!}
                         <button type="submit" value="submit">{!! inline_svg('images/arrow-triple.svg') !!}</button>
