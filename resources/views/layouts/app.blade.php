@@ -119,7 +119,7 @@
                 {{--                        </a>--}}
                 {{--                    </li>--}}
                 {{--                @endforeach--}}
-                <li class="nav-item d-flex align-items-center d-xs-none d-sm-none d-md-none d-lg-block">
+                <li class="nav-item d-flex align-items-center d-xs-none d-sm-none d-md-block d-lg-block">
                     {!! Html::image($navbar_beast_src,'BETHEBEAST',['class' => 'img-fluid ml-auto','id' => 'bethebeastLogo']) !!}
                 </li>
             </ul>

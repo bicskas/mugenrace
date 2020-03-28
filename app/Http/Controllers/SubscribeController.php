@@ -18,7 +18,7 @@ class SubscribeController extends Controller
         $data = $request->all();
         $subscribe = new Subscribe();
         $subscribe->fill($data)->save();
-        $message = 'Successfull subscribe';
+        $message = __('Successfull subscribe');
         return json_encode($message);
     }
 }

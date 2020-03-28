@@ -301,6 +301,11 @@
 
 @include media-breakpoint-only(fk) {
     footer {
+        .footer-bottom-content {
+            .list-group-item a {
+                font-size: 18px;
+            }
+        }
     }
 }
 

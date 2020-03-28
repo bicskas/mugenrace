@@ -52,6 +52,7 @@
     font-style: italic;
     text-transform: uppercase;
     margin-left: 15px;
+    font-family: "Eurostile Ext";
 }
 
 .navbar #navigationMenu {
@@ -152,7 +153,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        transition: visibility 0.2s ease-in-out;
+        //transition: visibility 0.2s ease-in-out;
         opacity: 1;
 
         svg {
@@ -221,6 +222,7 @@
         font-weight: 500;
         color: $primary;
         transition: all 2.2s cubic-bezier(0.000, 0.000, 0.230, 1);
+        font-family: "Eurostile Ext";
         //transition: all 2.2s linear;
         background-clip: text;
         -webkit-background-clip: text;

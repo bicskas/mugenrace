@@ -12,6 +12,19 @@
     }
 }
 
+@include media-breakpoint-only(md) {
+    #page-header {
+        .title {
+            font-size: 80px;
+        }
+
+        .subtitle {
+            font-size: 32px;
+            margin-top: -22px;
+        }
+    }
+}
+
 
 @include media-breakpoint-only(lg) {
     #page-header {

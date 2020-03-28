@@ -31,7 +31,7 @@
 
         .navigation-left {
             #navPageTitle {
-                font-size: 1.3rem;
+                font-size: 1rem;
                 margin-left: 45px;
                 margin-top: 20px !important;
             }
@@ -39,11 +39,68 @@
 
         .navigation-link {
             .nav-hover-overlay {
-                font-size: 2.5rem;
+                font-size: 1.7rem;
             }
 
             .small {
                 display: none;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .navbar {
+        .navbar-brand {
+            img {
+                max-height: 35px;
+            }
+        }
+
+
+        .nav-lang {
+            font-size: 20px;
+            padding: 0.8rem !important;
+        }
+
+        .navigation-btn {
+            margin-top: 20px;
+        }
+
+        #navigationMenu {
+            .navigation-list {
+                height: 80%;
+            }
+
+            .navigation-lang {
+                top: 40%;
+            }
+        }
+
+        #bethebeastLogo{
+            min-width: 120px;
+        }
+
+        #navigationMenu {
+            top: 40px;
+        }
+
+        .navigation-left {
+            #navPageTitle {
+                font-size: 1.3rem;
+                margin-left: 0px;
+                margin-top: 24px !important;
+            }
+        }
+
+        .navigation-link {
+            .nav-hover-overlay {
+                font-size: 3.6rem;
+            }
+
+            .small {
+            top: -0.5rem;
+            font-size: 1.1rem;
             }
         }
     }
@@ -75,5 +132,33 @@
             letter-spacing: 6px;
             font-size: 1.1rem;
         }
+    }
+}
+
+
+@include media-breakpoint-only(fk) {
+
+    #navPageTitle {
+        font-size: 40px;
+    }
+
+    #navigation-btn {
+        padding: 0;
+        border: 0;
+        min-height: 55px;
+    }
+
+    .navigation-link {
+        .small {
+            font-size: 35px;
+        }
+
+        .nav-hover-overlay {
+            font-size: 230px;
+        }
+    }
+
+    .nav-lang {
+        font-size: 40px;
     }
 }

@@ -104,7 +104,7 @@ $(function () {
                 },
 
                 {
-                    breakpoint: 900,
+                    breakpoint: 1200,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1

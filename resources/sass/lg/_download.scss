@@ -68,6 +68,81 @@
     }
 }
 
+@include media-breakpoint-only(md) {
+    .download-section {
+
+        .download-content {
+            padding: 1.5vh 2vh 5vh;
+        }
+
+        .download-category-title {
+            font-size: 25px;
+            padding-left: 17px;
+        }
+
+        .download-title {
+            h2 {
+                font-size: 40px;
+
+                span {
+                    font-size: calc(40px * 0.65);
+                    padding-left: 0;
+
+                    > svg {
+                        display: none;
+                    }
+                }
+            }
+
+            > svg {
+                left: 97% !important;
+                transform: translate(-100%, 0) !important;
+                height: 60% !important;
+                top: 5%;
+            }
+        }
+
+        .download-item {
+            font-size: 22px;
+            margin-top: 1vh;
+            margin-bottom: 3vh;
+            margin-left: 17px;
+
+            .download-item-title {
+                flex: 0 0 46%;
+            }
+
+            .download-item-size, .download-item-format, .download-item-button {
+                flex: 0 0 18%;
+            }
+
+            .download-item-size {
+                justify-content: flex-end !important;
+                padding-right: 10px;
+            }
+
+            .download-item-button {
+
+                a {
+                    width: 50%;
+                    max-width: 65px;
+                    right: unset;
+                    left: 10px;
+                }
+
+                svg {
+                    width: auto;
+                    height: 80%;
+                }
+            }
+
+            .download-item-format {
+                //display: none;
+            }
+        }
+    }
+}
+
 @include media-breakpoint-only(lg) {
     .download-section {
         .download-title {
@@ -148,12 +223,17 @@
 
                 span {
                     font-size: calc(100px * 0.65);
+                    padding-left: 40px;
                 }
             }
 
             > svg {
                 left: 45%;
             }
+        }
+
+        .download-category-title {
+            padding-left: 44px;
         }
 
         .download-category-title, .download-item-title, .download-item-format, .download-item-size {
