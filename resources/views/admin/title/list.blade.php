@@ -25,7 +25,6 @@
                                     <td class="align-middle">{{ucfirst($element->place)}}</td>
                                     <td class="align-middle text-right">
                                         @include('elements.buttons.adminEdit',['element' => $element])
-                                        @include('elements.buttons.adminDelete',['element' => $element])
 
                                     </td>
                                 </tr>
