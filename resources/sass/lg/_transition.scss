@@ -1,0 +1,28 @@
+@include media-breakpoint-between(xs, sm) {
+    #home-page {
+        .cr-bgimg div:nth-child(1n) span {
+            background-position: -200% 0px;
+            //background-position: 0px 0px;
+        }
+
+        .cr-bgimg div:nth-child(2n) span {
+            background-position: -300% 0px;
+            //background-position: -100% 0px;
+        }
+
+        .cr-bgimg div:nth-child(3n) span {
+            background-position: -400% 0px;
+            //background-position: -200% 0px;
+        }
+
+        .cr-bgimg div:nth-child(4n) span {
+            background-position: -500% 0px;
+            //background-position: -300% 0px;
+        }
+
+        .cr-bgimg div span {
+            //background-size: 400% 100%;
+            background-size: cover;
+        }
+    }
+}

@@ -53,6 +53,61 @@
     }
 }
 
+@include media-breakpoint-only(md) {
+    .szoveg-section {
+
+        .szoveg-title {
+            h2 {
+                font-size: 40px;
+
+                span {
+                    font-size: calc(40px * 0.65);
+                    padding-left: 0;
+
+                    > svg {
+                        display: none;
+                    }
+                }
+            }
+
+            > svg {
+                left: 97% !important;
+                transform: translate(-100%, 0) !important;
+                height: 60% !important;
+                top: 5%;
+            }
+        }
+
+        .szoveg {
+            font-size: 22px;
+
+            h2 {
+                font-size: 38px;
+            }
+
+            h3 {
+                font-size: 32px;
+            }
+
+            h4 {
+                font-size: 26px;
+            }
+
+            blockquote {
+                width: 70vw;
+
+                &:before {
+                    border-left-width: 70vw;
+                }
+
+                &:after {
+                    border-right-width: 70vw;
+                }
+            }
+        }
+    }
+}
+
 @include media-breakpoint-only(lg) {
     .szoveg-section {
         .szoveg-title {

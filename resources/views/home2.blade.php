@@ -34,7 +34,13 @@
                         <div>
                             @for($j =0;$j < $count;$j++)
                                 {{--                                @dd($home_images[$j]->getImage())--}}
-                                <span style="background-image: url({!! $home_images[$j]->getImage(1.92,3840) !!})">Slice {!! $i !!} - Image {{$j}}</span>
+                                <span style="
+                                    @if(Browser::isMobile())
+                                    background-image: url({!! $home_images[$j]->getImage(0.56,700) !!})
+                                    @else
+                                    background-image: url({!! $home_images[$j]->getImage(1.92,3840) !!})
+                                    @endif
+                                    ">Slice {!! $i !!} - Image {{$j}}</span>
                             @endfor
                         </div>
                     @endfor
