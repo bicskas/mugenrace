@@ -47,7 +47,7 @@
         <a class="navbar-brand" href="{{ route('home', app()->getLocale()) }}">
             {!! Html::image($navbar_brand_src, config('app.name'), ['class' => 'img-fluid']) !!}
         </a>
-        <button id="navigation-btn-mobile" class="navigation-btn open d-block d-md-none" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button id="navigation-btn-mobile" class="navigation-btn open d-block d-md-none @if(Browser::isSafari()) safari @endif" type="button" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span id="openIcon">
                         {!! inline_svg('images/arrow-triple.svg') !!}
                     </span>
