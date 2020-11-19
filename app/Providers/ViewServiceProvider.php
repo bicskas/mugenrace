@@ -38,14 +38,7 @@ class ViewServiceProvider extends ServiceProvider
             return "<?php echo '<span class=\"$class\"></span>' ;?>";
         });
 
-        view()->composer('home', function ($view) {
-            $view->with([
-                'navbar_brand_src' => 'images/mugenrace-logo-black.png',
-                'navbar_beast_src' => 'images/bethebeast-logo-black.png'
-            ]);
-        });
-
-        view()->composer('home2', function ($view) {
+        view()->composer(['home','home2','home3'], function ($view) {
             $view->with([
                 'navbar_brand_src' => 'images/mugenrace-logo-black.png',
                 'navbar_beast_src' => 'images/bethebeast-logo-black.png'

@@ -135,6 +135,10 @@ $(function () {
     var inDirection;
     var outDirection;
     var addClass;
+    var scrollBool = true;
+    var timerId;
+    var timerRemove;
+
 
     $(window).on('mousewheel', function (e) {
         if ($('body').hasClass('homepage')) {
@@ -156,6 +160,14 @@ $(function () {
                 }
                 active.attr('checked', false);
                 next.attr('checked', true);
+                // $('#slider').trigger('click');
+                // if ($('#slider-text .active').is(':last-child')) {
+                //     $('#slider-text .active').removeClass('active');
+                //     $('#slider-text h3').removeClass('active').first().addClass('active');
+                // } else {
+                //     $('#slider-text .active').removeClass('active').next().addClass('active');
+                // }
+
 
                 clearTimeout(timerId);
                 timerId = setTimeout(function () {

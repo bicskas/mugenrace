@@ -63,23 +63,15 @@ $grid-breakpoints: (
 @import "lg/loading";
 //@import "lg/transition";
 
+//@import "webgl/base.css";
+//@import "webgl/text";
+
 a, a:hover {
     text-decoration: none;
 }
 
 a:hover {
     color: $primary;
-}
-
-#felezo {
-    display: block;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background-color: $black;
-    left: 50%;
-    transform: translate(-50%, 0);
 }
 
 html:not(.homepage) {
